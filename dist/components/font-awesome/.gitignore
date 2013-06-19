@@ -18,7 +18,6 @@ src/website/media/*
 bin
 cfcache
 develop-eggs
-dist
 downloads
 eggs
 parts
