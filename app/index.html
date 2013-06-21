@@ -57,11 +57,11 @@
         <a class="brand" href="/">Scrolls Toolbox</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
+            <li ng-show="user.authed">
+              <a href="/collection">Collection</a>
+            </li>
             <!--<li>
               <a href="#contact">Decks</a>
-            </li>
-            <li>
-              <a href="#contact">Collection</a>
             </li>
             <li>
               <a href="#contact">Trades</a>
@@ -138,6 +138,16 @@
   <script src="scripts/controllers/account.js"></script>
   <script src="scripts/controllers/forgotpassword.js"></script>
   <script src="scripts/controllers/faq.js"></script>
+  <script src="scripts/services/cards.js"></script>
+  <script src="scripts/controllers/collection.js"></script>
+  <script src="scripts/filters/price.js"></script>
+  <script src="scripts/filters/interpolate.js"></script>
+  <script src="scripts/directives/app-version.js"></script>
+  <script src="scripts/directives/owned-color.js"></script>
+  <script src="scripts/directives/rarity-color.js"></script>
+  <script src="scripts/directives/faction-color.js"></script>
+  <script src="scripts/directives/image-popup.js"></script>
+  <script src="scripts/controllers/collection-gold.js"></script>
   <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

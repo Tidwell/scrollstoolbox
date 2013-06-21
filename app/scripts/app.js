@@ -24,6 +24,10 @@ angular.module('scrollstoolboxApp', [])
 		templateUrl: 'views/faq.html',
 		controller: 'FaqCtrl'
 	})
+.when('/collection', {
+  templateUrl: 'views/collection.html',
+  controller: 'CollectionCtrl'
+})
 		.otherwise({
 		redirectTo: '/'
 	});
