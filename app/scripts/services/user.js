@@ -34,7 +34,6 @@ angular.module('scrollstoolboxApp')
 	});
 
 	function updateUser(data) {
-		console.log(data);
 		for (var property in data) {
 			user[property] = data[property];
 		}
