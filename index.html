@@ -19,7 +19,13 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <link rel="stylesheet" href="styles/7cfa16c5.main.css">
+  <link rel="stylesheet" href="styles/d41d8cd9.main.css">
+  <link rel="stylesheet" href="/styles/bootstrap.css">
+  <link rel="stylesheet" href="/styles/bootstrap-responsive.css">
+  <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="/styles/d41d8cd9.main.css">
+
+  <script src="/socket.io/socket.io.js"></script>
 </head>
 <body ng-app="scrollstoolboxApp">
   <!--[if lt IE 7]>
@@ -40,7 +46,7 @@
   <!-- Add your site or application content here -->
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
-      <div class="container">
+      <div class="container" ng-controller="NavCtrl">
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -49,9 +55,6 @@
         <a class="brand" href="/">Scrolls Toolbox</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
-            <li class="active">
-              <a href="/">Home</a>
-            </li>
             <!--<li>
               <a href="#contact">Decks</a>
             </li>
@@ -64,17 +67,44 @@
             <li>
               <a href="#about">About</a>
             </li>-->
-            <li>
+            <li ng-class="navClass('links')">
               <a href="/links">Resources</a>
             </li>
           </ul>
-          <!--
-          <form class="navbar-form pull-right">
-            <input class="span2" type="text" placeholder="Email">
-            <input class="span2" type="password" placeholder="Password">
-            <button type="submit" class="btn">Sign in</button>
+          <ul class="nav pull-right">
+            <li ng-class="navClass('account')" ng-show="user.authed">
+              <a href="/account">{{user.username}}'s Account</a>
+            </li>
+            <li ng-show="user.authed">
+              <a href="/logout" ng-click="logout()"> <i class="icon-signout"></i>
+                Logout
+              </a>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-question-sign"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/forgot-password" ng-show="!user.authed">Forgot Password</a>
+                  <a href="/faq">FAQ</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="alert alert-error nav-error" ng-show="user.error">
+            <strong>{{user.error}}</strong>
+          </div>
+          <div class="alert alert-success nav-success" ng-show="userUpdated">
+            <a class="close" href="#" ng-click="clearUpdated()">&times;</a>
+            <strong>User Update Successful.</strong>
+          </div>
+          <form class="navbar-form pull-right" ng-show="!user.authed">
+            <input class="span2" type="text" placeholder="Username" ng-model="username">
+            <input class="span2" type="password" placeholder="Password" ng-model="password">
+            <button type="submit" class="btn" ng-click="login()">Login</button>
+            <button type="submit" class="btn" ng-click="register()">Register</button>
           </form>
-        -->
         </div>
         <!--/.nav-collapse -->
       </div>
@@ -82,15 +112,22 @@
   </div>
   <div class="container">
     <div ng-view=""></div>
+  </div>
+  <div class="container">
     <hr>
+
     <footer>
-      <p>&copy;ScrollsToolbox 2013, all Scrolls Images and Content &copy;Mojang.  This site is not affiliated with Mojang in any way.</p>
+      <p>&copy;ScrollsToolbox 2013, all Scrolls Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by <a href="http://www.mojang.com">Mojang</a> in any way.  Card information thanks to <a href="http://www.scrollsguide.com">Scrolls Guide</a>.  Prices thanks to <a href="http://trading.scrollsguide.com/">Scrolls Trading Bulletin</a></p>
     </footer>
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="/components/bootstrap/bootstrap.min.js"></script>
 
-  <script src="scripts/d93f8121.scripts.js"></script>
+  <script src="///ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  <script src="/components/angular-ui/build/angular-ui.js"></script>
+
+  <script src="scripts/73b1e03c.scripts.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
