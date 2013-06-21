@@ -10,7 +10,7 @@ angular.module('scrollstoolboxApp')
 			}, {
 				title: 'Scrolls PC',
 				url: 'http://scrollspc.com/',
-				description: 'Price checking, price voting, historical price data'
+				description: 'Price checking, price voting, historical price charts'
 			}, {
 				title: 'Scrolls Prices',
 				url: 'http://scrollsprices.com/',
@@ -28,7 +28,7 @@ angular.module('scrollstoolboxApp')
 			}, {
 				title: 'TradingScrolls',
 				url: 'http://www.tradingscrolls.com/',
-				descriotion: 'Post buy/sell/trade requests'
+				description: 'Post buy/sell/trade requests'
 			}
 		],
 		deckbuilders: [{
@@ -62,6 +62,16 @@ angular.module('scrollstoolboxApp')
 				title: 'Scrolls Guide Card Maker',
 				url: 'http://www.scrollsguide.com/designer',
 				description: 'Create custom cards'
+			}
+		],
+		developers: [{
+				title: 'ScrollsGuide API',
+				url: 'http://www.reddit.com/r/Scrolls/comments/1ge2wj/full_scrolls_sqldb_or_spreatsheet/caje1f3',
+				description: 'Reddit thread for how to request ScrollsGuide API acess'
+			}, {
+				title: 'Scrolls Trading Bulletin API',
+				url: 'http://www.reddit.com/r/Scrolls/comments/1gqzg9/scrolls_trading_sites_comparisonaverage_in_json/can6dge',
+				description: 'Reddit thread detailing Scrolls Trading Bulletin API'
 			}
 		]
 	};
