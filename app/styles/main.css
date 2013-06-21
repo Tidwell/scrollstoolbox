@@ -1,12 +1,1 @@
 /* Will be compiled down to a single stylesheet with your sass files */
-body {
-	padding: 50px 0;
-}
-.nav-error, .nav-success {
-	position: fixed;
-	top: 50px;
-	right: 0;
-}
-.nav .dropdown i {
-	cursor: pointer;
-}
