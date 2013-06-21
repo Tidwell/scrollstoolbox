@@ -16,7 +16,7 @@ describe('Controller: LinksCtrl', function () {
     });
   }));
 
-  it('should attach a list of links to the scope', function () {
-    expect(scope.links.length).toBe(3);
+  it('should attach a list of link categories to the scope', function () {
+    expect(typeof scope.links).toBe('object');
   });
 });
