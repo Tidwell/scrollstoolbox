@@ -1,4 +1,4 @@
-<div class="row resources">
+<div>
 	<h1>Resources</h1>
 	<hr>
 
@@ -33,6 +33,13 @@
 	<h2>Misc</h2>
 	<ul>
 		<li ng-repeat="link in links.misc">
+			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
+		
+	</ul>
+
+	<h2>For Developers</h2>
+	<ul>
+		<li ng-repeat="link in links.developers">
 			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
 		
 	</ul>
