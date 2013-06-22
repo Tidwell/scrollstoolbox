@@ -59,7 +59,7 @@ angular.module('scrollstoolboxApp')
 				}
 
 				//create buy text
-				if (card.owned < 3) {
+				if (card.owned < 3 || card.alwaysBuy) {
 					if (card.card.rarity === 'Common' && $scope.buyCommon ||
 						card.card.rarity === 'Uncommon' && $scope.buyUncommon ||
 						card.card.rarity === 'Rare' && $scope.buyRare) {
@@ -67,12 +67,12 @@ angular.module('scrollstoolboxApp')
 						if ($scope.wtb.length > $scope.buyPrependText.length) {
 							$scope.wtb += $scope.separator;
 						}
-						$scope.wtb += (3 - card.owned)+'x '+cardName+' ('+buyPrice+'g)';
+						$scope.wtb += (card.alwaysBuy ? '' : 3 - card.owned+'x ')+cardName+' ('+buyPrice+'g)';
 					}
 				}
 
 				//create sell text
-				if (card.owned > 3) {
+				if (card.owned > 3 || (card.alwaysSell && card.owned)) {
 					if (card.card.rarity === 'Common' && $scope.sellCommon ||
 						card.card.rarity === 'Uncommon' && $scope.sellUncommon ||
 						card.card.rarity === 'Rare' && $scope.sellRare) {
@@ -81,7 +81,7 @@ angular.module('scrollstoolboxApp')
 							$scope.wts += $scope.separator;
 						}
 
-						$scope.wts += (card.owned-3)+'x '+cardName+' ('+sellPrice+'g)';
+						$scope.wts += (card.alwaysSell ? '' : card.owned-3+'x ')+cardName+' ('+sellPrice+'g)';
 					}
 				}
 			}
@@ -91,6 +91,7 @@ angular.module('scrollstoolboxApp')
 	socket.on('card:saved',updateText);
 	socket.on('user:login', updateText);
 	socket.on('cards:all', updateText);
+	socket.on('user:error', updateText); //for when they are in the demo
 	$scope.$watch('separator + buyPrependText + sellPrependText + buyModifier + sellModifier + buyAt + sellAt + buyCommon + buyUncommon + buyRare + sellCommon + sellUncommon + sellRare',updateText);
 
 });

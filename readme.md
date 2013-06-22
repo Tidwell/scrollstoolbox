@@ -17,12 +17,13 @@ node app &
 TODO
 -solve throttle/db save race condition
 -send salt down (store on socket), password is sent over socket md5+salt
+-icon checkboxes for factions
+-login/register modal popups (w/ page exit warning)
+-styles, logo, copy, etc
+
 -always buy/always sell ui integration
 -3-column view
 -exclude
--icon checkboxes for factions
--login/register modal popups (w/ page exit warning)
-
 -options to not show 3x
 -option to change () prefix/suffix
 -buy/sell # override
