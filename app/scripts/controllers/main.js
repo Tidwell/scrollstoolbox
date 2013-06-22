@@ -6,5 +6,5 @@ angular.module('scrollstoolboxApp')
 
 		$scope.$watch('cards.data',function() {
 			console.log($scope.cards);
-		})
+		});
 });

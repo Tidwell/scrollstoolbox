@@ -1,0 +1,88 @@
+<h2>Collection</h2>
+<div class="span2 form">
+	<div class="controls">
+		<div class="faction-order checkbox">
+			<input type="checkbox" ng-model="showOrder">Order: <strong>{{total('order')}}</strong>
+		</div>
+		<div class="faction-energy checkbox">
+			<input type="checkbox" ng-model="showEnergy">Energy: <strong>{{total('energy')}}</strong>
+		</div>
+		<div class="faction-growth checkbox">
+			<input type="checkbox" ng-model="showGrowth">Growth: <strong>{{total('growth')}}</strong>
+		</div>
+	</div>
+</div>
+<form class="form span5 form-horizontal">
+	<div class="control-group">
+		<label class="control-label">Show</label>
+		<div class="controls">
+			<label class="radio">
+			  <input type="radio" ng-model="tableView" value="all">
+			  All ({{total('all')}} cards)
+			</label>
+			<label class="radio">
+			  <input type="radio" ng-model="tableView" value="missing">
+			  Missing ({{total('missing')}} missing for full playset)
+			</label>
+			<label class="radio">
+			  <input type="radio" ng-model="tableView" value="duplicate">
+			  Duplicates ({{total('duplicate')}} beyond full playset)
+			</label>
+		</div>
+	</div>
+</form>
+<div class="pull-right" ng-controller="CollectionGoldCtrl">
+	<p>
+		Gold to Full Playset <br>
+		<strong>{{playsetGold().low}}-{{playsetGold().high}}</strong>
+	</p>
+	<p>
+		Duplicate Sell value <br>
+		<strong>{{sellGold().low}}-{{sellGold().high}}</strong>
+	</p>
+	<p>
+		Total Binder Value<br>
+		<strong>{{binderGold().low}}-{{binderGold().high}}</strong>
+	</p>
+</div>
+<div class="row-fluid">
+	<input type="text" ng-model="search">
+	<table class="table table-bordered table-hover table-condensed">
+	  <thead>
+	    <tr>
+	      <th>Owned</th>
+	      <th>Image</th>
+	      <th>Name</th>
+	      <th>Rarity</th>
+	      <th>Price</th>
+	      <th>Always Buy</th>
+	      <th>Buy Override</th>
+	      <th>Always Sell</th>
+	      <th>Sell Override</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="(name, card) in data.data" faction-color="card.resource" ng-show="
+		    	(tableView=='all' ||
+	    		(card.owned > 3 && tableView=='duplicate') ||
+	    		card.owned <3 && tableView == 'missing') &&
+
+	    		((showOrder && card.resource=='Order') ||
+	    		(showGrowth && card.resource=='Growth') ||
+	    		(showEnergy && card.resource=='Energy')) &&
+
+	    		inFiltered(name)">
+	      <td owned-color="card.owned"><input type="number" ng-model="card.owned" tabindex="{{$index+1}}"></td>
+	      <td><img src="{{generateImagePath(name)}}" image-popup="generateImagePath(name)"></td>
+	      <td>{{name}}</td>
+	      <td rarity-color="card.card.rarity">{{card.card.rarity}}</td>
+	      <td>{{card.price | price}}</td>
+	      <td><input type="checkbox" ng-model="card.alwaysBuy"></td>
+	      <td><input type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"></td>
+	      <td><input type="checkbox" ng-model="card.alwaysSell"></td>
+	      <td><input type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"></td>
+	    </tr>
+	  </tbody>
+	</table>
+</div>
+<div class="image-popup-container"></div>

@@ -18,10 +18,8 @@ angular.module('scrollstoolboxApp')
     data: {}
   };
 
-  var userPassword = '';
-
   var cards = angular.copy(cardTemplate);
-  var user = user.get();
+  var userData = user.get();
 
   socket.on('all-cards', function(data) {
     cards.data = parseSet(data);
@@ -40,7 +38,7 @@ angular.module('scrollstoolboxApp')
 
   function updateCollection() {
     //parse the collection from the user and set the #owned on cards
-    console.log('updating collection', user.owned);
+    console.log('updating collection', userData.owned);
     for (var cardName in cards.data) {
       cards.data[cardName].owned = 0;
     }

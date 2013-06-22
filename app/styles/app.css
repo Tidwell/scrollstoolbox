@@ -57,9 +57,6 @@ table input[type='checkbox'] {
   display: block;
   margin: 0 auto;
 }
-table input[type='checkbox']:checked {
-    background: white;
-}
 table input[type='checkbox']:checked:after {
   content: "X";
   font-size: 30px;

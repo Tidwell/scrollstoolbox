@@ -2,7 +2,7 @@
 
 angular.module('scrollstoolboxApp')
 	.filter('price', function() {
-	return function(price, elm, attrs) {
+	return function(price) {
 		var val = '';
 		if (price) {
 			if (price.low === price.high) {

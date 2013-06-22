@@ -45,5 +45,5 @@ angular.module('scrollstoolboxApp')
 			low: lowTotal,
 			high: highTotal
 		};
-	}
+	};
 });

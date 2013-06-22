@@ -8,21 +8,25 @@ angular.module('scrollstoolboxApp')
 		if (name) {
 			return '/img/scrolls-cards/'+name.toLowerCase().replace(/ /g,'').replace(/'/g,'')+'.png';
 		}
-	}
+	};
 
 	$scope.tabIndex = function(index,multiplier) {
 		return ($scope.countCards()*multiplier)+index;
-	}
+	};
 
 	$scope.countCards = function() {
 		if ($scope.numCards) { return $scope.numCards; }
 
 		var numCards = 0;
-		for (var card in $scope.data.data) {
+		var card;
+		for (card in $scope.data.data) {
 			numCards++;
 		}
-		return $scope.numCards = numCards;
-	}
+		$scope.numCards = numCards;
+
+		return $scope.numCards;
+	};
+
 	$scope.total = function(faction) {
 		var total = 0;
 		var numCards = 0;
@@ -37,7 +41,7 @@ angular.module('scrollstoolboxApp')
 			numCards++;
 		}
 		return total;
-	}
+	};
 
 	$scope.tableView = 'all';
 

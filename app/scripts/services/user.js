@@ -25,8 +25,6 @@ angular.module('scrollstoolboxApp')
 		authed: false
 	};
 
-	var userPassword = '';
-
 	var user = angular.copy(userTemplate);
 
 	socket.on('user:error', function(data) {
@@ -50,13 +48,11 @@ angular.module('scrollstoolboxApp')
 		login: function(data) {
 			user.error = false;
 			socket.emit('user:login', data);
-			userPassword = data.password; //store the password for actions
 			return user;
 		},
 		register: function(data) {
 			user.error = false;
 			socket.emit('user:register', data);
-			userPassword = data.password; //store the password for actions
 			return user;
 		},
 		forgotPassword: function(email) {
@@ -67,12 +63,10 @@ angular.module('scrollstoolboxApp')
 		},
 		logout: function() {
 			socket.emit('user:logout', {
-				username: user.username,
-				password: userPassword
+				username: user.username
 			});
 			user.username = '';
 			user.authed = false;
-			userPassword = '';
 			return user;
 		},
 		update: function() {
@@ -80,15 +74,8 @@ angular.module('scrollstoolboxApp')
 				inGameName: user.inGameName,
 				email: user.email,
 				username: user.username,
-				password: userPassword,
 				newPassword: user.password
 			});
-			if (user.password) {
-				userPassword = user.password;
-			}
-		},
-		getPassword: function() {
-			return userPassword;
 		}
 	};
 });
