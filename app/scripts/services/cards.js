@@ -19,10 +19,6 @@ angular.module('scrollstoolboxApp')
 		owned: []
 	};
 
-	$rootScope.$watch('data.data', function() {
-		console.log('change', arguments);
-	});
-
 	var cards = angular.copy(cardTemplate);
 	var userData = user.get();
 
@@ -38,7 +34,6 @@ angular.module('scrollstoolboxApp')
 
 	function updateCollection() {
 		//parse the collection from the user and set the #owned on cards
-		console.log('updating collection', userData.owned);
 		var numCards = 0;
 		for (var cardName in cards.data) {
 			cards.data[cardName].owned = 0;
@@ -61,7 +56,6 @@ angular.module('scrollstoolboxApp')
 	}
 
 	socket.on('user:registered', updateCollection);
-	socket.on('user:updated', updateCollection);
 	socket.on('user:login', updateCollection);
 
 	socket.on('all-cards', function(data) {
@@ -69,8 +63,9 @@ angular.module('scrollstoolboxApp')
 		updateCollection();
 	});
 
-	socket.on('card:saved', function(data){
-		console.log(data);
+	socket.on('card:saved', function(){
+		//set a message?
+		//maybe this should just be in the nav controller
 	});
 
 	return {
@@ -79,7 +74,6 @@ angular.module('scrollstoolboxApp')
 			return cards;
 		},
 		save: function(obj) {
-			console.log(obj);
 			socket.emit('card:save', {
 				name: obj.card.name,
 				owned: obj.owned,
