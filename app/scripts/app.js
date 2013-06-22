@@ -4,7 +4,7 @@ angular.module('scrollstoolboxApp', [])
 	.config(function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
 	$routeProvider
-		.when('/', {
+		.when('/home', {
 		templateUrl: 'views/main.html',
 		controller: 'MainCtrl'
 	})
@@ -32,11 +32,11 @@ angular.module('scrollstoolboxApp', [])
 	  templateUrl: 'views/wtswtb.html',
 	  controller: 'WtswtbCtrl'
 	})
-.when('/contact', {
-  templateUrl: 'views/contact.html',
-  controller: 'ContactCtrl'
-})
+		.when('/contact', {
+	  templateUrl: 'views/contact.html',
+	  controller: 'ContactCtrl'
+	})
 		.otherwise({
-		redirectTo: '/'
+		redirectTo: '/home'
 	});
 });
