@@ -73,16 +73,16 @@
 
 		    		inFiltered(name)">
 		      <td owned-color="card.owned" class="owned">
-		      	<input select-on-click="" type="number" ng-model="card.owned" tabindex="{{$index+1}}" ng-change="save(name)">
+		      	<input type="number" ng-model="card.owned" tabindex="{{$index+1}}" ng-change="save(name)">
 		      </td>
 <!-- 		      <td class="image"><img src="{{generateImagePath(name)}}" image-popup="generateImagePath(name)"></td>
  -->		      <td class="name"><a image-popup="generateImagePath(name)">{{name}}</a></td>
 		      <td class="rarity" rarity-color="card.card.rarity">{{card.card.rarity}}</td>
 		      <td class="price">{{card.price | price}}</td>
 		      <td class="always-buy"><input type="checkbox" ng-model="card.alwaysBuy" ng-change="save(name)"></td>
-		      <td class="buy-override"><input select-on-click="" ng-change="save(name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"></td>
+		      <td class="buy-override"><input ng-change="save(name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"></td>
 		      <td class="always-sell"><input type="checkbox" ng-model="card.alwaysSell" ng-change="save(name)"></td>
-		      <td class="sell-override"><input select-on-click="" ng-change="save(name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"></td>
+		      <td class="sell-override"><input ng-change="save(name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"></td>
 		    </tr>
 		  </tbody>
 		</table>
