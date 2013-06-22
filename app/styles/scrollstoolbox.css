@@ -1,5 +1,51 @@
 body {
-	padding: 50px 0;
+  padding: 10px 10px 0 120px;
+}
+h1, h2 {
+  font-family: 'Balthazar', serif;
+}
+.navbar-fixed-top {
+  height:40px;
+}
+.content {
+  overflow: hidden;
+  position: absolute;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 20px;
+  border-radius: 20px;
+  top: 40px;
+  bottom: 0px;
+  left: 100px;
+  right: 0px;
+  padding: 0px 10px;
+  overflow: auto;
+}
+.sideNav {
+  padding: 10px 0;
+  position: fixed;
+  left: 0px;
+  top: 0;
+  height: 100%;
+  bottom: 0px;
+  width: 100px;
+  /*z-index: 1020;  10 less than .navbar-fixed to prevent any overlap */
+  text-align:center;
+  font-size:11px;
+  font-weight:bold;
+}
+.sideNav a:hover {
+  text-decoration: none;
+  color: #ccc;
+}
+.sideNav .active {
+  color: white;
+}
+.sideNav button {
+  max-width: 100px;
+}
+.login-container {
+  margin: 5px;
 }
 .nav-error, .nav-success {
 	position: fixed;
@@ -8,6 +54,55 @@ body {
 }
 .nav .dropdown i {
 	cursor: pointer;
+}
+
+.table-controls  {
+  margin: 0;
+}
+.table-controls .control-group>label {
+  text-align: left;
+  width: 35px;
+}
+.table-controls.checkbox-controls {
+  margin-left: 100px;
+}
+.table-controls .checkbox {
+  height: 30px;
+  background: none;
+  line-height: 32px;
+  margin: 10px 0;
+}
+.table-controls input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 10px 0 0;
+  opacity: .5;
+  background-size: cover;
+}
+.table-controls .faction-order input[type='checkbox'] {
+  background-image: url('/img/card-icons/order.png');
+}
+.table-controls .faction-energy input[type='checkbox'] {
+  background-image: url('/img/card-icons/energy.png');
+}
+.table-controls .faction-growth input[type='checkbox'] {
+  background-image: url('/img/card-icons/growth.png');
+}
+.table-controls input[type='checkbox']:checked {
+  opacity: 1;
+}
+
+.gold-info {
+  padding: 10px;
+  text-align: right;
+}
+.gold-info label {
+  margin: 0;
+  font-weight: bold;
 }
 
 table.table thead th:not(.name):not(.rarity),
@@ -125,5 +220,6 @@ input[type="number"] {
   font-size: 1.5em;
 }
 .login-alert i {
-  padding: 5px;
+  padding: 0 10px 0;
+  font-size: 40px;
 }

@@ -21,6 +21,9 @@ ALPHA
 -icon checkboxes for factions
 -login/register modal popups
 -styles, logo, copy, etc
+-loading indicators
+-frontload card data in main
+-google analytics
 
 DURING BETA
 -enter collection prompt (switches tab-order)

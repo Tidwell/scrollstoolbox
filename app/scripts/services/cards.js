@@ -38,6 +38,10 @@ angular.module('scrollstoolboxApp')
 		var numCards = 0;
 		for (var cardName in cards.data) {
 			cards.data[cardName].owned = 0;
+			delete cards.data[cardName].price.buyOverride;
+			delete cards.data[cardName].price.sellOverride;
+			delete cards.data[cardName].alwaysBuy;
+			delete cards.data[cardName].alwaysSell;
 			numCards++;
 		}
 
@@ -60,6 +64,7 @@ angular.module('scrollstoolboxApp')
 
 	socket.on('user:registered', updateCollection);
 	socket.on('user:login', updateCollection);
+	socket.on('user:logged-out', updateCollection);
 
 	socket.on('cards:all', function(data) {
 		cards.data = parseSet(data);

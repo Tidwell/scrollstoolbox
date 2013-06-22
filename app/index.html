@@ -23,8 +23,10 @@
   <link rel="stylesheet" href="/styles/bootstrap.css">
   <link rel="stylesheet" href="/styles/responsive-bootstrap.css">
   <link rel="stylesheet" href="/styles/scrollstoolbox.css">
+  <link href='/styles/darkstrap.css' rel='stylesheet' />
   <!-- endbuild -->
 
+  <link href='http://fonts.googleapis.com/css?family=Balthazar' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.css">
 
   <script src="/socket.io/socket.io.js"></script>
@@ -46,80 +48,102 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container" ng-controller="NavCtrl">
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand" href="/">Scrolls Toolbox</a>
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ng-class="navClass('collection')">
-              <a href="/collection">Collection</a>
-            </li>
-            <li ng-class="navClass('wtswtb')">
-              <a href="/wtswtb">Trade Assistant</a>
-            </li>
-            <li>
-              <!--
-              <a href="/decks">Decks</a>
-            </li>
-            -->
-            <li ng-class="navClass('links')">
-              <a href="/links">Resources</a>
-            </li>
-          </ul>
-          <ul class="nav pull-right">
-            <li ng-class="navClass('account')" ng-show="user.authed">
-              <a href="/account">{{user.username}}'s Account</a>
-            </li>
-            <li ng-show="user.authed">
-              <a href="/logout" ng-click="logout()"> <i class="icon-signout"></i>
-                Logout
-              </a>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown">
-                <i class="icon-question-sign"></i>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/forgot-password" ng-show="!user.authed">Forgot Password</a>
-                  <a href="/faq">FAQ</a>
-                  <a href="/contact">Contact / Bug Report</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <div class="alert alert-error nav-error" ng-show="user.error">
-            <strong>{{user.error}}</strong>
-          </div>
-          <div class="alert alert-success nav-success" ng-show="userUpdated">
-            <a class="close" href="#" ng-click="clearUpdated()">&times;</a>
-            <strong>User Update Successful.</strong>
-          </div>
-          <form class="navbar-form pull-right" ng-show="!user.authed">
-            <input class="span2" type="text" placeholder="Username" ng-model="username">
-            <input class="span2" type="password" placeholder="Password" ng-model="password">
-            <button type="submit" class="btn" ng-click="login()">Login</button>
-            <button type="submit" class="btn" ng-click="register()">Register</button>
-          </form>
-        </div>
-        <!--/.nav-collapse -->
-      </div>
+  <!-- End Header -->
+  <div class="sideNav well" ng-controller="NavCtrl">
+    <a href="/">
+      <i class="icon-home icon-3x"></i><br />
+      Scrolls Toolbox
+    </a>
+    <hr />
+
+    <a href="/collection" ng-class="navClass('collection')"> <i class="icon-book icon-3x"></i>
+      <br />
+      Collection
+    </a>
+
+    <hr />
+
+    <a href="/wtswtb" ng-class="navClass('wtswtb')"> <i class="icon-list-alt icon-3x"></i>
+      <br />
+      Trade
+      <br />
+      Assistant
+    </a>
+
+    <hr />
+
+    <a href="/links" ng-class="navClass('links')">
+      <i class="icon-external-link icon-3x"></i>
+      <br />
+      Resources
+    </a>
+
+    <hr />
+    <div ng-show="user.authed">
+      <a href="/account" ng-class="navClass('account')">
+        <i class="icon-user icon-3x"></i>
+        <br />
+        {{user.username}}'s
+        <br />
+        Account
+      </a>
+      <hr />
+      <a href="/logout" ng-click="logout()">
+        <i class="icon-signout icon-3x"></i>
+        <br />
+        Logout
+      </a>
+      <hr>
     </div>
+    <div class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown">
+        <i class="icon-question-sign icon-3x"></i>
+        <br />
+        Help
+      </a>
+      <ul class="dropdown-menu">
+        <li style="text-align: left">
+          <a href="/forgot-password" ng-show="!user.authed">Forgot Password</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">Contact / Bug Report</a>
+        </li>
+      </ul>
+    </div>
+    <hr>
   </div>
-  <div class="container">
+  <!-- End Side Nav -->
+  <div class="row-fluid">
+  <div ng-controller="NavCtrl" class="pull-right login-container">
+    <div class="alert alert-error nav-error" ng-show="user.error">
+      <strong>{{user.error}}</strong>
+    </div>
+    <div class="alert alert-success nav-success" ng-show="userUpdated">
+      <a class="close" href="#" ng-click="clearUpdated()">&times;</a> <strong>User Update Successful.</strong>
+    </div>
+    <form class="navbar-form pull-right" ng-show="!user.authed">
+      <input class="span4" type="text" placeholder="Username" ng-model="username">
+      <input class="span4" type="password" placeholder="Password" ng-model="password">
+      <button type="submit" class="btn" ng-click="login()">Login</button>
+      <button type="submit" class="btn" ng-click="register()">Register</button>
+    </form>
+  </div>
+
+
     <div ng-view></div>
   </div>
-  <div class="container">
+  <div class="row-fluid">
     <hr>
 
     <footer ng-controller="FooterCtrl">
-      <p>&copy;ScrollsToolbox 2013, all Scrolls Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by <a href="http://www.mojang.com">Mojang</a> in any way.  Card information thanks to <a href="http://www.scrollsguide.com">Scrolls Guide</a>.  Prices thanks to <a href="http://trading.scrollsguide.com/">Scrolls Trading Bulletin</a>. {{userCount}} users currently signed in.</p>
+      <p>
+        &copy;ScrollsToolbox 2013, all Scrolls Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by
+        <a href="http://www.mojang.com">Mojang</a>
+        in any way.  Card information thanks to
+        <a href="http://www.scrollsguide.com">Scrolls Guide</a>
+        .  Prices thanks to
+        <a href="http://trading.scrollsguide.com/">Scrolls Trading Bulletin</a>
+        . {{userCount}} users currently signed in.
+      </p>
     </footer>
   </div>
 
@@ -160,5 +184,5 @@
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
-  </body>
+</body>
 </html>
