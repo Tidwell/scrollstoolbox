@@ -65,8 +65,19 @@ angular.module('scrollstoolboxApp')
 			socket.emit('user:logout', {
 				username: user.username
 			});
-			user.username = '';
-			user.authed = false;
+			var prop;
+			//clear the user
+			for (prop in user) {
+				if (user.hasOwnProperty(prop)) {
+					delete user[prop];
+				}
+			}
+			//reset
+			for (prop in userTemplate) {
+				if (userTemplate.hasOwnProperty(prop)) {
+					user[prop] = userTemplate[prop];
+				}
+			}
 			return user;
 		},
 		update: function() {
