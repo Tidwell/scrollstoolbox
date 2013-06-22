@@ -46,7 +46,7 @@
 	</p>
 </div>
 <div class="row-fluid">
-	<input type="text" ng-model="search" />
+	<input type="text" ng-model="search" placeholder="Search" />
 	<table class="table table-bordered table-hover table-condensed">
 	  <thead>
 	    <tr>
@@ -74,15 +74,17 @@
 	    		(showEnergy && card.resource=='Energy')) &&
 
 	    		inFiltered(name)">
-	      <td owned-color="card.owned"><input type="number" ng-model="card.owned" tabindex="{{$index+1}}" /></td>
+	      <td owned-color="card.owned">
+	      	<input select-on-click type="number" ng-model="card.owned" tabindex="{{$index+1}}" ng-change="saveOwned(name)" />
+	      </td>
 	      <td><img src="{{generateImagePath(name)}}" image-popup="generateImagePath(name)"></td>
 	      <td>{{name}}</td>
 	      <td rarity-color="card.card.rarity">{{card.card.rarity}}</td>
 	      <td>{{card.price | price}}</td>
 	      <td><input type="checkbox" ng-model="card.alwaysBuy" /></td>
-	      <td><input type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"/></td>
+	      <td><input select-on-click ng-change="saveOverride(name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"/></td>
 	      <td><input type="checkbox" ng-model="card.alwaysSell"/></td>
-	      <td><input type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"/></td>
+	      <td><input select-on-click ng-change="saveOverride(name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"/></td>
 	    </tr>
 	  </tbody>
 	</table>
