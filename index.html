@@ -53,10 +53,10 @@
         <a class="brand" href="/">Scrolls Toolbox</a>
         <div class="nav-collapse collapse">
           <ul class="nav">
-            <li ng-show="user.authed">
+            <li ng-show="user.authed" ng-class="navClass('collection')">
               <a href="/collection">Collection</a>
             </li>
-            <li ng-show="user.authed">
+            <li ng-show="user.authed" ng-class="navClass('wtswtb')">
               <a href="/wtswtb">Trade Assistant</a>
             </li>
             <li>
