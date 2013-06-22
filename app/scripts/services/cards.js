@@ -73,7 +73,6 @@ angular.module('scrollstoolboxApp')
 
 	return {
 		get: function() {
-			console.log(cards.data);
 			if (!cards.fetched) {
 				socket.emit('cards:all');
 				cards.fetched = true;
