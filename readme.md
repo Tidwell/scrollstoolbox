@@ -18,7 +18,10 @@ TODO
 -solve throttle/db save race condition
 -always buy/always sell ui integration
 -3-column view
+-exclude
 -options to not show 3x
+-icon checkboxes for factions
 -option to change () prefix/suffix
 -buy/sell # override
 -saving options
+-show trade assistant show/hide (option, saveable)

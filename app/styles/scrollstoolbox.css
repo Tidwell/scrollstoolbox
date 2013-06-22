@@ -121,3 +121,9 @@ input[type="number"] {
   width: 350px;
   max-width: 200%;
 }
+.login-alert {
+  font-size: 1.5em;
+}
+.login-alert i {
+  padding: 5px;
+}
