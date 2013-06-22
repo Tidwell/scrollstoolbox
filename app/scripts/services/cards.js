@@ -16,7 +16,8 @@ angular.module('scrollstoolboxApp')
 	var cardTemplate = {
 		error: false,
 		data: {},
-		owned: []
+		owned: [],
+		fetched: false
 	};
 
 	var cards = angular.copy(cardTemplate);
@@ -72,7 +73,11 @@ angular.module('scrollstoolboxApp')
 
 	return {
 		get: function() {
-			socket.emit('cards:all');
+			console.log(cards.data);
+			if (!cards.fetched) {
+				socket.emit('cards:all');
+				cards.fetched = true;
+			}
 			return cards;
 		},
 		save: function(obj) {
