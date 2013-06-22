@@ -22,6 +22,7 @@ ALPHA
 -styles, logo, copy, etc
 
 DURING BETA
+-enter collection prompt (switches tab-order)
 -3-column view
 -exclude
 -options to not show 3x
@@ -33,4 +34,5 @@ DURING BETA
 -show/hide columns-per-page options
 -stay logged in via localStorage
 -discrepancy from scrollsguide API card count
+-extended character support
 -local storage cache data (md5 to check if need new data - page speed ++++++)
