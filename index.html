@@ -10,7 +10,7 @@
 <![endif]-->
 <!--[if gt IE 8]>
 <!-->
-<html class="no-js">
+<html class="no-js" ng-app="scrollstoolboxApp">
 <!--<![endif]-->
 <head>
   <meta charset="utf-8">
@@ -25,7 +25,7 @@
 
   <script src="/socket.io/socket.io.js"></script>
 </head>
-<body ng-app="scrollstoolboxApp">
+<body>
   <!--[if lt IE 7]>
   <p class="chromeframe">
     You are using an outdated browser.
@@ -114,8 +114,8 @@
   <div class="container">
     <hr>
 
-    <footer>
-      <p>&copy;ScrollsToolbox 2013, all Scrolls Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by <a href="http://www.mojang.com">Mojang</a> in any way.  Card information thanks to <a href="http://www.scrollsguide.com">Scrolls Guide</a>.  Prices thanks to <a href="http://trading.scrollsguide.com/">Scrolls Trading Bulletin</a></p>
+    <footer ng-controller="FooterCtrl">
+      <p>&copy;ScrollsToolbox 2013, all Scrolls Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by <a href="http://www.mojang.com">Mojang</a> in any way.  Card information thanks to <a href="http://www.scrollsguide.com">Scrolls Guide</a>.  Prices thanks to <a href="http://trading.scrollsguide.com/">Scrolls Trading Bulletin</a>. {{userCount}} users currently signed in.</p>
     </footer>
   </div>
 
@@ -124,7 +124,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
   <script src="/components/angular-ui/build/angular-ui.js"></script>
 
-  <script src="scripts/a43ab741.scripts.js"></script>
+  <script src="scripts/53935d0d.scripts.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
