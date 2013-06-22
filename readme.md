@@ -15,9 +15,10 @@ node app &
 
 
 TODO
--Trade Assistant
--always buy/always sell
+-solve throttle/db save race condition
+-always buy/always sell ui integration
 -3-column view
 -options to not show 3x
 -option to change () prefix/suffix
+-buy/sell # override
 -saving options

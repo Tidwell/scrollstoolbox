@@ -40,17 +40,19 @@ angular.module('scrollstoolboxApp')
 			numCards++;
 		}
 
-		if (!numCards || !userData.owned) { return; }
+		if (!numCards || !userData.owned) {
+			return;
+		}
 
-		userData.owned.forEach(function(card){
-			if (card.owned) {
-				cards.data[card.name].owned = card.owned;
-			}
-			if (card.buyOverride) {
-				cards.data[card.name].price.buyOverride = card.buyOverride;
-			}
-			if (card.sellOverride) {
-				cards.data[card.name].price.sellOverride = card.sellOverride;
+		userData.owned.forEach(function(card) {
+			for (var prop in card) {
+				if (card.hasOwnProperty(prop) && typeof card[prop] !== 'undefined') {
+					if (prop.indexOf('Override') !== -1) {
+						cards.data[card.name].price[prop] = card[prop];
+					} else {
+						cards.data[card.name][prop] = card[prop];
+					}
+				}
 			}
 		});
 	}
@@ -63,7 +65,7 @@ angular.module('scrollstoolboxApp')
 		updateCollection();
 	});
 
-	socket.on('card:saved', function(){
+	socket.on('card:saved', function() {
 		//set a message?
 		//maybe this should just be in the nav controller
 	});
@@ -78,7 +80,9 @@ angular.module('scrollstoolboxApp')
 				name: obj.card.name,
 				owned: obj.owned,
 				buyOverride: obj.price.buyOverride,
-				sellOverride: obj.price.sellOverride
+				sellOverride: obj.price.sellOverride,
+				alwaysSell: obj.alwaysSell,
+				alwaysBuy: obj.alwaysBuy
 			});
 			return cards;
 		}
