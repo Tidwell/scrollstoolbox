@@ -56,16 +56,15 @@
             <li ng-show="user.authed">
               <a href="/collection">Collection</a>
             </li>
-            <!--<li>
-              <a href="#contact">Decks</a>
+            <li ng-show="user.authed">
+              <a href="/wtswtb">Trade Assistant</a>
             </li>
             <li>
-              <a href="#contact">Trades</a>
+              <!--
+              <a href="/decks">Decks</a>
             </li>
-            <li>
-              <a href="#about">About</a>
-            </li>-->
-            <li ng-class="navClass('links')">
+            -->
+            </li><li ng-class="navClass('links')">
               <a href="/links">Resources</a>
             </li>
           </ul>
@@ -86,6 +85,7 @@
                 <li>
                   <a href="/forgot-password" ng-show="!user.authed">Forgot Password</a>
                   <a href="/faq">FAQ</a>
+                  <a href="/contact">Contact / Bug Report</a>
                 </li>
               </ul>
             </li>
@@ -121,10 +121,10 @@
 
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="/components/bootstrap/bootstrap.min.js"></script>
-  <script src="///ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
   <script src="/components/angular-ui/build/angular-ui.js"></script>
 
-  <script src="scripts/dbeaeb39.scripts.js"></script>
+  <script src="scripts/a1802948.scripts.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
