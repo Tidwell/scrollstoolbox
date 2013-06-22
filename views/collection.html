@@ -50,15 +50,15 @@
 	<table class="table table-bordered table-hover table-condensed">
 	  <thead>
 	    <tr>
-	      <th>Owned</th>
-	      <th>Image</th>
-	      <th>Name</th>
-	      <th>Rarity</th>
-	      <th>Price</th>
-	      <th>Always Buy</th>
-	      <th>Buy Override</th>
-	      <th>Always Sell</th>
-	      <th>Sell Override</th>
+	      <th class="owned">Owned</th>
+	      <th class="image">Image</th>
+	      <th class="name">Name</th>
+	      <th class="rarity">Rarity</th>
+	      <th class="price">Price</th>
+	      <th class="always-buy">Always Buy</th>
+	      <th class="buy-override">Buy Override</th>
+	      <th class="always-sell">Always Sell</th>
+	      <th class="sell-override">Sell Override</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -72,17 +72,17 @@
 	    		(showEnergy && card.resource=='Energy')) &&
 
 	    		inFiltered(name)">
-	      <td owned-color="card.owned">
+	      <td owned-color="card.owned" class="owned">
 	      	<input select-on-click="" type="number" ng-model="card.owned" tabindex="{{$index+1}}" ng-change="saveOwned(name)">
 	      </td>
-	      <td><img src="{{generateImagePath(name)}}" image-popup="generateImagePath(name)"></td>
-	      <td>{{name}}</td>
-	      <td rarity-color="card.card.rarity">{{card.card.rarity}}</td>
-	      <td>{{card.price | price}}</td>
-	      <td><input type="checkbox" ng-model="card.alwaysBuy"></td>
-	      <td><input select-on-click="" ng-change="saveOverride(name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"></td>
-	      <td><input type="checkbox" ng-model="card.alwaysSell"></td>
-	      <td><input select-on-click="" ng-change="saveOverride(name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"></td>
+	      <td class="image"><img src="{{generateImagePath(name)}}" image-popup="generateImagePath(name)"></td>
+	      <td class="name"><a image-popup="generateImagePath(name)">{{name}}</a></td>
+	      <td class="rarity" rarity-color="card.card.rarity">{{card.card.rarity}}</td>
+	      <td class="price">{{card.price | price}}</td>
+	      <td class="always-buy"><input type="checkbox" ng-model="card.alwaysBuy"></td>
+	      <td class="buy-override"><input select-on-click="" ng-change="saveOverride(name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"></td>
+	      <td class="always-sell"><input type="checkbox" ng-model="card.alwaysSell"></td>
+	      <td class="sell-override"><input select-on-click="" ng-change="saveOverride(name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"></td>
 	    </tr>
 	  </tbody>
 	</table>
