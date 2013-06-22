@@ -16,6 +16,7 @@ node app &
 
 ALPHA
 -solve throttle/db save race condition
+-fix multi-sign-in
 -send salt down (store on socket), password is sent over socket md5+salt
 -icon checkboxes for factions
 -login/register modal popups
