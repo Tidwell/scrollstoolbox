@@ -14,20 +14,23 @@ kill #PID
 node app &
 
 
-TODO
+ALPHA
 -solve throttle/db save race condition
 -send salt down (store on socket), password is sent over socket md5+salt
 -icon checkboxes for factions
--login/register modal popups (w/ page exit warning)
+-login/register modal popups
 -styles, logo, copy, etc
 
--always buy/always sell ui integration
+DURING BETA
 -3-column view
 -exclude
 -options to not show 3x
 -option to change () prefix/suffix
 -buy/sell # override
-
+-page exit warnings
 -saving options
 -trade assistant table columns show/hide (option, saveable)
 -show/hide columns-per-page options
+-stay logged in via localStorage
+-discrepancy from scrollsguide API card count
+-local storage cache data (md5 to check if need new data - page speed ++++++)
