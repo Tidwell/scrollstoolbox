@@ -10,11 +10,7 @@ angular.module('scrollstoolboxApp')
 		}
 	};
 
-	$scope.saveOwned = function(cardName) {
-		cards.save($scope.data.data[cardName]);
-	};
-
-	$scope.saveOverride = function(cardName) {
+	$scope.save = function(cardName) {
 		cards.save($scope.data.data[cardName]);
 	};
 
