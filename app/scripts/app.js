@@ -32,6 +32,10 @@ angular.module('scrollstoolboxApp', [])
 	  templateUrl: 'views/wtswtb.html',
 	  controller: 'WtswtbCtrl'
 	})
+.when('/contact', {
+  templateUrl: 'views/contact.html',
+  controller: 'ContactCtrl'
+})
 		.otherwise({
 		redirectTo: '/'
 	});
