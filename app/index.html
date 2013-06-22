@@ -60,15 +60,14 @@
             <li ng-show="user.authed">
               <a href="/collection">Collection</a>
             </li>
-            <!--<li>
-              <a href="#contact">Decks</a>
+            <li ng-show="user.authed">
+              <a href="/wtswtb">Trade Assistant</a>
             </li>
             <li>
-              <a href="#contact">Trades</a>
+              <!--
+              <a href="/decks">Decks</a>
             </li>
-            <li>
-              <a href="#about">About</a>
-            </li>-->
+            -->
             <li ng-class="navClass('links')">
               <a href="/links">Resources</a>
             </li>
@@ -90,6 +89,7 @@
                 <li>
                   <a href="/forgot-password" ng-show="!user.authed">Forgot Password</a>
                   <a href="/faq">FAQ</a>
+                  <a href="/contact">Contact / Bug Report</a>
                 </li>
               </ul>
             </li>
@@ -125,7 +125,7 @@
 
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="/components/bootstrap/bootstrap.min.js"></script>
-  <script src="/components/angular/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
   <script src="/components/angular-ui/build/angular-ui.js"></script>
 
   <!-- build:js scripts/scripts.js -->
@@ -147,6 +147,8 @@
   <script src="scripts/directives/image-popup.js"></script>
   <script src="scripts/controllers/collection-gold.js"></script>
   <script src="scripts/directives/select-on-click.js"></script>
+  <script src="scripts/controllers/table.js"></script>
+  <script src="scripts/controllers/wtswtb.js"></script>
   <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

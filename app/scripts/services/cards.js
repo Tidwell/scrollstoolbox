@@ -58,7 +58,7 @@ angular.module('scrollstoolboxApp')
 	socket.on('user:registered', updateCollection);
 	socket.on('user:login', updateCollection);
 
-	socket.on('all-cards', function(data) {
+	socket.on('cards:all', function(data) {
 		cards.data = parseSet(data);
 		updateCollection();
 	});
