@@ -16,8 +16,6 @@ node app &
 
 ALPHA
 -solve throttle/db save race condition
--fix multi-sign-in
--save notification
 -send salt down (store on socket), password is sent over socket md5+salt
 -login/register modal popups
 -loading indicators
@@ -25,8 +23,10 @@ ALPHA
 
 
 DURING ALPHA/POST-LAUNCH
+-fix multi-sign-in
 -exclude
 -options to not show 3x
+-add starter decks
 -light theme
 -enter collection prompt (switches tab-order)
 -3-column view
