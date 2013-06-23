@@ -36,9 +36,15 @@ h1, h2 {
 }
 .sideNav a:hover {
   text-decoration: none;
+}
+
+.dark .sideNav a:hover {
   color: #ccc;
 }
 .sideNav .active {
+  color: black;
+}
+.dark .sideNav .active {
   color: white;
 }
 .sideNav button {

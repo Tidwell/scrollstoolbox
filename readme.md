@@ -24,8 +24,9 @@ ALPHA
 
 DURING ALPHA/POST-LAUNCH
 -fix multi-sign-in
--exclude
+-exclude, exclude threshhold?
 -options to not show 3x
+-always/never sell quantity option
 -add starter decks
 -light theme
 -enter collection prompt (switches tab-order)
