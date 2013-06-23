@@ -17,6 +17,7 @@ node app &
 ALPHA
 -solve throttle/db save race condition
 -fix multi-sign-in
+-save notification
 -send salt down (store on socket), password is sent over socket md5+salt
 -login/register modal popups
 -loading indicators
