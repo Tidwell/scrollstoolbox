@@ -21,7 +21,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="shortcut icon" href="/favicon.ico?v=2">
 
-  <link rel="stylesheet" href="styles/4bb18f0b.main.css">
+  <link rel="stylesheet" href="styles/0e678ca8.main.css">
 
   <link href="http://fonts.googleapis.com/css?family=Balthazar" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.css">
@@ -117,6 +117,9 @@
     <div class="alert alert-success nav-success" ng-show="userUpdated">
       <a class="close" href="#" ng-click="clearUpdated()">&times;</a> <strong>User Update Successful.</strong>
     </div>
+    <div class="alert alert-success nav-success nav-card-save-success" ng-show="saveMsgs.length" ng-repeat="msg in saveMsgs" fade-out-remove="msg" remove-from="saveMsgs">
+      <strong>{{msg.card}} has been saved</strong>
+    </div>
     <form class="navbar-form pull-right" ng-show="!user.authed">
       <input class="span4" type="text" placeholder="Username" ng-model="username">
       <input class="span4" type="password" placeholder="Password" ng-model="password">
@@ -148,7 +151,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
   <script src="/components/angular-ui/build/angular-ui.js"></script>
 
-  <script src="scripts/f4ed5db9.scripts.js"></script>
+  <script src="scripts/a243c9db.scripts.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>

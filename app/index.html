@@ -122,6 +122,9 @@
     <div class="alert alert-success nav-success" ng-show="userUpdated">
       <a class="close" href="#" ng-click="clearUpdated()">&times;</a> <strong>User Update Successful.</strong>
     </div>
+    <div class="alert alert-success nav-success nav-card-save-success" ng-show="saveMsgs.length" ng-repeat="msg in saveMsgs" fade-out-remove="msg" remove-from="saveMsgs">
+      <strong>{{msg.card}} has been saved</strong>
+    </div>
     <form class="navbar-form pull-right" ng-show="!user.authed">
       <input class="span4" type="text" placeholder="Username" ng-model="username">
       <input class="span4" type="password" placeholder="Password" ng-model="password">
@@ -177,6 +180,7 @@
   <script src="scripts/controllers/logged-in.js"></script>
   <script src="scripts/controllers/footer.js"></script>
   <script src="scripts/controllers/contact.js"></script>
+  <script src="scripts/directives/fade-out-remove.js"></script>
   <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

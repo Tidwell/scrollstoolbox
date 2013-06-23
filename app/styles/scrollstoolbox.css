@@ -227,3 +227,7 @@ input[type="number"] {
 footer {
   margin-top: 100px;
 }
+
+.nav-card-save-success {
+  z-index: 100000;
+}

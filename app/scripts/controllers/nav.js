@@ -17,6 +17,16 @@ angular.module('scrollstoolboxApp')
 		$scope.userUpdated = true;
 	});
 
+	$scope.saveMsgs = [
+
+	];
+
+	socket.on('card:saved', function(data) {
+		if ($scope.saveMsgs.indexOf(data) === -1) {
+			$scope.saveMsgs.push(data);
+		}
+	});
+
 	$scope.clearUpdated = function() {
 		$scope.userUpdated = false;
 	};

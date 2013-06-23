@@ -22,13 +22,15 @@ ALPHA
 -login/register modal popups
 -loading indicators
 -frontload card data in main
--google analytics
 
-DURING BETA
--enter collection prompt (switches tab-order)
--3-column view
+
+DURING ALPHA/POST-LAUNCH
 -exclude
 -options to not show 3x
+-light theme
+-enter collection prompt (switches tab-order)
+-3-column view
+-save data when registering
 -option to change () prefix/suffix
 -buy/sell # override
 -page exit warnings
