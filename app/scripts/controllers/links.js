@@ -15,6 +15,10 @@ angular.module('scrollstoolboxApp')
 				title: 'Scrolls Prices',
 				url: 'http://scrollsprices.com/',
 				description: 'Price checking'
+			}, {
+				title: 'Scrolls Post',
+				url: 'http://www.scrollspost.com/',
+				description: 'Price checking, Filters, Time-Ranged pricing, generated from in-game bot'
 			}
 		],
 		trading: [{

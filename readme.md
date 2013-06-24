@@ -28,7 +28,9 @@ DURING ALPHA/POST-LAUNCH
 -options to not show 3x
 -always/never sell quantity option
 -add starter decks
--light theme
+-change help to dropdown top or right for tablet (or just help home?)
+-phone reduced size nav
+-nav hiding
 -enter collection prompt (switches tab-order)
 -3-column view
 -save data when registering

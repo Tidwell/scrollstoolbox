@@ -36,6 +36,10 @@ angular.module('scrollstoolboxApp', [])
 	  templateUrl: 'views/contact.html',
 	  controller: 'ContactCtrl'
 	})
+		.when('/game-analyzer', {
+	  templateUrl: 'views/game-analyzer.html',
+	  controller: 'GameAnalyzerCtrl'
+	})
 		.otherwise({
 		redirectTo: '/home'
 	});

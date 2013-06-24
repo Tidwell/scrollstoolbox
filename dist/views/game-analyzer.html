@@ -1,0 +1,71 @@
+<h2>Game Analyzer</h2>
+<div class="row-fluid">
+	<input type="text" ng-model="search">
+	<p>{{game.players.white}} vs {{game.players.black}} - {{game.gameType}}</p>
+	<table class="table table-bordered table-hover table-condensed analyzer-table">
+	  <tbody ng-repeat="event in game.game">
+	  	<tr ng-show="!event.effects && event.msg != 'Ping'">
+	  		<td ng-show="event.msg">{{event.msg}}</td>
+	  		<td>{{makeCopy(event)}}</td>
+	  	</tr>
+	  	<tr ng-repeat="effect in event.effects" ng-show="event.effects">
+	      <td>{{getEffect(effect)}}</td>
+	      <td>{{makeCopy(effect)}}</td>
+		</tr>
+	  </tbody>
+	  <tbody ng-repeat="event in game.game">
+
+	  </tbody>
+ 	  </table>
+
+<!--
+	<table class="table table-bordered table-hover table-condensed">
+	  <thead>
+	    <tr>
+	      <th>Event</th>
+	      <th>Color</th>
+	      <th>Turn</th>
+	      <th>Resource</th>
+	      <th>Target Tile</th>
+	      <th>idol</th>
+	      <th>amount</th>
+	      <th>hp</th>
+	      <th>kill</th>
+	      <th>attackType</th>
+	      <th>damageType</th>
+	      <th>source</th>
+	      <th>target</th>
+	      <th>card played</th>
+
+	      <th>data</th>
+	    </tr>
+	  </thead>
+	  <tbody ng-repeat="event in game.game" ng-show="event.effects">
+	    <tr ng-repeat="effect in event.effects">
+	      <td>{{getEffect(effect)}}</td>
+	      <td>{{effect[getEffect(effect)].color}}</td>
+	      <td>{{effect[getEffect(effect)].turn}}</td>
+
+	      <td>{{effect[getEffect(effect)].resource}}</td>
+
+	      <td>{{effect[getEffect(effect)].targetTile}}</td>
+	      <td>{{effect[getEffect(effect)].idol}}</td>
+
+	      <td>{{effect[getEffect(effect)].amount}}</td>
+	      <td>{{effect[getEffect(effect)].hp}}</td>
+	      <td>{{effect[getEffect(effect)].kill}}</td>
+	      <td>{{effect[getEffect(effect)].attackType}}</td>
+	      <td>{{effect[getEffect(effect)].damageType}}</td>
+
+	      <td>{{effect[getEffect(effect)].source}}</td>
+	      <td>{{effect[getEffect(effect)].target}}</td>
+
+	      <td>{{effect[getEffect(effect)].color}},{{effect[getEffect(effect)].card}},{{effect[getEffect(effect)].tile1}}</td>
+
+	      <td ng-show="getEffect(effect) != 'TurnBegin' && getEffect(effect) != 'IdolUpdate' && getEffect(effect) != 'CardSacrificed'">{{effect[getEffect(effect)]}}</td>
+	    </tr>
+	  </tbody>
+	</table>
+-->
+</div>
+<div class="image-popup-container"></div>

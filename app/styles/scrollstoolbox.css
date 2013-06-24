@@ -115,6 +115,10 @@ table.table thead th:not(.name):not(.rarity),
 table.table td:not(.name):not(.rarity) {
   text-align: center;
 }
+table.table.analyzer-table tbody tr td {
+  text-align: left !important;
+}
+
 table.table {
   font-weight: bold;
   margin-bottom: 500px;
