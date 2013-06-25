@@ -24,6 +24,7 @@ angular.module('scrollstoolboxApp')
 	var userData = user.get();
 
 	function parseSet(res) {
+		console.log(res);
 		var rarityMap = ['Common', 'Uncommon', 'Rare'];
 		for (var cardName in res) {
 			res[cardName].price.median = Math.floor((res[cardName].price.high + res[cardName].price.low) / 2);
@@ -38,8 +39,10 @@ angular.module('scrollstoolboxApp')
 		var numCards = 0;
 		for (var cardName in cards.data) {
 			cards.data[cardName].owned = 0;
-			delete cards.data[cardName].price.buyOverride;
-			delete cards.data[cardName].price.sellOverride;
+			if (cards.data[cardName].price) {
+				delete cards.data[cardName].price.buyOverride;
+				delete cards.data[cardName].price.sellOverride;
+			}
 			delete cards.data[cardName].alwaysBuy;
 			delete cards.data[cardName].alwaysSell;
 			numCards++;

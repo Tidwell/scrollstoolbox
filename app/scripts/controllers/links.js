@@ -76,6 +76,11 @@ angular.module('scrollstoolboxApp')
 				title: 'Scrolls Trading Bulletin API',
 				url: 'http://www.reddit.com/r/Scrolls/comments/1gqzg9/scrolls_trading_sites_comparisonaverage_in_json/can6dge',
 				description: 'Reddit thread detailing Scrolls Trading Bulletin API'
+			},
+			{
+				title: 'ScrollsPC API',
+				url: 'http://scrollspc.icyboards.net/showthread.php?tid=14',
+				description: 'Forum thread on ScrollsPC detailing their API.'
 			}
 		]
 	};
