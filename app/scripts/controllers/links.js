@@ -81,6 +81,11 @@ angular.module('scrollstoolboxApp')
 				title: 'ScrollsPC API',
 				url: 'http://scrollspc.icyboards.net/showthread.php?tid=14',
 				description: 'Forum thread on ScrollsPC detailing their API.'
+			},
+			{
+				title: 'Summoner',
+				url: 'http://www.scrollsguide.com/forum/viewforum.php?f=59',
+				description: 'aka ModLoader, allows you to write mods for scrolls in C#'
 			}
 		]
 	};

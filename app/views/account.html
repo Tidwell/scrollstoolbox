@@ -2,13 +2,11 @@
 	<h1>{{user.username}}</h1>
 
 	<p>
-		<strong>These should match the Scrolls account you are currently using.</strong>
-		<br />
 		Click the edit icons to change your email or in-game name.</p>
 	</p>
 		<div ng-show="!inGameNameEditing">
 			<p>
-				<strong>In-Game Name:</strong>
+				<strong>In-Game Name (Required for Collection Sync):</strong>
 				<span>
 					{{user.inGameName}}
 					<a ng-click="edit('inGameName')">
@@ -21,7 +19,7 @@
 		<div ng-show="inGameNameEditing">
 			<p>
 				<form class="form-inline">
-					<strong>In-Game Name:</strong>
+					<strong>In-Game Name (Required for Collection Sync):</strong>
 					<input type="text" class="input" placeholder="In-Game Name" ng-model="inGameNameEdited" />
 
 					<button type="submit" class="btn" ng-click="save('inGameName')">Save</button>

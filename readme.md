@@ -11,14 +11,32 @@ ssh to prod, git pull
 If server needs restart
 Look for the process on port 9000 using: netstat -tulpn
 kill #PID
-node app &
+nohup node app &
 
 
 ALPHA
+-import messages and all mod stuff cleaned up
+MOD
+---error response
+---okay responses
+---cleanup mod
+---submit
+SITE
+---import message? (shared eventListener between socket and route?)
+---copy for how to use mod
+	--register account & set in game name (in game name prompt from organizer)
+	--download & install modloader
+	--go to mods, click checkbox
+	--goto collections, click sync
+	--tada!
+	--synced flag - first option?
+
+-loading indicators
+
+
 -solve throttle/db save race condition
 -send salt down (store on socket), password is sent over socket md5+salt
 -login/register modal popups
--loading indicators
 -frontload card data in main
 
 
