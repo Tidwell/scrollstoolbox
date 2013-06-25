@@ -24,7 +24,6 @@ angular.module('scrollstoolboxApp')
 	var userData = user.get();
 
 	function parseSet(res) {
-		console.log(res);
 		var rarityMap = ['Common', 'Uncommon', 'Rare'];
 		for (var cardName in res) {
 			res[cardName].price.median = Math.floor((res[cardName].price.high + res[cardName].price.low) / 2);
