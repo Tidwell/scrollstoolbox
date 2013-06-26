@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('scrollstoolboxApp', [])
+angular.module('scrollstoolboxApp', ['ui.bootstrap'])
 	.config(function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
 	$routeProvider

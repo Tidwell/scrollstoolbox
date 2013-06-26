@@ -1,18 +1,19 @@
 'use strict';
 
-describe('Controller: ContactCtrl', function () {
+describe('Controller: RegisterDialogCtrl', function () {
 
   // load the controller's module
   beforeEach(module('scrollstoolboxApp'));
 
-  var ContactCtrl,
+  var RegisterDialogCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ContactCtrl = $controller('ContactCtrl', {
+    RegisterDialogCtrl = $controller('RegisterDialogCtrl', {
       $scope: scope
     });
   }));
+
 });

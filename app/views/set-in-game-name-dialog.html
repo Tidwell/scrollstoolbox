@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h1>Set In-Game Name</h1>
+</div>
+<div class="modal-body">
+  <div class="alert alert-info">
+    <div class="large-alert">
+      <i class="icon-info-sign icon-3x pull-left"></i>
+      <p>In order to sync your account, you must set your In-Game Name.  This should match your Scrolls profile name (not your login-email).  You can always change or remove this from the Acccount screen.
+      </p>
+    </div>
+  </div>
+  <input type="text" placeholder="In-Game Name" ng-model="inGameName" required />
+</div>
+<div class="modal-footer">
+  <button ng-click="close(inGameName)" class="btn btn-primary">Save In-Game Name</button>
+  <button ng-click="close()" class="btn btn">Cancel</button>
+</div>

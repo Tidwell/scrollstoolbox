@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: ContactCtrl', function () {
+describe('Controller: SetInGameNameDialogCtrl', function () {
 
   // load the controller's module
   beforeEach(module('scrollstoolboxApp'));
 
-  var ContactCtrl,
+  var SetInGameNameDialogCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ContactCtrl = $controller('ContactCtrl', {
+    SetInGameNameDialogCtrl = $controller('SetInGameNameDialogCtrl', {
       $scope: scope
     });
   }));

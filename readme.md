@@ -9,7 +9,7 @@ git subtree push --prefix dist origin site
 ssh to prod, git pull
 
 If server needs restart
-Look for the process on port 9000 using: netstat -tulpn
+Look for the process on port 9000 using:
 kill #PID
 nohup node app &
 

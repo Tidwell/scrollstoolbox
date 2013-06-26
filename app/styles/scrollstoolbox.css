@@ -241,3 +241,26 @@ footer {
 .nav-card-save-success {
   z-index: 100000;
 }
+
+.dark .modal h1 {
+  color: #333;
+}
+.dark .modal .final-tutorial {
+  color: #333;
+}
+.dark .modal, .dark .modal a {
+  color: #333;
+}
+
+.modal {
+  top: 300px;
+}
+
+.modal-download-button {
+  margin: 0 auto 10px auto;
+  display: block;
+}
+
+.dark .modal a.modal-download-button {
+  color: white;
+}
