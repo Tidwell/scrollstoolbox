@@ -1,18 +1,20 @@
 <!-- Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit main-hero">
 	<h1>Scrolls Toolbox</h1>
+	<h2>Collection Tracking and Trade Message Generation.</h2>
 	<p>
-		Providing helpful webapps to enrich your Scrolls TCG experience.
-
-		Track your collection and use our integrated tools to automatically generate customized trade messages, using the latest pricing data, your overrides, and the information from your collection.
+		Sync your collection using our in-game MOD and use our app to track the cards you own.  Automatically generate customized trade messages based on your synced collection data.  We use the latest pricing data from <a href="scrollspc.com">ScrollsPC.com</a> and have a wide variety of customization options and filters.
 	</p>
 	<p>
-		<a href="/collection" class="btn btn-primary btn-large">Explore the Collection Manger <i class="icon-chevron-right"></i></a>
+		<a ng-click="startDialog()" class="btn btn-primary btn-large">Sync Your Collection and Get Started <i class="icon-chevron-right"></i></a>
 	</p>
 	<a href="" switch-theme="">Switch to Light Theme</a>
 </div>
 
 <!-- Example row of columns -->
+<div class="row-fluid">
+	<h2>Stop managing your binder, and get back to the game!</h2>
+</div>
 <div class="row-fluid">
 	<!--
 	<div class="span4">
@@ -26,21 +28,21 @@
 	</div>
 -->
 	<div class="span6">
-		<h2>Collection Manager</h2>
+		<h1>Collection Manager</h1>
 		<p>
 			Manage your collection, track buy and sell price overrides, view aggregate gold data, sorting, filtering, fullsize-card preview.  Minimalist "data-entry" view.  Live saving via websockets (just like google spreadsheets!).
 		</p>
 		<p>
-			<a class="btn" href="/collection">Try it out <i class="icon-chevron-right"></i></a>
+			<a class="btn btn-large" href="/collection">Try it out <i class="icon-chevron-right"></i></a>
 		</p>
 	</div>
 	<div class="span6">
-		<h2>Trade Assistant</h2>
+		<h1>Trade Assistant</h1>
 		<p>
 			Auto-generate WTS/WTB messages based on your collection information.  Ability to always buy/always sell and price overrides.  Apply global modifiers and generate shopping lists using pricing information from ScrollsPC and Scrolls Trading Bulletin.
 		</p>
 		<p>
-			<a class="btn" href="/wtswtb">Try it out <i class="icon-chevron-right"></i></a>
+			<a class="btn btn-large" href="/wtswtb">Try it out <i class="icon-chevron-right"></i></a>
 		</p>
 	</div>
 </div>
