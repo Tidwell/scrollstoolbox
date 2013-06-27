@@ -5,6 +5,7 @@ angular.module('scrollstoolboxApp')
 	$scope.user = user.get();
 	var d; //active dialog
 	$scope.startDialog = function(viewOverride) {
+		showBG();
 		if (!$scope.user.authed) {
 			//prompt to register
 			d = $dialog.dialog({
@@ -15,6 +16,9 @@ angular.module('scrollstoolboxApp')
 				controller: 'RegisterDialogCtrl'
 			});
 			d.open().then(function(result) {
+				if (!result) {
+					removeBG();
+				}
 				if (result && $scope.user.authed) {
 					$scope.startDialog(); //trigger the next step
 					return;
@@ -32,6 +36,9 @@ angular.module('scrollstoolboxApp')
 				controller: 'SetInGameNameDialogCtrl'
 			});
 			d.open().then(function(result) {
+				if (!result) {
+					removeBG();
+				}
 				if (result && $scope.user.authed) {
 					$scope.user.inGameName = result;
 					user.update();
@@ -50,6 +57,9 @@ angular.module('scrollstoolboxApp')
 				controller: 'DownloadDialogCtrl'
 			});
 			d.open().then(function(result) {
+				if (!result) {
+					removeBG();
+				}
 				if (result) {
 					$scope.startDialog('final');
 				}
@@ -64,8 +74,17 @@ angular.module('scrollstoolboxApp')
 				controller: 'EnableSyncCtrl'
 			});
 			d.open().then(function() {
+				removeBG();
 				//were done
 			});
 		}
 	};
+
+	//hack due to bug in angular-bootstrap
+	function showBG() {
+		$('.modal-backdrop').show();
+	}
+	function removeBG() {
+		$('.modal-backdrop').hide();
+	}
 });
