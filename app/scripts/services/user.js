@@ -40,6 +40,9 @@ angular.module('scrollstoolboxApp')
 	socket.on('user:registered', updateUser);
 	socket.on('user:updated', updateUser);
 	socket.on('user:login', updateUser);
+	socket.on('collection:synced', function() {
+		user.synced = true;
+	});
 
 	return {
 		get: function() {

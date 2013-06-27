@@ -219,8 +219,16 @@ input[type="number"] {
   max-width: none;
   width: auto;
 }
+.image-popup-container .popover {
+  background: none;
+  border: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.image-popup-container .popover-title,
 .image-popup-container .popover.right .arrow {
-  top: 5%;
+  display: none;
 }
 .image-popup-container .popover-content img {
   width: 350px;
