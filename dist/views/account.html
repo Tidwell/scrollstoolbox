@@ -57,12 +57,11 @@
 	<div ng-show="passwordEditing">
 		<p>
 			<form class="form-inline">
-				<strong>Password:</strong>
+				<strong>New Password:</strong>
 				<input type="password" class="input" placeholder="Password" ng-model="passwordEdited">
 
-				<button type="submit" class="btn" ng-click="save('password')">Save</button>
 				<button ng-click="close('password')" class="btn">Cancel</button>
-
+				<button type="submit" class="btn btn-primary" ng-click="save('password')">Save</button>
 			</form>
 		</p>
 	</div>
