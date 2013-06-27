@@ -4,13 +4,13 @@ Hey Guys, I'm really excited today to announce [Scrolls Toolbox.com](http://www.
 
 ###[Scrolls Toolbox.com](http://www.scrollstoolbox.com)
 ####Collection Tracking and Trade Message Generation.
-
+No More Google Spreadsheets!
 
 Sync your collection using our in-game MOD and use our app to track the cards you own. Automatically generate customized Want-to-sell and Want-to-buy trade messages based on your synced collection data. We use the latest pricing data from [ScrollsPC.com](http://www.ScrollsPC.com) and have a wide variety of customization options and filters.
 
 *****
 
-To get started, click the big blue "Sync Your Collection and Get Started" button on the homepage to walk through the tutorial for downloading and activing the MOD and syncing your collection data to the website.
+To get started, click the big blue "Sync Your Collection and Get Started" button on the homepage to walk through the tutorial for downloading and activating the MOD and syncing your collection data to the website.
 
 I tried to make the process as painless as possible, but if anyone runs into issues or can't get something to work, please let me know either here, or on the [ScrollsGuide form post for the MOD](http://www.scrollsguide.com/forum/viewtopic.php?f=61&t=1961).
 
@@ -45,5 +45,4 @@ Super-Huge thanks to KBasten and Darkulix, without their tireless work on Summon
 Also, a big thank you to the [ScrollsGuide](http://www.scrollsguide.com) community and everyone who has tested or given feedback during development, of which there are far too many to list. Special thanks to my IRL coworkers j0shua and detour!
 
 And of course, Mojang for creating an amazing game.
-
 

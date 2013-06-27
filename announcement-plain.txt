@@ -1,0 +1,36 @@
+Hey Guys, I'm really excited today to announce Scrolls Toolbox.com and CollectionSync Mod, a website and Summoner MOD that I've been working on for the last few weeks.
+
+Scrolls Toolbox.com
+Collection Tracking and Trade Message Generation.
+Sync your collection using our in-game MOD and use our app to track the cards you own. Automatically generate customized Want-to-sell and Want-to-buy trade messages based on your synced collection data. We use the latest pricing data from ScrollsPC.com and have a wide variety of customization options and filters.
+
+
+To get started, click the big blue "Sync Your Collection and Get Started" button on the homepage to walk through the tutorial for downloading and activating the MOD and syncing your collection data to the website.
+
+I tried to make the process as painless as possible, but if anyone runs into issues or can't get something to work, please let me know either here, or on the ScrollsGuide form post for the MOD.
+
+
+This came about while I was attempting to track my collection data in the quest to acquire a full playset. Originally I was using a google Spreadsheet, which eventually evolved into a small application, and with the launch of Summoner ModLoader was able to be fully realized with in-game integration. Full information about the technical stack for the site is in the FAQ section, and both the MOD and the site are open source, available from my github.
+
+
+In the next few days I plan to be adding:
+- Additional support for ScrollsPost and trading.ScrollsGuide pricing and aggregation
+- Exclude Checkbox (so those pesky Junkyards and Ilthorns won't show up in your generated lists)
+- Quantity overrides (maybe you want 5 speeds?)
+- Remember Me for Login
+- Developer REST API so you can grab a user's collection info based on their in-game name without having to write a MOD
+- Additonal Settings and server-side option storage
+- Card image updates to reflect the latest changes
+
+
+Any bug reports, feature requests, questions, comments, or hate mail can be posted here, sent via email to Aaron.Tidwell@gmail.com or sent to @Tidwell on twitter.
+
+Some Thank-Yous:
+
+Huge thank-you to ScrollsPC, trading.scrollsguide and ScrollsPost - everyone I've talked to has been awesome and willing to share their data and even develop new features just to make my life easier. I highly recommend using one of their sites for up-to-the minute price analysis.
+
+Super-Huge thanks to KBasten and Darkulix, without their tireless work on Summoner and being patient while a Javascript guy tries to learn C#, there would be no CollectionSync Mod.
+
+Also, a big thank you to the ScrollsGuide community and everyone who has tested or given feedback during development, of which there are far too many to list. Special thanks to my IRL coworkers j0shua and detour!
+
+And of course, Mojang for creating an amazing game.
