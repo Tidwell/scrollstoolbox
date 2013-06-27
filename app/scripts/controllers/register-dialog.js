@@ -26,7 +26,6 @@ angular.module('scrollstoolboxApp')
 	};
 
 	$scope.$watch('user.authed', function() {
-		console.log('watch called');
 		if ($scope.user.authed) {
 			$scope.close($scope.user.username);
 		}
