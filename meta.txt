@@ -1,0 +1,7 @@
+Name: CollectionSync
+
+Description: ScrollsToolbox Sync
+
+Long Description: Adds a button to the Deck Builder to sync your collection data with ScrollsToolbox.com. Use ScrollsToolbox to track the cards you own and automatically generate customized trade messages based on your collection data, the latest prices, and your customizations and filters.
+
+version: 1.0

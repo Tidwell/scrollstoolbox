@@ -26,12 +26,16 @@ angular.module('scrollstoolboxApp')
 				url: 'http://scrollswap.com/',
 				description: 'Post buy/sell/trade requests'
 			}, {
-				title: 'FastTrade',
+				title: 'Fast Trade',
 				url: 'http://scrollspc.com/fasttrade/index.php',
 				description: 'Made by ScrollsPC, post buy/sell requests'
 			}, {
-				title: 'TradingScrolls',
+				title: 'Trading Scrolls',
 				url: 'http://www.tradingscrolls.com/',
+				description: 'Post buy/sell/trade requests'
+			}, {
+				title: 'Scrolls Trader',
+				url: 'http://www.scrollstrader.com/',
 				description: 'Post buy/sell/trade requests'
 			}
 		],

@@ -10,6 +10,7 @@ ssh to prod, git pull
 
 If server needs restart
 Look for the process on port 9000 using:
+netstat -tulpn
 kill #PID
 nohup node app &
 
