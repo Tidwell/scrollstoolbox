@@ -4,7 +4,7 @@
 	angular.module('scrollstoolboxApp')
 		.service('socket', function($rootScope) {
 		if (typeof io !== 'undefined' && !socket) {
-			socket = io.connect();
+			socket = io.connect('',{port:9000});
 		} else {
 			//mock for tests, we should inject io instead and provide a separate mock
 			socket = {on: function() {}, emit: function(){}};
