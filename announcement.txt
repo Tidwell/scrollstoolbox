@@ -2,7 +2,8 @@ Hey Guys, I'm really excited today to announce [Scrolls Toolbox.com](http://www.
 
 *****
 
-[Scrolls Toolbox.com](http://www.scrollstoolbox.com) - Collection Tracking and Trade Message Generation.
+###[Scrolls Toolbox.com](http://www.scrollstoolbox.com)
+####Collection Tracking and Trade Message Generation.
 
 
 Sync your collection using our in-game MOD and use our app to track the cards you own. Automatically generate customized Want-to-sell and Want-to-buy trade messages based on your synced collection data. We use the latest pricing data from [ScrollsPC.com](http://www.ScrollsPC.com) and have a wide variety of customization options and filters.
@@ -27,6 +28,7 @@ In the next few days I plan to be adding:
 - Remember Me for Login
 - Developer REST API so you can grab a user's collection info based on their in-game name without having to write a MOD
 - Additonal Settings and server-side option storage
+- Card image updates to reflect the latest changes
 
 *****
 
@@ -34,13 +36,13 @@ Any bug reports, feature requests, questions, comments, or hate mail can be post
 
 *****
 
-Some thank-yous:
+Some Thank-Yous:
 
 Huge thank-you to ScrollsPC, trading.scrollsguide and ScrollsPost - everyone I've talked to has been awesome and willing to share their data and even develop new features just to make my life easier.  I highly recommend using one of their sites for up-to-the minute price analysis.
 
 Super-Huge thanks to KBasten and Darkulix, without their tireless work on Summoner and being patient while a Javascript guy tries to learn C#, there would be no CollectionSync Mod.
 
-Also, a big thank you to the ScrollsGuide community and everyone who has tested or given feedback during development, of which there are far too many to list. Special thanks to my IRL coworkers j0shua and detour!
+Also, a big thank you to the [ScrollsGuide](http://www.scrollsguide.com) community and everyone who has tested or given feedback during development, of which there are far too many to list. Special thanks to my IRL coworkers j0shua and detour!
 
 And of course, Mojang for creating an amazing game.
 
