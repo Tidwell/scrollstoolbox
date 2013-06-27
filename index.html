@@ -21,7 +21,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="shortcut icon" href="/favicon.ico?v=2">
 
-  <link rel="stylesheet" href="styles/20a6a251.main.css">
+  <link rel="stylesheet" href="styles/675657c6.main.css">
 
   <link rel="stylesheet" href="/components/darkstrap.css" id="darkstrap">
 
@@ -122,6 +122,10 @@
     <div class="alert alert-success nav-success nav-card-save-success" ng-show="saveMsgs.length" ng-repeat="msg in saveMsgs" fade-out-remove="msg" remove-from="saveMsgs">
       <strong>{{msg.card}} has been saved</strong>
     </div>
+
+    <div class="alert alert-success nav-success" ng-show="user.synced">
+      <a class="close" href="#" ng-click="user.synced = false">&times;</a> <strong>Your data has been synced with your in-game scrolls collection.</strong>
+    </div>
     <form class="navbar-form pull-right" ng-show="!user.authed">
       <input class="span4" type="text" placeholder="Username" ng-model="username">
       <input class="span4" type="password" placeholder="Password" ng-model="password">
@@ -150,7 +154,7 @@
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <script src="/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
-  <script src="scripts/601d1d30.scripts.js"></script>
+  <script src="scripts/87fe5b6d.scripts.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
