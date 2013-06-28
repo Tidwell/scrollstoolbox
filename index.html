@@ -112,6 +112,11 @@
   </div>
   <!-- End Side Nav -->
   <div class="row-fluid">
+    <div class="alert">
+      <i class="icon-exclamation-sign pull-left icon-3x"></i>
+      There will be a server restart to fix syncing for users with more than 1000 scrolls in their collection.  This will occur between 10AM and 1PM EST.  If you suddenly start getting the "Error Authenticating" message, wait a few minutes and log back in. Thank you for your patience.
+    </div>
+
   <div ng-controller="NavCtrl" class="pull-right login-container">
     <div class="alert alert-error nav-error" ng-show="user.error">
       <strong>{{user.error}}</strong>
@@ -126,6 +131,7 @@
     <div class="alert alert-success nav-success" ng-show="user.synced">
       <a class="close" href="#" ng-click="user.synced = false">&times;</a> <strong>Your data has been synced with your in-game scrolls collection.</strong>
     </div>
+
     <form class="navbar-form pull-right" ng-show="!user.authed">
       <input class="span4" type="text" placeholder="Username" ng-model="username">
       <input class="span4" type="password" placeholder="Password" ng-model="password">
@@ -133,8 +139,6 @@
       <button type="submit" class="btn" ng-click="register()">Register</button>
     </form>
   </div>
-
-
     <div ng-view=""></div>
   </div>
   <div class="row-fluid">
