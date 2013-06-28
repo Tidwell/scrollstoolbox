@@ -37,7 +37,12 @@ h1, h2 {
 .sideNav a:hover {
   text-decoration: none;
 }
-
+.top-alert {
+  line-height: 30px;
+}
+.dark .top-alert a {
+  color: black;
+}
 .dark .sideNav a:hover {
   color: #ccc;
 }

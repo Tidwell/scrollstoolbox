@@ -40,6 +40,9 @@ angular.module('scrollstoolboxApp', ['ui.bootstrap'])
 	  templateUrl: 'views/game-analyzer.html',
 	  controller: 'GameAnalyzerCtrl'
 	})
+			.when('/changelog', {
+	  templateUrl: 'views/changelog.html'
+	})
 		.otherwise({
 		redirectTo: '/home'
 	});
