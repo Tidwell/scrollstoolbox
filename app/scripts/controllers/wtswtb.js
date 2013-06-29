@@ -73,7 +73,7 @@ angular.module('scrollstoolboxApp')
 				} else {
 					sellPrice = Number(card.price[$scope.sellAt]);
 
-					sellPModifier = Math.ceil(Number($scope.buyPModifier) ? (Number($scope.sellPModifier)/100)*sellPrice : 0);
+					sellPModifier = Math.ceil(Number($scope.sellPModifier) ? (Number($scope.sellPModifier)/100)*sellPrice : 0);
 
 					sellPrice += sellPModifier;
 					sellPrice += Number($scope.sellModifier);
