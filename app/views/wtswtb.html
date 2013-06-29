@@ -6,61 +6,67 @@
 	  <li><a href="#wts">WTS</a></li>
 	</ul>
 	<form class="form form-horizontal">
-		<div class="control-group">
-			<label class="control-label">Separator</label>
-			<div class="controls">
-				<input type="text" ng-model="separator" ng-trim="false" />
-			</div>
-		</div>
 		<div class="tab-content">
 		  	<div class="tab-pane active" id="wtb">
 				<fieldset>
-					<div class="control-group">
-						<div class="control-label">Buy Prepend Text</div>
-						<div class="controls">
-							<input ng-model="buyPrependText" ng-trim="false" />
+					<div class="span6">
+						<div class="control-group">
+							<div class="control-label">Buy Prepend Text</div>
+							<div class="controls">
+								<input ng-model="buyPrependText" ng-trim="false" type="text" />
+							</div>
+						</div>
+					    <div class="control-group">
+							<label class="control-label">Rarities</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="buyRare">
+								  Rares
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="buyUncommon">
+								  Uncommons
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="buyCommon">
+								  Commons
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Buy Pricing</label>
+							<div class="controls">
+								<label class="radio">
+								  <input type="radio" ng-model="buyAt" value="low">
+								  Buy Low
+								</label>
+								<label class="radio">
+								  <input type="radio" ng-model="buyAt" value="median">
+								  Buy Median
+								</label>
+								<label class="radio">
+								  <input type="radio" ng-model="buyAt" value="high">
+								  Buy High
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Buy Modifier % </label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="number" ng-model="buyPModifier" />
+									<span class="add-on">%</span>
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Buy Modifier</label>
+							<div class="controls">
+								<input type="number" ng-model="buyModifier" />
+							</div>
 						</div>
 					</div>
-				    <div class="control-group">
-						<label class="control-label">Rarities</label>
-						<div class="controls">
-							<label class="checkbox">
-							  <input type="checkbox" ng-model="buyRare">
-							  Rares
-							</label>
-							<label class="checkbox">
-							  <input type="checkbox" ng-model="buyUncommon">
-							  Uncommons
-							</label>
-							<label class="checkbox">
-							  <input type="checkbox" ng-model="buyCommon">
-							  Commons
-							</label>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label">Buy Pricing</label>
-						<div class="controls">
-							<label class="radio">
-							  <input type="radio" ng-model="buyAt" value="low">
-							  Buy Low
-							</label>
-							<label class="radio">
-							  <input type="radio" ng-model="buyAt" value="median">
-							  Buy Median
-							</label>
-							<label class="radio">
-							  <input type="radio" ng-model="buyAt" value="high">
-							  Buy High
-							</label>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label">Buy Modifier</label>
-						<div class="controls">
-							<input type="number" ng-model="buyModifier" />
-						</div>
-					</div>
+					<div class="span6" ng-include="'views/advanced-text-controls.html'"></div>
 					<div class="control-group">
 						<div class="controls">
 							<textarea ng-model="wtb" rows="4" class="span10"></textarea>
@@ -71,52 +77,64 @@
 			</div>
 			<div class="tab-pane" id="wts">
 				<fieldset>
-					<div class="control-group">
-						<div class="control-label">Sell Prepend Text</div>
-						<div class="controls">
-							<input ng-model="sellPrependText" ng-trim="false" />
+					<div class="span6">
+						<div class="control-group">
+							<div class="control-label">Sell Prepend Text</div>
+							<div class="controls">
+								<input ng-model="sellPrependText" ng-trim="false" type="text" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Rarities</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="sellRare">
+								  Rares
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="sellUncommon">
+								  Uncommons
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="sellCommon">
+								  Commons
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Sell Pricing</label>
+							<div class="controls">
+								<label class="radio">
+								  <input type="radio" ng-model="sellAt" value="low">
+								  Sell Low
+								</label>
+								<label class="radio">
+								  <input type="radio" ng-model="sellAt" value="median">
+								  Sell Median
+								</label>
+								<label class="radio">
+								  <input type="radio" ng-model="sellAt" value="high">
+								  Sell High
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Sell Modifier % </label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="number" ng-model="sellPModifier" />
+									<span class="add-on">%</span>
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Sell Modifier</label>
+							<div class="controls">
+								<input type="number" ng-model="sellModifier" />
+							</div>
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label">Rarities</label>
-						<div class="controls">
-							<label class="checkbox">
-							  <input type="checkbox" ng-model="sellRare">
-							  Rares
-							</label>
-							<label class="checkbox">
-							  <input type="checkbox" ng-model="sellUncommon">
-							  Uncommons
-							</label>
-							<label class="checkbox">
-							  <input type="checkbox" ng-model="sellCommon">
-							  Commons
-							</label>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label">Sell Pricing</label>
-						<div class="controls">
-							<label class="radio">
-							  <input type="radio" ng-model="sellAt" value="low">
-							  Sell Low
-							</label>
-							<label class="radio">
-							  <input type="radio" ng-model="sellAt" value="median">
-							  Sell Median
-							</label>
-							<label class="radio">
-							  <input type="radio" ng-model="sellAt" value="high">
-							  Sell High
-							</label>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label">Sell Modifier</label>
-						<div class="controls">
-							<input type="number" ng-model="sellModifier" />
-						</div>
-					</div>
+					<div class="span6" ng-include="'views/advanced-text-controls.html'"></div>
 					<div class="control-group">
 						<div class="controls">
 							<textarea ng-model="wts" rows="4" class="span10"></textarea>

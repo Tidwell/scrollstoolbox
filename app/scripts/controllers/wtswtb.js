@@ -7,7 +7,13 @@ angular.module('scrollstoolboxApp')
 	$scope.buyPrependText = 'WTB >>> ';
 	$scope.sellPrependText = 'WTS >>> ';
 
-	$scope.separator = ' // ';
+	$scope.sharedOpts = {
+		qPrefix: '',
+		qSuffix: 'x ',
+		gPrefix: ' (',
+		gSuffix: 'g)',
+		separator: ' // '
+	};
 
 	$scope.tableView = 'all';
 
@@ -16,6 +22,9 @@ angular.module('scrollstoolboxApp')
 
 	$scope.buyModifier = '+0';
 	$scope.sellModifier = '+0';
+
+	$scope.buyPModifier = '+0';
+	$scope.sellPModifier = '+0';
 
 	$scope.buyCommon = true;
 	$scope.buyUncommon = true;
@@ -42,19 +51,31 @@ angular.module('scrollstoolboxApp')
 				//determine buy and sell price for each card
 				var buyPrice;
 				var sellPrice;
+
+				var buyPModifier;
+				var sellPModifier;
+
+				//only apply modifier if auto-generated
 				if (card.price.buyOverride) {
 					buyPrice = card.price.buyOverride;
 				} else {
 					buyPrice = Number(card.price[$scope.buyAt]);
-					//only apply modifier if auto-generated
+
+					buyPModifier = Math.ceil(Number($scope.buyPModifier) ? (Number($scope.buyPModifier)/100)*Number(buyPrice) : 0);
+
+					buyPrice += buyPModifier;
 					buyPrice += Number($scope.buyModifier);
 				}
 
+				//only apply modifier if auto-generated
 				if (card.price.sellOverride) {
 					sellPrice = Number(card.price.sellOverride);
 				} else {
 					sellPrice = Number(card.price[$scope.sellAt]);
-					//only apply modifier if auto-generated
+
+					sellPModifier = Math.ceil(Number($scope.buyPModifier) ? (Number($scope.sellPModifier)/100)*sellPrice : 0);
+
+					sellPrice += sellPModifier;
 					sellPrice += Number($scope.sellModifier);
 				}
 
@@ -65,9 +86,9 @@ angular.module('scrollstoolboxApp')
 						card.card.rarity === 'Rare' && $scope.buyRare) {
 
 						if ($scope.wtb.length > $scope.buyPrependText.length) {
-							$scope.wtb += $scope.separator;
+							$scope.wtb += $scope.sharedOpts.separator;
 						}
-						$scope.wtb += (card.alwaysBuy ? '' : 3 - card.owned+'x ')+cardName+' ('+buyPrice+'g)';
+						$scope.wtb += (card.alwaysBuy ? '' : $scope.sharedOpts.qPrefix+(3 - card.owned)+$scope.sharedOpts.qSuffix)+cardName+$scope.sharedOpts.gPrefix+buyPrice+$scope.sharedOpts.gSuffix;
 					}
 				}
 
@@ -78,10 +99,10 @@ angular.module('scrollstoolboxApp')
 						card.card.rarity === 'Rare' && $scope.sellRare) {
 
 						if ($scope.wts.length > $scope.sellPrependText.length) {
-							$scope.wts += $scope.separator;
+							$scope.wts += $scope.sharedOpts.separator;
 						}
 
-						$scope.wts += (card.alwaysSell ? '' : card.owned-3+'x ')+cardName+' ('+sellPrice+'g)';
+						$scope.wts += (card.alwaysSell ? '' : $scope.sharedOpts.qPrefix+(card.owned-3)+$scope.sharedOpts.qSuffix)+cardName+$scope.sharedOpts.gPrefix+sellPrice+$scope.sharedOpts.gSuffix;
 					}
 				}
 			}
@@ -92,6 +113,6 @@ angular.module('scrollstoolboxApp')
 	socket.on('user:login', updateText);
 	socket.on('cards:all', updateText);
 	socket.on('user:error', updateText); //for when they are in the demo
-	$scope.$watch('separator + buyPrependText + sellPrependText + buyModifier + sellModifier + buyAt + sellAt + buyCommon + buyUncommon + buyRare + sellCommon + sellUncommon + sellRare',updateText);
+	$scope.$watch('sharedOpts.separator + buyPrependText + sellPrependText + buyModifier + sellModifier + buyPModifier + sellPModifier + buyAt + sellAt + buyCommon + buyUncommon + buyRare + sellCommon + sellUncommon + sellRare + sharedOpts.gPrefix + sharedOpts.gSuffix + sharedOpts.qPrefix + sharedOpts.qSuffix',updateText);
 
 });
