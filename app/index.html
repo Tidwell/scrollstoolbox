@@ -117,10 +117,10 @@
       <!-- End Side Nav -->
       <hr>
     </div>
-    <div class="alert alert-info top-alert" ng-show="showTop">
-      <a class="close" href="#" ng-click="showTop = false">&times;</a>
+    <div class="alert alert-info top-alert" ng-show="flashMsg.msg && flashMsg.show" ng-controller="FlashMsgCtrl">
+      <a class="close" ng-click="flashMsg.show = false">&times;</a>
       <i class="icon-exclamation-sign pull-left icon-2x"></i>
-      A new version of the CollectionSync MOD has been released. Please restart Scrolls to get the latest version. <a href="/changelog">See the changes in v1.2</a>
+      <span ng-bind-html-unsafe="flashMsg.msg"></span>
       <div class="clearfix"></div>
     </div>
   </div>
@@ -153,17 +153,7 @@
     <footer ng-controller="FooterCtrl">
       <hr>
       <p>
-        &copy;ScrollsToolbox 2013, all
-        <img src="img/scrolls-logo.png" style="width: 80px"/>
-        Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by
-        <a href="http://www.mojang.com">Mojang</a>
-        in any way.  Card information thanks to
-        <a href="http://www.scrollsguide.com">Scrolls Guide</a>
-        .  Prices thanks to
-        <a href="http://trading.scrollsguide.com/">Scrolls Trading Bulletin</a>
-        and
-        <a href="http://www.scrollspc.com/">ScrollsPC</a>
-        . {{userCount}} users currently signed in.
+        &copy;ScrollsToolbox 2013, all <img src="img/scrolls-logo.png" style="width: 80px"/> Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by <a href="http://www.mojang.com">Mojang</a> in any way.  Card information thanks to <a href="http://www.scrollsguide.com">Scrolls Guide</a>.  Prices thanks to <a href="http://trading.scrollsguide.com/">Scrolls Trading Bulletin</a> and <a href="http://www.scrollspc.com/">ScrollsPC</a>.  {{userCount}} users currently signed in.
       </p>
     </footer>
   </div>
@@ -206,6 +196,8 @@
   <script src="scripts/controllers/register-dialog.js"></script>
   <script src="scripts/controllers/download-dialog.js"></script>
   <script src="scripts/controllers/enable-sync.js"></script>
+  <script src="scripts/controllers/flash-msg.js"></script>
+  <script src="scripts/services/flash-msg.js"></script>
   <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -4,8 +4,6 @@ angular.module('scrollstoolboxApp')
   .controller('NavCtrl', function ($scope, $location, user, socket) {
 	$scope.user = user.get();
 
-	$scope.showTop = true;
-
 	$scope.username = '';
 	$scope.password = '';
 

@@ -15,6 +15,22 @@ kill #PID
 nohup node app &
 
 
+ features
+-never buy
+-never sell
+-filter generated text by faction
+-current users list
+
+-api
+-private option on account
+-admin option on account
+
+
+-settings saving?
+
+ db.users.update({inGameName: ''}, {$set: {owned: []}})
+
+
 ALPHA
 -import messages and all mod stuff cleaned up
 MOD
