@@ -129,14 +129,14 @@
       <div class="alert alert-error nav-error" ng-show="user.error"> <strong>{{user.error}}</strong>
       </div>
       <div class="alert alert-success nav-success" ng-show="userUpdated">
-        <a class="close" href="#" ng-click="clearUpdated()">&times;</a> <strong>User Update Successful.</strong>
+        <a class="close" ng-click="clearUpdated()">&times;</a> <strong>User Update Successful.</strong>
       </div>
       <div class="alert alert-success nav-success nav-card-save-success" ng-show="saveMsgs.length" ng-repeat="msg in saveMsgs" fade-out-remove="msg" remove-from="saveMsgs">
         <strong>{{msg.card}} has been saved</strong>
       </div>
 
       <div class="alert alert-success nav-success" ng-show="user.synced">
-        <a class="close" href="#" ng-click="user.synced = false">&times;</a>
+        <a class="close" ng-click="user.synced = false">&times;</a>
         <strong>Your data has been synced with your in-game scrolls collection.</strong>
       </div>
 
