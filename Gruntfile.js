@@ -260,7 +260,8 @@ module.exports = function (grunt) {
             '.htaccess',
             'components/**/*',
             'img/{,*/}*.*',
-            'fonts/*'
+            'fonts/*',
+            'flash-msg.json'
           ]
         }]
       }
