@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('scrollstoolboxApp', ['ui.bootstrap'])
+angular.module('scrollstoolboxApp', ['ui.bootstrap', 'ngCookies'])
 	.config(function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
 	$routeProvider

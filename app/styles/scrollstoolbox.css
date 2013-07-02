@@ -58,6 +58,15 @@ h1, h2 {
 .login-container {
   margin: 5px;
 }
+
+.navbar-form {
+  text-align: right;
+}
+.remember-me {
+  margin: 0;
+}
+
+
 .nav-error, .nav-success {
 	position: fixed;
 	top: 50px;
@@ -66,6 +75,7 @@ h1, h2 {
 .nav .dropdown i {
 	cursor: pointer;
 }
+
 
 .table-controls  {
   margin: 0;

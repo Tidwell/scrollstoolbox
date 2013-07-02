@@ -14,48 +14,67 @@ netstat -tulpn
 kill #PID
 nohup node app &
 
+fix multi-accounts or non-sync:
+db.users.update({inGameName: '******INGAMENAME******'}, {$set: {owned: []}})
+
+db.users.update({inGameName: '******INGAMENAME******'}, {$set: {password: 'changeme1'}})
+
+-----------
+
+Hey there, I just went ahead and reset your password:
+
+Username:
+pw:
+
+After logging-in, please reset your password from the account screen.  Please note usernames and passwords are case-sensitive.
+
+If you run into any issues, let me know!
+
+-Tidwell
+
+
+bugs
+-resolve port9000 blocked issue
+-resolve https://lastpass.com/ issue
+
 
  features
 -never buy
 -never sell
--filter generated text by faction
--current users list
+-current users list (login time)
+-include quantity/price shared settings
+-other price sources!!!!!!!!!!!!!!!!! (TOMORROW!)
+-change colors (0 red, 1-2 orange, 3 green, 4+ blue)
 
 -api
 -private option on account
 -admin option on account
 
+-settings saving
 
--settings saving?
 
- db.users.update({inGameName: ''}, {$set: {owned: []}})
+
+For the Trade Assistant:
+Being able to append text to the buy/sell message
+Setting the order of cards in text (not sure how they're ordered now)
+Exporting to CSV and/or having a publically viewable list
+Filtering option for cards with price above/below certain price (E.g. I want to sell all cards worth more than 350g, regardless of rarity)
+Custom buy sell list apart from rarity (Like above, but using checkboxes rather than gold)
+Being able to save WTB / WTS settings
+
+Trade Assistant / Collection
+Rarity filter
+Column sorting by Number Owned, Price, Always Buy, Buy Price Override, Always Sell, Sell Price Override
+
 
 
 ALPHA
--import messages and all mod stuff cleaned up
-MOD
----error response
----okay responses
----cleanup mod
----submit
-SITE
----import message? (shared eventListener between socket and route?)
----copy for how to use mod
-	--register account & set in game name (in game name prompt from organizer)
-	--download & install modloader
-	--go to mods, click checkbox
-	--goto collections, click sync
-	--tada!
-	--synced flag - first option?
-
 -loading indicators
-
 
 -solve throttle/db save race condition
 -send salt down (store on socket), password is sent over socket md5+salt
 -login/register modal popups
--frontload card data in main
-
+-frontload card data in main (still necessary?)
 
 DURING ALPHA/POST-LAUNCH
 -fix multi-sign-in
