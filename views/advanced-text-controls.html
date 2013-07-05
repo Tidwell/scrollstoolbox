@@ -42,4 +42,21 @@
 			<input type="checkbox" ng-model="sharedOpts.includeGrowth">
 		</div>
 	</div>
+
+	<div class="control-group">
+		<label class="control-label">Only include cards with prices</label>
+		<div class="controls">
+			<div class="input-prepend">
+				<span class="add-on">&gt;</span>
+				<input type="number" ng-model="sharedOpts.minPrice">
+			</div>
+		</div>
+		<div class="controls">
+			<div class="input-prepend">
+				<span class="add-on">&lt;</span>
+				<input type="number" ng-model="sharedOpts.maxPrice">
+			</div>
+		</div>
+	</div>
+
 </div>
