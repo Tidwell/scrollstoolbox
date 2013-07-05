@@ -5,7 +5,9 @@ angular.module('scrollstoolboxApp')
 	$scope.data = cards.get();
 
 	$scope.buyPrependText = 'WTB >>> ';
+	$scope.buyAppendText = '';
 	$scope.sellPrependText = 'WTS >>> ';
+	$scope.sellAppendText = '';
 
 	$scope.sharedOpts = {
 		qPrefix: '',
@@ -15,7 +17,9 @@ angular.module('scrollstoolboxApp')
 		separator: ' // ',
 		includeOrder: true,
 		includeGrowth: true,
-		includeEnergy: true
+		includeEnergy: true,
+		minPrice: 0,
+		maxPrice: 10000
 	};
 
 	$scope.tableView = 'all';
@@ -90,7 +94,10 @@ angular.module('scrollstoolboxApp')
 
 						(card.resource === 'Order' && $scope.sharedOpts.includeOrder ||
 						card.resource === 'Energy' && $scope.sharedOpts.includeEnergy ||
-						card.resource === 'Growth' && $scope.sharedOpts.includeGrowth)) {
+						card.resource === 'Growth' && $scope.sharedOpts.includeGrowth) &&
+
+						(buyPrice > $scope.sharedOpts.minPrice &&
+						buyPrice < $scope.sharedOpts.maxPrice )) {
 
 						//console.log(card.resource, $scope.sharedOpts)
 
@@ -109,7 +116,10 @@ angular.module('scrollstoolboxApp')
 
 						(card.resource === 'Order' && $scope.sharedOpts.includeOrder ||
 						card.resource === 'Energy' && $scope.sharedOpts.includeEnergy ||
-						card.resource === 'Growth' && $scope.sharedOpts.includeGrowth)) {
+						card.resource === 'Growth' && $scope.sharedOpts.includeGrowth) &&
+
+						(sellPrice > $scope.sharedOpts.minPrice &&
+						sellPrice < $scope.sharedOpts.maxPrice )) {
 
 						if ($scope.wts.length > $scope.sellPrependText.length) {
 							$scope.wts += $scope.sharedOpts.separator;
@@ -120,12 +130,15 @@ angular.module('scrollstoolboxApp')
 				}
 			}
 		}
+
+		$scope.wtb += $scope.buyAppendText;
+		$scope.wts += $scope.sellAppendText;
 	}
 
 	socket.on('card:saved',updateText);
 	socket.on('user:login', updateText);
 	socket.on('cards:all', updateText);
 	socket.on('user:error', updateText); //for when they are in the demo
-	$scope.$watch('sharedOpts.separator + buyPrependText + sellPrependText + buyModifier + sellModifier + buyPModifier + sellPModifier + buyAt + sellAt + buyCommon + buyUncommon + buyRare + sellCommon + sellUncommon + sellRare + sharedOpts.gPrefix + sharedOpts.gSuffix + sharedOpts.qPrefix + sharedOpts.qSuffix + sharedOpts.includeEnergy + sharedOpts.includeOrder + sharedOpts.includeGrowth',updateText);
+	$scope.$watch('sharedOpts.separator + buyPrependText + buyAppendText + sellPrependText + sellAppendText + buyModifier + sellModifier + buyPModifier + sellPModifier + buyAt + sellAt + buyCommon + buyUncommon + buyRare + sellCommon + sellUncommon + sellRare + sharedOpts.gPrefix + sharedOpts.gSuffix + sharedOpts.qPrefix + sharedOpts.qSuffix + sharedOpts.includeEnergy + sharedOpts.includeOrder + sharedOpts.includeGrowth + sharedOpts.minPrice + sharedOpts.maxPrice',updateText);
 
 });

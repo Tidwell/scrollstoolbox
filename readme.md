@@ -55,10 +55,8 @@ bugs
 
 
 For the Trade Assistant:
-Being able to append text to the buy/sell message
 Setting the order of cards in text (not sure how they're ordered now)
 Exporting to CSV and/or having a publically viewable list
-Filtering option for cards with price above/below certain price (E.g. I want to sell all cards worth more than 350g, regardless of rarity)
 Custom buy sell list apart from rarity (Like above, but using checkboxes rather than gold)
 Being able to save WTB / WTS settings
 

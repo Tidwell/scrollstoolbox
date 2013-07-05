@@ -22,6 +22,10 @@
 					  All ({{total('all')}} cards)
 					</label>
 					<label class="radio">
+					  <input type="radio" ng-model="tableView" value="owned">
+					  Owned Only ({{total('all')}})
+					</label>
+					<label class="radio">
 					  <input type="radio" ng-model="tableView" value="missing">
 					  Missing ({{total('missing')}} missing for full playset)
 					</label>
@@ -56,11 +60,27 @@
 		<table class="table table-bordered table-hover table-condensed">
 		  <thead>
 		    <tr>
-		      <th class="owned">Owned</th>
+		      <th class="owned">
+		      	Owned
+		      	<i class="icon-sort-up" ng-click="setSort('owned', 'asc')" ng-class="{active: isActiveSort('owned','asc')}"></i>
+		      	<i class="icon-sort-down" ng-click="setSort('owned', 'desc')" ng-class="{active: isActiveSort('owned','desc')}"></i>
+		      </th>
 	<!-- 	      <th class="image">Image</th> -->
-		      <th class="name">Name</th>
-		      <th class="rarity">Rarity</th>
-		      <th class="price">Price</th>
+		      <th class="name">
+		      	Name
+		      	<i class="icon-sort-up" ng-click="setSort('name', 'asc')" ng-class="{active: isActiveSort('name','asc')}"></i>
+		      	<i class="icon-sort-down" ng-click="setSort('name', 'desc')" ng-class="{active: isActiveSort('name','desc')}"></i>
+		      </th>
+		      <th class="rarity">
+		      	Rarity
+		      	<i class="icon-sort-up" ng-click="setSort('rarity', 'asc')" ng-class="{active: isActiveSort('rarity','asc')}"></i>
+		      	<i class="icon-sort-down" ng-click="setSort('rarity', 'desc')" ng-class="{active: isActiveSort('rarity','desc')}"></i>
+		      </th>
+		      <th class="price">
+		      	Price
+		      	<i class="icon-sort-up" ng-click="setSort('price', 'asc')" ng-class="{active: isActiveSort('price','asc')}"></i>
+		      	<i class="icon-sort-down" ng-click="setSort('price', 'desc')"  ng-class="{active: isActiveSort('price','desc')}"></i>
+		      </th>
 		      <th class="always-buy">Always Buy</th>
 		      <th class="buy-override">Buy Price Override</th>
 		      <th class="always-sell">Always Sell</th>
@@ -68,29 +88,30 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr ng-repeat="(name, card) in data.data"
+		    <tr ng-repeat="card in sortedData"
 		    	faction-color="card.resource"
 		    	ng-show="
 			    	(tableView=='all' ||
 		    		(card.owned > 3 && tableView=='duplicate') ||
-		    		card.owned <3 && tableView == 'missing') &&
+		    		card.owned <3 && tableView == 'missing' ||
+		    		card.owned && tableView == 'owned') &&
 
 		    		((showOrder && card.resource=='Order') ||
 		    		(showGrowth && card.resource=='Growth') ||
 		    		(showEnergy && card.resource=='Energy')) &&
 
-		    		inFiltered(name)">
+		    		inFiltered(card.name)">
 		      <td owned-color="card.owned" class="owned">
-		      	<input type="number" ng-model="card.owned" tabindex="{{$index+1}}" ng-change="save(name)" />
+		      	<input type="number" ng-model="card.owned" tabindex="{{$index+1}}" ng-change="save(card.name)" />
 		      </td>
-<!-- 		      <td class="image"><img src="{{generateImagePath(name)}}" image-popup="generateImagePath(name)"></td>
- -->		      <td class="name" image-popup="generateImagePath(name)"><a>{{name}}</a></td>
+<!-- 		      <td class="image"><img src="{{generateImagePath(card.name)}}" image-popup="generateImagePath(card.name)"></td>
+ -->		      <td class="card.name" image-popup="generateImagePath(card.name)"><a>{{card.name}}</a></td>
 		      <td class="rarity" rarity-color="card.card.rarity">{{card.card.rarity}}</td>
 		      <td class="price">{{card.price | price}}</td>
-		      <td class="always-buy"><input type="checkbox" ng-model="card.alwaysBuy" ng-change="save(name)"/></td>
-		      <td class="buy-override"><input ng-change="save(name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"/></td>
-		      <td class="always-sell"><input type="checkbox" ng-model="card.alwaysSell" ng-change="save(name)"/></td>
-		      <td class="sell-override"><input ng-change="save(name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"/></td>
+		      <td class="always-buy"><input type="checkbox" ng-model="card.alwaysBuy" ng-change="save(card.name)"/></td>
+		      <td class="buy-override"><input ng-change="save(card.name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,1)}}"/></td>
+		      <td class="always-sell"><input type="checkbox" ng-model="card.alwaysSell" ng-change="save(card.name)"/></td>
+		      <td class="sell-override"><input ng-change="save(card.name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,2)}}"/></td>
 		    </tr>
 		  </tbody>
 		</table>

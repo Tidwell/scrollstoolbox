@@ -144,6 +144,25 @@ table.table thead th:not(.name):not(.rarity),
 table.table td:not(.name):not(.rarity) {
   text-align: center;
 }
+
+table.table th {
+  position: relative;
+}
+table.table th i {
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+table.table th i.active {
+  color: #0088cc;
+}
+table.table th i:first-child {
+  top: 3px;
+}
+table.table th i:nth-child(2) {
+  bottom: 3px;
+}
+
 table.table.analyzer-table tbody tr td {
   text-align: left !important;
 }

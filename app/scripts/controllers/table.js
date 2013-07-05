@@ -3,6 +3,20 @@
 angular.module('scrollstoolboxApp')
   .controller('TableCtrl', function ($scope, cards) {
 	$scope.data = cards.get();
+	$scope.sortedData = [];
+
+
+	$scope.tableView = 'all';
+
+	$scope.showOrder = true;
+	$scope.showEnergy = true;
+	$scope.showGrowth = true;
+
+	$scope.sorting = {
+		option: 'name',
+		order: 'asc'
+	};
+
 
 	$scope.generateImagePath = function(name) {
 		if (name) {
@@ -47,11 +61,71 @@ angular.module('scrollstoolboxApp')
 		return total;
 	};
 
-	$scope.tableView = 'all';
+	$scope.setSort = function(sortOption, sortOrder) {
+		$scope.sorting.option = sortOption;
+		$scope.sorting.order = sortOrder;
+		tableSort();
+	};
 
-	$scope.showOrder = true;
-	$scope.showEnergy = true;
-	$scope.showGrowth = true;
+	$scope.isActiveSort = function(sortOption, sortOrder) {
+		if ($scope.sorting.option === sortOption && $scope.sorting.order === sortOrder) {
+			return true;
+		}
+
+		return false;
+	};
+
+	function tableSort() {
+		var arrayData = [];
+		for (var cardName in $scope.data.data) {
+			$scope.data.data[cardName].name = $scope.data.data[cardName].card.name;
+			arrayData.push($scope.data.data[cardName]);
+		}
+		arrayData.sort(function(a,b) {
+			//price
+			if ($scope.sorting.option === 'price') {
+				if ($scope.sorting.order === 'asc') {
+					return a.price.median - b.price.median;
+				} else {
+					return b.price.median - a.price.median;
+				}
+			}
+
+			//rarity
+			var rMap = {
+				Common: 1,
+				Uncommon: 2,
+				Rare: 3
+			};
+			if ($scope.sorting.option === 'rarity') {
+				if ($scope.sorting.order === 'asc') {
+					return rMap[a.card.rarity] - rMap[b.card.rarity];
+				} else {
+					return rMap[b.card.rarity] - rMap[a.card.rarity];
+				}
+			}
+
+			if ($scope.sorting.option === 'owned') {
+				if ($scope.sorting.order === 'asc') {
+					return a.owned - b.owned;
+				} else {
+					return b.owned - a.owned;
+				}
+			}
+
+			//stuff thats ABC
+			if (a.card[$scope.sorting.option] === b.card[$scope.sorting.option]) { return 0; }
+			if ($scope.sorting.order === 'asc') {
+				return a.card[$scope.sorting.option] > b.card[$scope.sorting.option] ? 1 : -1;
+			} else {
+				return a.card[$scope.sorting.option] < b.card[$scope.sorting.option] ? 1 : -1;
+			}
+		});
+		$scope.sortedData = arrayData;
+	}
+
+	$scope.$watch('data.data',tableSort);
+
 
 	//we cant do this as a proper filter since we are using a hashmap instead of an array
 	$scope.inFiltered = function(name) {
