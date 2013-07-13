@@ -21,7 +21,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="shortcut icon" href="/favicon.ico?v=2" />
 
-  <!-- build:css styles/main.css -->
+  <!-- build:css /styles/main.css -->
   <link rel="stylesheet" href="/styles/bootstrap.css">
   <link rel="stylesheet" href="/styles/responsive-bootstrap.css">
   <link rel="stylesheet" href="/styles/scrollstoolbox.css">
@@ -33,6 +33,8 @@
   <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.css">
 
   <script src="/socket.io/socket.io.js"></script>
+
+  <base href="/" />
 </head>
 <body class="dark" ng-cloak>
   <!--[if lt IE 7]>
@@ -154,7 +156,7 @@
     <footer ng-controller="FooterCtrl">
       <hr>
       <p>
-        &copy;ScrollsToolbox 2013, all <img src="img/scrolls-logo.png" style="width: 80px"/> Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by <a href="http://www.mojang.com">Mojang</a> in any way.  Card information thanks to <a href="http://www.scrollsguide.com">Scrolls Guide</a>.  Prices thanks to <a href="http://www.scrollspost.com/">Scrolls Post</a>.  {{userCount}} users currently signed in.
+        &copy;ScrollsToolbox 2013, all <img src="/img/scrolls-logo.png" style="width: 80px"/> Images and Content &copy;Mojang.  This site is not affiliated with or endorsed by <a href="http://www.mojang.com">Mojang</a> in any way.  Card information thanks to <a href="http://www.scrollsguide.com">Scrolls Guide</a>.  Prices thanks to <a href="http://www.scrollspost.com/">Scrolls Post</a>.  {{userCount}} users currently signed in.
       </p>
     </footer>
   </div>
@@ -166,40 +168,42 @@
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <script src="/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
-  <!-- build:js scripts/scripts.js -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/links.js"></script>
-  <script src="scripts/controllers/nav.js"></script>
-  <script src="scripts/services/user.js"></script>
-  <script src="scripts/services/socket.js"></script>
-  <script src="scripts/controllers/account.js"></script>
-  <script src="scripts/controllers/forgotpassword.js"></script>
-  <script src="scripts/controllers/faq.js"></script>
-  <script src="scripts/services/cards.js"></script>
-  <script src="scripts/controllers/collection.js"></script>
-  <script src="scripts/filters/price.js"></script>
-  <script src="scripts/directives/owned-color.js"></script>
-  <script src="scripts/directives/rarity-color.js"></script>
-  <script src="scripts/directives/faction-color.js"></script>
-  <script src="scripts/directives/image-popup.js"></script>
-  <script src="scripts/controllers/collection-gold.js"></script>
-  <script src="scripts/directives/select-on-click.js"></script>
-  <script src="scripts/controllers/table.js"></script>
-  <script src="scripts/controllers/wtswtb.js"></script>
-  <script src="scripts/controllers/logged-in.js"></script>
-  <script src="scripts/controllers/footer.js"></script>
-  <script src="scripts/controllers/contact.js"></script>
-  <script src="scripts/directives/fade-out-remove.js"></script>
-  <script src="scripts/directives/switch-theme.js"></script>
-  <script src="scripts/controllers/game-analyzer.js"></script>
-  <script src="scripts/services/game.js"></script>
-  <script src="scripts/controllers/set-in-game-name-dialog.js"></script>
-  <script src="scripts/controllers/register-dialog.js"></script>
-  <script src="scripts/controllers/download-dialog.js"></script>
-  <script src="scripts/controllers/enable-sync.js"></script>
-  <script src="scripts/controllers/flash-msg.js"></script>
-  <script src="scripts/services/flash-msg.js"></script>
+  <!-- build:js /scripts/scripts.js -->
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers/main.js"></script>
+  <script src="/scripts/controllers/links.js"></script>
+  <script src="/scripts/controllers/nav.js"></script>
+  <script src="/scripts/services/user.js"></script>
+  <script src="/scripts/services/socket.js"></script>
+  <script src="/scripts/controllers/account.js"></script>
+  <script src="/scripts/controllers/forgotpassword.js"></script>
+  <script src="/scripts/controllers/faq.js"></script>
+  <script src="/scripts/services/cards.js"></script>
+  <script src="/scripts/controllers/collection.js"></script>
+  <script src="/scripts/filters/price.js"></script>
+  <script src="/scripts/directives/owned-color.js"></script>
+  <script src="/scripts/directives/rarity-color.js"></script>
+  <script src="/scripts/directives/faction-color.js"></script>
+  <script src="/scripts/directives/image-popup.js"></script>
+  <script src="/scripts/controllers/collection-gold.js"></script>
+  <script src="/scripts/directives/select-on-click.js"></script>
+  <script src="/scripts/controllers/table.js"></script>
+  <script src="/scripts/controllers/wtswtb.js"></script>
+  <script src="/scripts/controllers/logged-in.js"></script>
+  <script src="/scripts/controllers/footer.js"></script>
+  <script src="/scripts/controllers/contact.js"></script>
+  <script src="/scripts/directives/fade-out-remove.js"></script>
+  <script src="/scripts/directives/switch-theme.js"></script>
+  <script src="/scripts/controllers/game-analyzer.js"></script>
+  <script src="/scripts/services/game.js"></script>
+  <script src="/scripts/controllers/set-in-game-name-dialog.js"></script>
+  <script src="/scripts/controllers/register-dialog.js"></script>
+  <script src="/scripts/controllers/download-dialog.js"></script>
+  <script src="/scripts/controllers/enable-sync.js"></script>
+  <script src="/scripts/controllers/flash-msg.js"></script>
+  <script src="/scripts/services/flash-msg.js"></script>
+  <script src="/scripts/controllers/collection-list.js"></script>
+  <script src="/scripts/services/collection-list.js"></script>
   <!-- endbuild -->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

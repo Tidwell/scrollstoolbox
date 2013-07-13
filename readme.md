@@ -67,7 +67,6 @@ Column Sorting for Always Buy, Buy Price Override, Always Sell, Sell Price Overr
 -mark untradeable
 
 DURING ALPHA/POST-LAUNCH
--fix multi-sign-in
 -options to not show 3x
 -always/never sell quantity option
 -add starter decks
