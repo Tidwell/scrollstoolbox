@@ -6,31 +6,18 @@ change env.js to be 'stage' in scrollstoolbox-server and restart server
 
 To deploy:
 git subtree push --prefix dist origin site
-ssh to prod, git pull
+ssh to prod & git pull
 
 If server needs restart
-Look for the process on port 9000 using:
-netstat -tulpn
+Look for the process on port 9000 using: netstat -tulpn
 kill #PID
 nohup node app &
+sudo service apache2 restart
 
 fix multi-accounts or non-sync:
 db.users.update({inGameName: '******INGAMENAME******'}, {$set: {owned: []}})
 
 db.users.update({inGameName: '******INGAMENAME******'}, {$set: {password: 'changeme1'}})
-
------------
-
-Hey there, I just went ahead and reset your password:
-
-Username:
-pw:
-
-After logging-in, please reset your password from the account screen.  Please note usernames and passwords are case-sensitive.
-
-If you run into any issues, let me know!
-
--Tidwell
 
 
 bugs

@@ -1,0 +1,12 @@
+Hey there, I just went ahead and reset your password:
+
+Username:
+pw:
+
+After logging-in, please reset your password from the account screen.  Please note usernames and passwords are case-sensitive.
+
+If you run into any issues, let me know!
+
+-Tidwell
+
+
