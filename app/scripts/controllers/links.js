@@ -4,21 +4,21 @@ angular.module('scrollstoolboxApp')
 	.controller('LinksCtrl', function($scope) {
 	$scope.links = {
 		prices: [{
+				title: 'Scrolls Post',
+				url: 'http://www.scrollspost.com/',
+				description: 'Price checking, Filters, Time-Ranged pricing, generated from in-game bot'
+			}, {
 				title: 'Scrolls Trading Bulletin',
 				url: 'http://trading.scrolls.pw/',
 				description: 'Price checking and card information, generated from in-game bot'
 			}, {
-				title: 'Scrolls PC',
-				url: 'http://scrollspc.com/',
-				description: 'Price checking, price voting, historical price charts'
-			}, {
 				title: 'Scrolls Prices',
 				url: 'http://scrollsprices.com/',
 				description: 'Price checking'
-			}, {
-				title: 'Scrolls Post',
-				url: 'http://www.scrollspost.com/',
-				description: 'Price checking, Filters, Time-Ranged pricing, generated from in-game bot'
+			},{
+				title: 'Scrolls PC',
+				url: 'http://scrollspc.com/',
+				description: 'Price checking, price voting, historical price charts (no longer updated)'
 			}
 		],
 		trading: [{

@@ -96,7 +96,7 @@ angular.module('scrollstoolboxApp')
 						card.resource === 'Energy' && $scope.sharedOpts.includeEnergy ||
 						card.resource === 'Growth' && $scope.sharedOpts.includeGrowth) &&
 
-						(buyPrice > $scope.sharedOpts.minPrice &&
+						(buyPrice >= $scope.sharedOpts.minPrice &&
 						buyPrice < $scope.sharedOpts.maxPrice )) {
 
 						//console.log(card.resource, $scope.sharedOpts)
@@ -118,7 +118,7 @@ angular.module('scrollstoolboxApp')
 						card.resource === 'Energy' && $scope.sharedOpts.includeEnergy ||
 						card.resource === 'Growth' && $scope.sharedOpts.includeGrowth) &&
 
-						(sellPrice > $scope.sharedOpts.minPrice &&
+						(sellPrice >= $scope.sharedOpts.minPrice &&
 						sellPrice < $scope.sharedOpts.maxPrice )) {
 
 						if ($scope.wts.length > $scope.sellPrependText.length) {
