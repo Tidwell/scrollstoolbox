@@ -32,6 +32,7 @@ bugs
 -current users list (login time)
 -include quantity/price shared settings
 -other price sources
+-price rounding
 -change colors (0 red, 1-2 orange, 3 green, 4+ blue)
 
 -api

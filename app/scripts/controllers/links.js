@@ -84,7 +84,7 @@ angular.module('scrollstoolboxApp')
 			{
 				title: 'ScrollsPC API',
 				url: 'http://scrollspc.icyboards.net/showthread.php?tid=14',
-				description: 'Forum thread on ScrollsPC detailing their API.'
+				description: 'Forum thread on ScrollsPC detailing their API. (no longer updated)'
 			},
 			{
 				title: 'Summoner',

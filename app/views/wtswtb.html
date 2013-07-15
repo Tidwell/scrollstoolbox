@@ -13,28 +13,28 @@
 						<div class="control-group">
 							<div class="control-label">Buy Prepend Text</div>
 							<div class="controls">
-								<input ng-model="buyPrependText" ng-trim="false" type="text" />
+								<input ng-model="u.settings.buyPrependText" ng-trim="false" type="text" />
 							</div>
 						</div>
 						<div class="control-group">
 							<div class="control-label">Buy Append Text</div>
 							<div class="controls">
-								<input ng-model="buyAppendText" ng-trim="false" type="text" />
+								<input ng-model="u.settings.buyAppendText" ng-trim="false" type="text" />
 							</div>
 						</div>
 					    <div class="control-group">
 							<label class="control-label">Rarities</label>
 							<div class="controls">
 								<label class="checkbox">
-								  <input type="checkbox" ng-model="buyRare">
+								  <input type="checkbox" ng-model="u.settings.buyRare">
 								  Rares
 								</label>
 								<label class="checkbox">
-								  <input type="checkbox" ng-model="buyUncommon">
+								  <input type="checkbox" ng-model="u.settings.buyUncommon">
 								  Uncommons
 								</label>
 								<label class="checkbox">
-								  <input type="checkbox" ng-model="buyCommon">
+								  <input type="checkbox" ng-model="u.settings.buyCommon">
 								  Commons
 								</label>
 							</div>
@@ -43,19 +43,19 @@
 							<label class="control-label">Buy Pricing</label>
 							<div class="controls">
 								<label class="radio">
-								  <input type="radio" ng-model="buyAt" value="low">
+								  <input type="radio" ng-model="u.settings.buyAt" value="low">
 								  Buy Low
 								</label>
 								<label class="radio">
-								  <input type="radio" ng-model="buyAt" value="median">
+								  <input type="radio" ng-model="u.settings.buyAt" value="median">
 								  Buy Median
 								</label>
 								<label class="radio">
-								  <input type="radio" ng-model="buyAt" value="suggested">
+								  <input type="radio" ng-model="u.settings.buyAt" value="suggested">
 								  Buy ScrollsPost Suggested
 								</label>
 								<label class="radio">
-								  <input type="radio" ng-model="buyAt" value="high">
+								  <input type="radio" ng-model="u.settings.buyAt" value="high">
 								  Buy High
 								</label>
 							</div>
@@ -64,7 +64,7 @@
 							<label class="control-label">Buy Modifier % </label>
 							<div class="controls">
 								<div class="input-append">
-									<input type="number" ng-model="buyPModifier" />
+									<input type="number" ng-model="u.settings.buyPModifier" />
 									<span class="add-on">%</span>
 								</div>
 							</div>
@@ -72,7 +72,7 @@
 						<div class="control-group">
 							<label class="control-label">Buy Modifier</label>
 							<div class="controls">
-								<input type="number" ng-model="buyModifier" />
+								<input type="number" ng-model="u.settings.buyModifier" />
 							</div>
 						</div>
 					</div>
@@ -91,28 +91,28 @@
 						<div class="control-group">
 							<div class="control-label">Sell Prepend Text</div>
 							<div class="controls">
-								<input ng-model="sellPrependText" ng-trim="false" type="text" />
+								<input ng-model="u.settings.sellPrependText" ng-trim="false" type="text" />
 							</div>
 						</div>
 						<div class="control-group">
 							<div class="control-label">Sell Append Text</div>
 							<div class="controls">
-								<input ng-model="sellAppendText" ng-trim="false" type="text" />
+								<input ng-model="u.settings.sellAppendText" ng-trim="false" type="text" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label">Rarities</label>
 							<div class="controls">
 								<label class="checkbox">
-								  <input type="checkbox" ng-model="sellRare">
+								  <input type="checkbox" ng-model="u.settings.sellRare">
 								  Rares
 								</label>
 								<label class="checkbox">
-								  <input type="checkbox" ng-model="sellUncommon">
+								  <input type="checkbox" ng-model="u.settings.sellUncommon">
 								  Uncommons
 								</label>
 								<label class="checkbox">
-								  <input type="checkbox" ng-model="sellCommon">
+								  <input type="checkbox" ng-model="u.settings.sellCommon">
 								  Commons
 								</label>
 							</div>
@@ -121,19 +121,19 @@
 							<label class="control-label">Sell Pricing</label>
 							<div class="controls">
 								<label class="radio">
-								  <input type="radio" ng-model="sellAt" value="low">
+								  <input type="radio" ng-model="u.settings.sellAt" value="low">
 								  Sell Low
 								</label>
 								<label class="radio">
-								  <input type="radio" ng-model="sellAt" value="median">
+								  <input type="radio" ng-model="u.settings.sellAt" value="median">
 								  Sell Median
 								</label>
 								<label class="radio">
-								  <input type="radio" ng-model="sellAt" value="suggested">
+								  <input type="radio" ng-model="u.settings.sellAt" value="suggested">
 								  Sell ScrollsPost Suggested
 								</label>
 								<label class="radio">
-								  <input type="radio" ng-model="sellAt" value="high">
+								  <input type="radio" ng-model="u.settings.sellAt" value="high">
 								  Sell High
 								</label>
 							</div>
@@ -142,7 +142,7 @@
 							<label class="control-label">Sell Modifier % </label>
 							<div class="controls">
 								<div class="input-append">
-									<input type="number" ng-model="sellPModifier" />
+									<input type="number" ng-model="u.settings.sellPModifier" />
 									<span class="add-on">%</span>
 								</div>
 							</div>
@@ -150,7 +150,7 @@
 						<div class="control-group">
 							<label class="control-label">Sell Modifier</label>
 							<div class="controls">
-								<input type="number" ng-model="sellModifier" />
+								<input type="number" ng-model="u.settings.sellModifier" />
 							</div>
 						</div>
 					</div>

@@ -22,7 +22,38 @@ angular.module('scrollstoolboxApp')
 	.service('user', function($http, $rootScope, socket) {
 	var userTemplate = {
 		error: false,
-		authed: false
+		authed: false,
+		settings: {
+			theme: '',
+
+			//wts wtb
+			separator: ' // ',
+			buyPrependText: 'WTB >>> ',
+			buyAppendText: '',
+			sellPrependText: 'WTS >>> ',
+			sellAppendText: '',
+			buyModifier: 0,
+			sellModifier: 0,
+			buyPModifier: 0,
+			sellPModifier: 0,
+			buyAt: 'low',
+			sellAt: 'high',
+			buyCommon: true,
+			buyUncommon: true,
+			buyRare: true,
+			sellCommon: true,
+			sellUncommon: true,
+			sellRare: true,
+			gPrefix: ' (',
+			gSuffix: 'g)',
+			qPrefix: '',
+			qSuffix: 'x ',
+			includeEnergy: true,
+			includeOrder: true,
+			includeGrowth: true,
+			minPrice: 0,
+			maxPrice: 10000
+		}
 	};
 
 	var user = angular.copy(userTemplate);
@@ -34,6 +65,12 @@ angular.module('scrollstoolboxApp')
 	function updateUser(data) {
 		for (var property in data) {
 			user[property] = data[property];
+		}
+		//if the user has no settings, save their defaults
+		if (!data.settings) {
+			socket.emit('settings:update', {
+				settings: user.settings
+			});
 		}
 	}
 
@@ -88,7 +125,13 @@ angular.module('scrollstoolboxApp')
 				inGameName: user.inGameName,
 				email: user.email,
 				username: user.username,
-				newPassword: user.password
+				newPassword: user.password,
+				settings: user.settings
+			});
+		},
+		updateSettings: function() {
+			socket.emit('settings:update', {
+				settings: user.settings
 			});
 		}
 	};
