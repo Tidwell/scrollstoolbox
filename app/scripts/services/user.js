@@ -24,7 +24,7 @@ angular.module('scrollstoolboxApp')
 		error: false,
 		authed: false,
 		settings: {
-			theme: '',
+			theme: 'dark',
 
 			//wts wtb
 			separator: ' // ',

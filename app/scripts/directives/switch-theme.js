@@ -1,26 +1,43 @@
 'use strict';
 
 (function() {
-	var $darkCSS;
 	angular.module('scrollstoolboxApp')
-		.directive('switchTheme', function() {
+		.directive('switchTheme', function(user) {
+		var u = user.get();
+
+		function goDark($el) {
+			$el.html('Switch to Light Theme');
+		}
+
+		function goLight($el) {
+			$el.html('Switch to Dark Theme');
+		}
+
+		function load($el) {
+			if (u.settings.theme === 'light') {
+				goLight($el);
+				return;
+			}
+			goDark($el);
+		}
+
 		return {
 			link: function postLink(scope, element) {
-				var $body = $('body');
-				if (!$body.hasClass('dark')) {
-					$(element).html('Switch to Dark Theme');
-				}
-				$(element).click(function() {
-					if ($body.hasClass('dark')) {
-						$darkCSS = $('#darkstrap').clone();
-						$('#darkstrap').remove();
-						$body.removeClass('dark');
-						$(element).html('Switch to Dark Theme');
+				var $el = $(element);
+
+				scope.$watch('user.settings', function() {
+					load($el);
+				});
+
+				//bind element
+				$el.click(function() {
+					if (u.settings.theme === 'dark') {
+						u.settings.theme = 'light';
 					} else {
-						$('body').append($darkCSS);
-						$body.addClass('dark');
-						$(element).html('Switch to Light Theme');
+						u.settings.theme = 'dark';
 					}
+					user.updateSettings();
+					load($el);
 				});
 			}
 		};

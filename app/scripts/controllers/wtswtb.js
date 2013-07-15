@@ -2,7 +2,7 @@
 
 angular.module('scrollstoolboxApp')
   .controller('WtswtbCtrl', function ($scope, cards, socket, user) {
-  	$scope.u = user.get();
+	$scope.u = user.get();
 
 	$scope.data = cards.get();
 

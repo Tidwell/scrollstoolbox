@@ -19,13 +19,17 @@ angular.module('scrollstoolboxApp')
 		$scope.userUpdated = true;
 	});
 
-	$scope.saveMsgs = [
-
-	];
+	$scope.saveMsgs = [];
+	$scope.updateMsgs = [];
 
 	socket.on('card:saved', function(data) {
 		if ($scope.saveMsgs.indexOf(data) === -1) {
 			$scope.saveMsgs.push(data);
+		}
+	});
+	socket.on('settings:updated', function(data) {
+		if ($scope.updateMsgs.indexOf(data) === -1) {
+			$scope.updateMsgs.push({msg: 'Your settings have been saved.'});
 		}
 	});
 

@@ -9,7 +9,7 @@
 				<strong>In-Game Name (Required for Collection Sync):</strong>
 				<span>
 					{{user.inGameName}}
-					<a ng-click="edit('inGameName')">
+					<a href ng-click="edit('inGameName')">
 						<i class="icon-edit"></i>
 					</a>
 				</span>
@@ -33,7 +33,7 @@
 				<strong>Email:</strong>
 				<span>
 					{{user.email}}
-					<a ng-click="edit('email')">
+					<a href ng-click="edit('email')">
 						<i class="icon-edit"></i>
 					</a>
 				</span>
@@ -52,7 +52,7 @@
 			</p>
 		</div>
 	<p>
-		<a href="#" ng-click="edit('password')" ng-show="!passwordEditing">Change Password</a>
+		<a href ng-click="edit('password')" ng-show="!passwordEditing">Change Password</a>
 	</p>
 	<div ng-show="passwordEditing">
 		<p>
@@ -65,4 +65,8 @@
 			</form>
 		</p>
 	</div>
+
+	<p>
+		<a href switch-theme>Switch to Light Theme</a>
+	</p>
 </div>
