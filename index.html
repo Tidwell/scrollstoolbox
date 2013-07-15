@@ -32,7 +32,7 @@
 
   <base href="/">
 </head>
-<body class="dark" ng-cloak="">
+<body class="dark" ng-cloak="" body-theme="">
   <!--[if lt IE 7]>
   <p class="chromeframe">
     You are using an outdated browser.
@@ -133,6 +133,10 @@
         <strong>{{msg.card}} has been saved</strong>
       </div>
 
+      <div class="alert nav-success nav-settings-save-success" ng-show="updateMsgs.length" ng-repeat="msg in updateMsgs" fade-out-remove="msg" remove-from="updateMsgs">
+        <strong>{{msg.msg}}</strong>
+      </div>
+
       <div class="alert alert-success nav-success" ng-show="user.synced">
         <a class="close" ng-click="user.synced = false">&times;</a>
         <strong>Your data has been synced with your in-game scrolls collection.</strong>
@@ -164,7 +168,7 @@
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <script src="/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
-  <script src="/scripts/e3566035.scripts.js"></script>
+  <script src="/scripts/d3bb7681.scripts.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>

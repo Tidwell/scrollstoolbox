@@ -2,44 +2,44 @@
 	<div class="control-group">
 		<label class="control-label">Separator</label>
 		<div class="controls">
-			<input type="text" ng-model="sharedOpts.separator" ng-trim="false">
+			<input type="text" ng-model="u.settings.separator" ng-trim="false">
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label">Quantity Prefix</label>
 		<div class="controls">
-			<input type="text" ng-model="sharedOpts.qPrefix" ng-trim="false">
+			<input type="text" ng-model="u.settings.qPrefix" ng-trim="false">
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label">Quantity Suffix</label>
 		<div class="controls">
-			<input type="text" ng-model="sharedOpts.qSuffix" ng-trim="false">
+			<input type="text" ng-model="u.settings.qSuffix" ng-trim="false">
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label">Gold Prefix</label>
 		<div class="controls">
-			<input type="text" ng-model="sharedOpts.gPrefix" ng-trim="false">
+			<input type="text" ng-model="u.settings.gPrefix" ng-trim="false">
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label">Gold Suffix</label>
 		<div class="controls">
-			<input type="text" ng-model="sharedOpts.gSuffix" ng-trim="false">
+			<input type="text" ng-model="u.settings.gSuffix" ng-trim="false">
 		</div>
 	</div>
 
 	<div class="control-group">
 		<label class="control-label">Generate For: </label>
 		<div class="faction-order checkbox inline">
-			<input type="checkbox" ng-model="sharedOpts.includeOrder">
+			<input type="checkbox" ng-model="u.settings.includeOrder">
 		</div>
 		<div class="faction-energy checkbox inline">
-			<input type="checkbox" ng-model="sharedOpts.includeEnergy">
+			<input type="checkbox" ng-model="u.settings.includeEnergy">
 		</div>
 		<div class="faction-growth checkbox inline">
-			<input type="checkbox" ng-model="sharedOpts.includeGrowth">
+			<input type="checkbox" ng-model="u.settings.includeGrowth">
 		</div>
 	</div>
 
@@ -48,13 +48,13 @@
 		<div class="controls">
 			<div class="input-prepend">
 				<span class="add-on">&gt;=</span>
-				<input type="number" ng-model="sharedOpts.minPrice">
+				<input type="number" ng-model="u.settings.minPrice">
 			</div>
 		</div>
 		<div class="controls">
 			<div class="input-prepend">
 				<span class="add-on">&lt;</span>
-				<input type="number" ng-model="sharedOpts.maxPrice">
+				<input type="number" ng-model="u.settings.maxPrice">
 			</div>
 		</div>
 	</div>
