@@ -298,6 +298,33 @@ footer {
   z-index: 100000;
 }
 
+.modal {
+  top: 300px;
+}
+
+
+.collection-list li {
+  position: relative;
+  list-style: none;
+}
+.collection-list li img {
+  width: 200px;
+  height: 355px;
+}
+.collection-list li strong {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 20px;
+  padding: 5px;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 100px;
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+}
+
 .dark .modal h1 {
   color: #333;
 }
@@ -308,9 +335,6 @@ footer {
   color: #333;
 }
 
-.modal {
-  top: 300px;
-}
 
 .modal-download-button {
   margin: 0 auto 10px auto;
