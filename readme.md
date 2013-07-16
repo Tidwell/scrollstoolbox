@@ -39,7 +39,6 @@ bugs
 -private option on account
 -admin option on account
 
--settings saving
 
 Sorting options for WTS/WTB list
 Column Sorting for Always Buy, Buy Price Override, Always Sell, Sell Price Override
