@@ -41,7 +41,8 @@ angular.module('scrollstoolboxApp', ['ui.bootstrap', 'ngCookies'])
 				controller: 'GameAnalyzerCtrl'
 			})
 			.when('/changelog', {
-				templateUrl: '/views/changelog.html'
+				templateUrl: '/views/changelog.html',
+				controller:  'ChangelogCtrl'
 			})
 			.when('/collection/:username', {
 				templateUrl: '/views/collection-list.html',
