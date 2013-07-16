@@ -2,7 +2,7 @@
 <div class="alert alert-info">Please note this list currently includes untradeable cards (the first starter deck purchased).  These will be marked appropriately soon&trade;</div>
 
 <ul class="collection-list">
-	<li ng-repeat="card in collection.collection" class="pull-left">
+	<li ng-repeat="card in collection.collection" class="pull-left" ng-show="card.owned > 0">
 		<img src="{{generateImagePath(card.name)}}" />
 		<strong class="owned">{{card.owned}}</strong>
 	</li>
