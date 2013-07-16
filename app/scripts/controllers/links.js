@@ -82,15 +82,16 @@ angular.module('scrollstoolboxApp')
 				description: 'Reddit thread detailing Scrolls Trading Bulletin API'
 			},
 			{
-				title: 'ScrollsPC API',
-				url: 'http://scrollspc.icyboards.net/showthread.php?tid=14',
-				description: 'Forum thread on ScrollsPC detailing their API. (no longer updated)'
-			},
-			{
 				title: 'Summoner',
 				url: 'http://www.scrollsguide.com/forum/viewforum.php?f=59',
 				description: 'aka ModLoader, allows you to write mods for scrolls in C#'
+			},
+			{
+				title: 'ScrollsPC API',
+				url: 'http://scrollspc.icyboards.net/showthread.php?tid=14',
+				description: 'Forum thread on ScrollsPC detailing their API. (no longer available)'
 			}
+
 		]
 	};
 });
