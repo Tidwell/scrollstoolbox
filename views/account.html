@@ -4,53 +4,53 @@
 	<p>
 		Click the edit icons to change your email or in-game name.</p>
 	
-		<div ng-show="!inGameNameEditing">
-			<p>
+	<div ng-show="!inGameNameEditing">
+		<p>
+			<strong>In-Game Name (Required for Collection Sync):</strong>
+			<span>
+				{{user.inGameName}}
+				<a href="" ng-click="edit('inGameName')">
+					<i class="icon-edit"></i>
+				</a>
+			</span>
+		</p>
+	</div>
+
+	<div ng-show="inGameNameEditing">
+		<p>
+			<form class="form-inline">
 				<strong>In-Game Name (Required for Collection Sync):</strong>
-				<span>
-					{{user.inGameName}}
-					<a href="" ng-click="edit('inGameName')">
-						<i class="icon-edit"></i>
-					</a>
-				</span>
-			</p>
-		</div>
+				<input type="text" class="input" placeholder="In-Game Name" ng-model="inGameNameEdited">
 
-		<div ng-show="inGameNameEditing">
-			<p>
-				<form class="form-inline">
-					<strong>In-Game Name (Required for Collection Sync):</strong>
-					<input type="text" class="input" placeholder="In-Game Name" ng-model="inGameNameEdited">
+				<button type="submit" class="btn" ng-click="save('inGameName')">Save</button>
+				<button ng-click="close('inGameName')" class="btn">Cancel</button>
+			</form>
+		</p>
+	</div>
 
-					<button type="submit" class="btn" ng-click="save('inGameName')">Save</button>
-					<button ng-click="close('inGameName')" class="btn">Cancel</button>
-				</form>
-			</p>
-		</div>
+	<div ng-show="!emailEditing">
+		<p>
+			<strong>Email:</strong>
+			<span>
+				{{user.email}}
+				<a href="" ng-click="edit('email')">
+					<i class="icon-edit"></i>
+				</a>
+			</span>
+		</p>
+	</div>
 
-		<div ng-show="!emailEditing">
-			<p>
+	<div ng-show="emailEditing">
+		<p>
+			<form class="form-inline">
 				<strong>Email:</strong>
-				<span>
-					{{user.email}}
-					<a href="" ng-click="edit('email')">
-						<i class="icon-edit"></i>
-					</a>
-				</span>
-			</p>
-		</div>
+				<input type="email" class="input" placeholder="Email" ng-model="emailEdited">
 
-		<div ng-show="emailEditing">
-			<p>
-				<form class="form-inline">
-					<strong>Email:</strong>
-					<input type="email" class="input" placeholder="Email" ng-model="emailEdited">
-
-					<button type="submit" class="btn" ng-click="save('email')">Save</button>
-					<button ng-click="close('email')" class="btn">Cancel</button>
-				</form>
-			</p>
-		</div>
+				<button type="submit" class="btn" ng-click="save('email')">Save</button>
+				<button ng-click="close('email')" class="btn">Cancel</button>
+			</form>
+		</p>
+	</div>
 	<p>
 		<a href="" ng-click="edit('password')" ng-show="!passwordEditing">Change Password</a>
 	</p>
