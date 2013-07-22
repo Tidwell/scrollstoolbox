@@ -8,8 +8,9 @@ angular.module('scrollstoolboxApp')
 				$(element).removeClass('owned-colors-missing')
 					.removeClass('owned-colors-playset')
 					.removeClass('owned-colors-extras');
-
-				if (numOwned < 3) {
+				if (numOwned === 0) {
+					$(element).addClass('owned-colors-none');
+				} else if (numOwned < 3) {
 					$(element).addClass('owned-colors-missing');
 				} else if (numOwned === 3) {
 					$(element).addClass('owned-colors-playset');

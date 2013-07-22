@@ -176,7 +176,11 @@ table.table tr td {
 }
 table tr td.owned,
 table tr td.image {
-  width: 50px;
+  max-width: 75px;
+}
+table tr td.owned input {
+  max-width: 70px;
+  margin: 0 auto;
 }
 table tr td.name {
   width: 300px;
@@ -219,14 +223,17 @@ table.table td a {
   cursor: pointer;
 }
 
+.owned-colors-none {
+  background: rgb(245,120,120);
+}
 .owned-colors-missing {
-  background: rgb(255,0,0);
+  background: rgb(245,205,120);
 }
 .owned-colors-playset {
-  background: rgb(255,153,0);
+  background: rgb(140,245,120);
 }
 .owned-colors-extras {
-  background: rgb(0,255,0);
+  background: rgb(120,125,245);
 }
 
 .rarity-common {
@@ -240,18 +247,18 @@ table.table td a {
 }
 
 /*make input background on owned field transparent*/
-td:not(first-child) input[type="number"],
+td.owned input[type="number"],
 tr:hover td:not(:first-child) input[type="number"] {
   background: transparent;
 }
 
-.faction-order, .faction-order td:not(:first-child) input[type="number"] {
+.faction-order, .faction-order td:not(.owned) input[type="number"] {
   background: rgb(164,194,244);
 }
-.faction-growth, .faction-growth td:not(:first-child)  input[type="number"] {
+.faction-growth, .faction-growth td:not(.owned)  input[type="number"] {
   background: rgb(172,208,176);
 }
-.faction-energy, .faction-energy td:not(:first-child) input[type="number"] {
+.faction-energy, .faction-energy td:not(.owned) input[type="number"] {
   background: rgb(249,203,156);
 }
 

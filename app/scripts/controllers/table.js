@@ -113,6 +113,14 @@ angular.module('scrollstoolboxApp')
 				}
 			}
 
+			if ($scope.sorting.option.indexOf('tier') !== -1) {
+				if ($scope.sorting.order === 'asc') {
+					return a[$scope.sorting.option] - b[$scope.sorting.option];
+				} else {
+					return b[$scope.sorting.option] - a[$scope.sorting.option];
+				}
+			}
+
 			//stuff thats ABC
 			if (a.card[$scope.sorting.option] === b.card[$scope.sorting.option]) { return 0; }
 			if ($scope.sorting.order === 'asc') {
