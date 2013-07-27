@@ -25,6 +25,10 @@ angular.module('scrollstoolboxApp')
 				title: 'Scrolls Trader',
 				url: 'http://www.scrollstrader.com/',
 				description: 'Post buy/sell/trade requests'
+			}, {
+				title: 'Scrolls Shop',
+				url: 'http://www.scrollsshop.com/',
+				description: 'Mod-supported collection tracking, WTS list generation'
 			}
 		],
 		deckbuilders: [{

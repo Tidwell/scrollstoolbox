@@ -60,7 +60,7 @@ angular.module('scrollstoolboxApp')
 			selltier2: false,
 			selltier3: false,
 			tier2multiplier: 3,
-			tier3multiplier: 27,
+			tier3multiplier: 9,
 			tierPrefix: '[t',
 			tierSuffix: ']',
 			buyMax: 3
