@@ -21,7 +21,5 @@ set buyTier1 true;
 set sellTier1 true;
 set maxBuy 3;
 
-db.users.update({}, {$set: {tierPrefix: '[t', tierSuffix: ']', tier2multiplier: 3, tier3multiplier: 27, buyTier1: true, sellTier1: true, maxBuy: 3}})
-
-
+db.users.update({}, {$set: {'settings.tierPrefix': '[t', 'settings.tierSuffix': ']', 'settings.tier2multiplier': 3, 'settings.tier3multiplier': 27, 'settings.buytier1': true, 'settings.selltier1': true, 'settings.buyMax': 3}}, false, true)
 

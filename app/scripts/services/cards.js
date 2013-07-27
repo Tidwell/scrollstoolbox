@@ -38,6 +38,10 @@ angular.module('scrollstoolboxApp')
 		var numCards = 0;
 		for (var cardName in cards.data) {
 			cards.data[cardName].owned = 0;
+			cards.data[cardName].tradeable = 0;
+			cards.data[cardName].tier1 = 0;
+			cards.data[cardName].tier2 = 0;
+			cards.data[cardName].tier3 = 0;
 			if (cards.data[cardName].price) {
 				delete cards.data[cardName].price.buyOverride;
 				delete cards.data[cardName].price.sellOverride;
