@@ -40,6 +40,23 @@
 							</div>
 						</div>
 						<div class="control-group">
+							<label class="control-label">Tiers</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="u.settings.buytier1">
+								  Tier1
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="u.settings.buytier2">
+								  Tier2
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="u.settings.buytier3">
+								  Tier3
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
 							<label class="control-label">Buy Pricing</label>
 							<div class="controls">
 								<label class="radio">
@@ -73,6 +90,15 @@
 							<label class="control-label">Buy Modifier</label>
 							<div class="controls">
 								<input type="number" ng-model="u.settings.buyModifier">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Never Buy If Total Owned</label>
+							<div class="controls">
+								<div class="input-prepend">
+									<span class="add-on">>=</span>
+									<input type="number" ng-model="u.settings.buyMax">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -114,6 +140,23 @@
 								<label class="checkbox">
 								  <input type="checkbox" ng-model="u.settings.sellCommon">
 								  Commons
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Tiers</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="u.settings.selltier1">
+								  Tier1
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="u.settings.selltier2">
+								  Tier2
+								</label>
+								<label class="checkbox">
+								  <input type="checkbox" ng-model="u.settings.selltier3">
+								  Tier3
 								</label>
 							</div>
 						</div>
