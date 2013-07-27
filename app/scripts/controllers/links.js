@@ -8,27 +8,15 @@ angular.module('scrollstoolboxApp')
 				url: 'http://www.scrollspost.com/',
 				description: 'Price checking, Filters, Time-Ranged pricing, generated from in-game bot'
 			}, {
-				title: 'Scrolls Trading Bulletin',
-				url: 'http://trading.scrolls.pw/',
-				description: 'Price checking and card information, generated from in-game bot'
-			}, {
 				title: 'Scrolls Prices',
 				url: 'http://scrollsprices.com/',
 				description: 'Price checking'
-			},{
-				title: 'Scrolls PC',
-				url: 'http://scrollspc.com/',
-				description: 'Price checking, price voting, historical price charts (no longer updated)'
 			}
 		],
 		trading: [{
 				title: 'Scrolls Swap',
 				url: 'http://scrollswap.com/',
 				description: 'Post buy/sell/trade requests'
-			}, {
-				title: 'Fast Trade',
-				url: 'http://scrollspc.com/fasttrade/index.php',
-				description: 'Made by ScrollsPC, post buy/sell requests'
 			}, {
 				title: 'Trading Scrolls',
 				url: 'http://www.tradingscrolls.com/',
@@ -76,22 +64,39 @@ angular.module('scrollstoolboxApp')
 				title: 'ScrollsGuide API',
 				url: 'http://www.reddit.com/r/Scrolls/comments/1ge2wj/full_scrolls_sqldb_or_spreatsheet/caje1f3',
 				description: 'Reddit thread for how to request ScrollsGuide API acess'
-			}, {
-				title: 'Scrolls Trading Bulletin API',
-				url: 'http://www.reddit.com/r/Scrolls/comments/1gqzg9/scrolls_trading_sites_comparisonaverage_in_json/can6dge',
-				description: 'Reddit thread detailing Scrolls Trading Bulletin API'
 			},
 			{
 				title: 'Summoner',
 				url: 'http://www.scrollsguide.com/forum/viewforum.php?f=59',
 				description: 'aka ModLoader, allows you to write mods for scrolls in C#'
-			},
-			{
+			}
+		],
+		notUpdated: [{
+				category: 'prices',
+				title: 'Scrolls Trading Bulletin',
+				url: 'http://trading.scrolls.pw/',
+				description: 'Price checking and card information, generated from in-game bot'
+			}, {
+				category: 'prices',
+				title: 'Scrolls PC',
+				url: 'http://scrollspc.com/',
+				description: 'Price checking, price voting, historical price charts (no longer updated)'
+			}, {
+				category: 'trading',
+				title: 'Fast Trade',
+				url: 'http://scrollspc.com/fasttrade/index.php',
+				description: 'Made by ScrollsPC, post buy/sell requests'
+			}, {
+				category: 'developers',
 				title: 'ScrollsPC API',
 				url: 'http://scrollspc.icyboards.net/showthread.php?tid=14',
 				description: 'Forum thread on ScrollsPC detailing their API. (no longer available)'
+			}, {
+				category: 'developers',
+				title: 'Scrolls Trading Bulletin API',
+				url: 'http://www.reddit.com/r/Scrolls/comments/1gqzg9/scrolls_trading_sites_comparisonaverage_in_json/can6dge',
+				description: 'Reddit thread detailing Scrolls Trading Bulletin API'
 			}
-
 		]
 	};
 });
