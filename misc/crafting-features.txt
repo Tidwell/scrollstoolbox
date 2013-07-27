@@ -1,15 +1,8 @@
-table
-------------
-can be traded/crafted #
-
 table filters
 --------------------
 teir1/tier2/tier3 only
 tradeable/craftable
 craftable (maintain playset)
-
-
-WTS >>> 2x Death Cap Berserk (233g) // 2x Iron Ogre (341g) // 2x Kinfolk Jarl (292g) // 4x Essence Feast (240g) // 2x Ancestral Totem (450g) // 1x [t3]Ancestral Totem (8000g) // 3x [t2]Plate Armor (900g)
 
 
 /collection/userName
@@ -27,3 +20,8 @@ set tier3multiplier 27
 set buyTier1 true;
 set sellTier1 true;
 set maxBuy 3;
+
+db.users.update({}, {$set: {tierPrefix: '[t', tierSuffix: ']', tier2multiplier: 3, tier3multiplier: 27, buyTier1: true, sellTier1: true, maxBuy: 3}})
+
+
+
