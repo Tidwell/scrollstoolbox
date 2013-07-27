@@ -25,11 +25,20 @@ angular.module('scrollstoolboxApp')
 
 	function parseSet(res) {
 		var rarityMap = ['Common', 'Uncommon', 'Rare'];
+		var toDelete = [];
 		for (var cardName in res) {
 			res[cardName].price.median = Math.floor((res[cardName].price.high + res[cardName].price.low) / 2);
 			res[cardName].resource = res[cardName].card.costenergy ? 'Energy' : (res[cardName].card.costgrowth ? 'Growth' : 'Order');
 			res[cardName].card.rarity = rarityMap[res[cardName].card.rarity];
+
+			if (res[cardName].card.costdecay) {
+				toDelete.push(cardName);
+			}
+
 		}
+		toDelete.forEach(function(name){
+			delete res[name];
+		});
 		return res;
 	}
 
