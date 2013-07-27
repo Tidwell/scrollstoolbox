@@ -90,6 +90,10 @@ angular.module('scrollstoolboxApp')
 			socket.emit('card:save', {
 				name: obj.card.name,
 				owned: obj.owned,
+				tier1: obj.tier1,
+				tier2: obj.tier2,
+				tier3: obj.tier3,
+				tradeable: obj.tradeable,
 				buyOverride: obj.price.buyOverride,
 				sellOverride: obj.price.sellOverride,
 				alwaysSell: obj.alwaysSell,

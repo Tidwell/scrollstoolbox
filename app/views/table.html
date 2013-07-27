@@ -35,6 +35,19 @@
 					</label>
 				</div>
 			</div>
+			<div class="control-group">
+				<label class="control-label">Table Columns</label>
+				<div class="controls">
+					<label class="checkbox regular">
+					  <input type="checkbox" ng-model="columnTradeableHide" class="regular">
+					  Hide Tradeable Column
+					</label>
+					<label class="checkbox regular">
+					  <input type="checkbox" ng-model="columnTiersHide" class="regular">
+					  Hide Tier Columns
+					</label>
+				</div>
+			</div>
 		</form>
 		<div class="span4 gold-info" ng-controller="CollectionGoldCtrl">
 			<p>
@@ -65,17 +78,22 @@
 		      	<i class="icon-sort-up" ng-click="setSort('owned', 'asc')" ng-class="{active: isActiveSort('owned','asc')}"></i>
 		      	<i class="icon-sort-down" ng-click="setSort('owned', 'desc')" ng-class="{active: isActiveSort('owned','desc')}"></i>
 		      </th>
-		      <th class="owned">
+		      <th class="owned" ng-show="!columnTradeableHide">
+		      	Tradeable
+		      	<i class="icon-sort-up" ng-click="setSort('tradeable', 'asc')" ng-class="{active: isActiveSort('tradeable','asc')}"></i>
+		      	<i class="icon-sort-down" ng-click="setSort('tradeable', 'desc')" ng-class="{active: isActiveSort('tradeable','desc')}"></i>
+		      </th>
+		      <th class="owned" ng-show="!columnTiersHide">
 		      	Tier 1
 		      	<i class="icon-sort-up" ng-click="setSort('tier1', 'asc')" ng-class="{active: isActiveSort('tier1','asc')}"></i>
 		      	<i class="icon-sort-down" ng-click="setSort('tier1', 'desc')" ng-class="{active: isActiveSort('tier1','desc')}"></i>
 		      </th>
-		      <th class="owned">
+		      <th class="owned" ng-show="!columnTiersHide">
 		      	Tier 2
 		      	<i class="icon-sort-up" ng-click="setSort('tier2', 'asc')" ng-class="{active: isActiveSort('tier2','asc')}"></i>
 		      	<i class="icon-sort-down" ng-click="setSort('tier2', 'desc')" ng-class="{active: isActiveSort('tier2','desc')}"></i>
 		      </th>
-		      <th class="owned">
+		      <th class="owned" ng-show="!columnTiersHide">
 		      	Tier 3
 		      	<i class="icon-sort-up" ng-click="setSort('tier3', 'asc')" ng-class="{active: isActiveSort('tier3','asc')}"></i>
 		      	<i class="icon-sort-down" ng-click="setSort('tier3', 'desc')" ng-class="{active: isActiveSort('tier3','desc')}"></i>
@@ -119,23 +137,26 @@
 		      <td owned-color="card.owned" class="owned">
 		      	<input type="number" ng-model="card.owned" tabindex="{{$index+1}}" ng-change="save(card.name)" />
 		      </td>
-		      <td owned-color="card.tier1" class="owned">
-		      	<input type="number" ng-model="card.tier1" tabindex="{{tabIndex($index,1)}}" ng-change="save(card.name)" />
+		      <td owned-color="card.tradeable" class="owned" ng-show="!columnTradeableHide">
+		      	<input type="number" ng-model="card.tradeable" tabindex="{{tabIndex($index,1)}}" ng-change="save(card.name)" />
 		      </td>
-		      <td owned-color="card.tier2" class="owned">
-		      	<input type="number" ng-model="card.tier2" tabindex="{{tabIndex($index,2)}}" ng-change="save(card.name)" />
+		      <td owned-color="card.tier1" class="owned" ng-show="!columnTiersHide">
+		      	<input type="number" ng-model="card.tier1" tabindex="{{tabIndex($index,2)}}" ng-change="save(card.name)" />
 		      </td>
-		      <td owned-color="card.tier3" class="owned">
-		      	<input type="number" ng-model="card.tier3" tabindex="{{tabIndex($index,3)}}" ng-change="save(card.name)" />
+		      <td owned-color="card.tier2" class="owned" ng-show="!columnTiersHide">
+		      	<input type="number" ng-model="card.tier2" tabindex="{{tabIndex($index,3)}}" ng-change="save(card.name)" />
+		      </td>
+		      <td owned-color="card.tier3" class="owned" ng-show="!columnTiersHide">
+		      	<input type="number" ng-model="card.tier3" tabindex="{{tabIndex($index,4)}}" ng-change="save(card.name)" />
 		      </td>
 <!-- 		      <td class="image"><img src="{{generateImagePath(card.name)}}" image-popup="generateImagePath(card.name)"></td>
  -->		      <td class="card.name" image-popup="generateImagePath(card.name)"><a>{{card.name}}</a></td>
 		      <td class="rarity" rarity-color="card.card.rarity">{{card.card.rarity}}</td>
 		      <td class="price">{{card.price | price}}</td>
 		      <td class="always-buy"><input type="checkbox" ng-model="card.alwaysBuy" ng-change="save(card.name)"/></td>
-		      <td class="buy-override"><input ng-change="save(card.name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,4)}}"/></td>
+		      <td class="buy-override"><input ng-change="save(card.name)" type="number" ng-model="card.price.buyOverride" tabindex="{{tabIndex($index,5)}}"/></td>
 		      <td class="always-sell"><input type="checkbox" ng-model="card.alwaysSell" ng-change="save(card.name)"/></td>
-		      <td class="sell-override"><input ng-change="save(card.name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,5)}}"/></td>
+		      <td class="sell-override"><input ng-change="save(card.name)" type="number" ng-model="card.price.sellOverride" tabindex="{{tabIndex($index,6)}}"/></td>
 		    </tr>
 		  </tbody>
 		</table>

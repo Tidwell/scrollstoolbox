@@ -52,7 +52,18 @@ angular.module('scrollstoolboxApp')
 			includeOrder: true,
 			includeGrowth: true,
 			minPrice: 0,
-			maxPrice: 10000
+			maxPrice: 50000,
+			buytier1: true,
+			buytier2: false,
+			buytier3: false,
+			selltier1: true,
+			selltier2: false,
+			selltier3: false,
+			tier2multiplier: 3,
+			tier3multiplier: 27,
+			tierPrefix: '[t',
+			tierSuffix: ']',
+			buyMax: 3
 		}
 	};
 

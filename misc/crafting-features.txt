@@ -6,13 +6,8 @@ table filters
 --------------------
 teir1/tier2/tier3 only
 tradeable/craftable
+craftable (maintain playset)
 
-
-wts/wtb
---------------
-rarity: tier1 tier2 tier3
-tier2 & tier3 price modifier x[3/9] + [X]
-tier prefix, suffix [t#]
 
 WTS >>> 2x Death Cap Berserk (233g) // 2x Iron Ogre (341g) // 2x Kinfolk Jarl (292g) // 4x Essence Feast (240g) // 2x Ancestral Totem (450g) // 1x [t3]Ancestral Totem (8000g) // 3x [t2]Plate Armor (900g)
 
@@ -21,3 +16,14 @@ WTS >>> 2x Death Cap Berserk (233g) // 2x Iron Ogre (341g) // 2x Kinfolk Jarl (2
 -----------------------
 can be traded/crafted toggle
 expand to #s for each tier & untradeable
+
+
+db
+--
+set tierPrefix '[t';
+set tierSuffix ']';
+set tier2multiplier 3;
+set tier3multiplier 27
+set buyTier1 true;
+set sellTier1 true;
+set maxBuy 3;

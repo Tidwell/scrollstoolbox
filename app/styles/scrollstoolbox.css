@@ -87,13 +87,13 @@ h1, h2 {
 .table-controls.checkbox-controls {
   margin-left: 100px;
 }
-.table-controls .checkbox,
+.table-controls .checkbox:not(.regular),
 .shared-controls .checkbox {
   height: 30px;
   background: none;
 }
 
-.table-controls .checkbox {
+.table-controls .checkbox:not(.regular) {
   margin: 10px 0;
   line-height: 32px;
 }
@@ -102,7 +102,7 @@ h1, h2 {
   margin-left: 0;
 }
 
-.table-controls input[type='checkbox'],
+.table-controls input[type='checkbox']:not(.regular),
 .shared-controls input[type='checkbox'] {
   appearance: none;
   -webkit-appearance: none;
@@ -176,10 +176,10 @@ table.table tr td {
 }
 table tr td.owned,
 table tr td.image {
-  max-width: 75px;
+  max-width: 80px;
 }
 table tr td.owned input {
-  max-width: 70px;
+  max-width: 65px;
   margin: 0 auto;
 }
 table tr td.name {
