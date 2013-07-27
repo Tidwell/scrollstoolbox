@@ -18,6 +18,18 @@
 		</div>
 	</div>
 	<div class="control-group">
+		<label class="control-label">Tier Prefix</label>
+		<div class="controls">
+			<input type="text" ng-model="u.settings.tierPrefix" ng-trim="false">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Tier Suffix</label>
+		<div class="controls">
+			<input type="text" ng-model="u.settings.tierSuffix" ng-trim="false">
+		</div>
+	</div>
+	<div class="control-group">
 		<label class="control-label">Gold Prefix</label>
 		<div class="controls">
 			<input type="text" ng-model="u.settings.gPrefix" ng-trim="false">
@@ -55,6 +67,26 @@
 			<div class="input-prepend">
 				<span class="add-on">&lt;</span>
 				<input type="number" ng-model="u.settings.maxPrice">
+			</div>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label">Tier 2 Multiplier</label>
+		<div class="controls">
+			<div class="input-prepend">
+				<span class="add-on">X</span>
+				<input type="number" ng-model="u.settings.tier2multiplier">
+			</div>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label">Tier 3 Multiplier</label>
+		<div class="controls">
+			<div class="input-prepend">
+				<span class="add-on">X</span>
+				<input type="number" ng-model="u.settings.tier3multiplier">
 			</div>
 		</div>
 	</div>
