@@ -52,12 +52,12 @@ angular.module('scrollstoolboxApp')
 				str += $scope.u.settings.qPrefix;
 				str += buySell === 'buy' ? (3 - card['tier' + tier]) : (card['tier' + tier] - 3);
 				str += $scope.u.settings.qSuffix;
-				str += tier > 1 ? $scope.u.settings.tierPrefix + String(tier) + $scope.u.settings.tierSuffix : '';
-				str += card.name;
-				str += $scope.u.settings.gPrefix;
-				str += price;
-				str += $scope.u.settings.gSuffix;
 			}
+			str += tier > 1 ? $scope.u.settings.tierPrefix + String(tier) + $scope.u.settings.tierSuffix : '';
+			str += card.name;
+			str += $scope.u.settings.gPrefix;
+			str += price;
+			str += $scope.u.settings.gSuffix;
 
 			return str;
 		}
