@@ -27,13 +27,12 @@ bugs
 
 
  features
+-goal (tier1 playset, tier2 playset, tier3 playset, faction playset, faction/tier playset)
 -never buy
 -never sell
 -current users list (login time)
 -include quantity/price shared settings
--other price sources
 -price rounding
--change colors (0 red, 1-2 orange, 3 green, 4+ blue)
 
 -api
 -private option on account
@@ -51,7 +50,6 @@ Column Sorting for Always Buy, Buy Price Override, Always Sell, Sell Price Overr
 -solve throttle/db save race condition
 -send salt down (store on socket), password is sent over socket md5+salt
 -frontload card data in main (still necessary?)
--mark untradeable
 
 DURING ALPHA/POST-LAUNCH
 -options to not show 3x
@@ -63,8 +61,5 @@ DURING ALPHA/POST-LAUNCH
 -3-column view
 -save data when registering
 -page exit warnings
--switch pricing source & options
--trade assistant table columns show/hide (option, saveable)
--show/hide columns-per-page options
 -extended character support
 -local storage cache data (md5 to check if need new data - page speed ++++++)

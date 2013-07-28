@@ -12,6 +12,10 @@ angular.module('scrollstoolboxApp')
 	$scope.showEnergy = true;
 	$scope.showGrowth = true;
 
+	$scope.columnTradeableHide = false;
+	$scope.columnTiersHide = false;
+	$scope.columnUntradeableHide = true;
+
 	$scope.sorting = {
 		option: 'name',
 		order: 'asc'
@@ -110,6 +114,24 @@ angular.module('scrollstoolboxApp')
 					return a.owned - b.owned;
 				} else {
 					return b.owned - a.owned;
+				}
+			}
+
+			//tradeable
+			if ($scope.sorting.option === 'tradeable') {
+				if ($scope.sorting.order === 'asc') {
+					return a.tradeable - b.tradeable;
+				} else {
+					return b.tradeable - a.tradeable;
+				}
+			}
+
+			//untradeable
+			if ($scope.sorting.option === 'untradeable') {
+				if ($scope.sorting.order === 'asc') {
+					return (a.owned-a.tradeable) - (b.owned-b.tradeable);
+				} else {
+					return (b.owned-b.tradeable) - (a.owned-a.tradeable);
 				}
 			}
 

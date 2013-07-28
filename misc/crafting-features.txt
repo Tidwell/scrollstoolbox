@@ -10,6 +10,13 @@ craftable (maintain playset)
 can be traded/crafted toggle
 expand to #s for each tier & untradeable
 
+gold to tier-2 playset
+gold to tier-3 playset
+update value to reflect tier2/3
+
+
+
+
 
 db
 --
@@ -22,4 +29,6 @@ set sellTier1 true;
 set maxBuy 3;
 
 db.users.update({}, {$set: {'settings.tierPrefix': '[t', 'settings.tierSuffix': ']', 'settings.tier2multiplier': 3, 'settings.tier3multiplier': 27, 'settings.buytier1': true, 'settings.selltier1': true, 'settings.buyMax': 3}}, false, true)
+
+db.users.update({}, {$set: {'settings.tier3multiplier': 9}}, false, true)
 
