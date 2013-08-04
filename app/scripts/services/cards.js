@@ -66,7 +66,7 @@ angular.module('scrollstoolboxApp')
 
 		userData.owned.forEach(function(card) {
 			for (var prop in card) {
-				if (card.hasOwnProperty(prop) && typeof card[prop] !== 'undefined') {
+				if (card.hasOwnProperty(prop) && typeof card[prop] !== 'undefined' && typeof cards.data[card.name] !== 'undefined') {
 					if (prop.indexOf('Override') !== -1) {
 						cards.data[card.name].price[prop] = card[prop];
 					} else {
