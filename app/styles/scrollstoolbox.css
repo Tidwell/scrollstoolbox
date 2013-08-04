@@ -252,6 +252,10 @@ tr:hover td:not(:first-child) input[type="number"] {
   background: transparent;
 }
 
+.dark .owned {
+  color: white;
+}
+
 .faction-order, .faction-order td:not(.owned) input[type="number"] {
   background: rgb(164,194,244);
 }
