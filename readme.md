@@ -5,7 +5,7 @@ To test deploy:
 change env.js to be 'stage' in scrollstoolbox-server and restart server
 
 To deploy:
-git subtree push --prefix dist origin site
+git subtree push --prefix dist origin live
 ssh to prod & git pull
 
 If server needs restart
