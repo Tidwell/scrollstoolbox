@@ -82,6 +82,7 @@ angular.module('scrollstoolboxApp')
 	function tableSort() {
 		var arrayData = [];
 		for (var cardName in $scope.data.data) {
+			console.log($scope.data.data[cardName]);
 			if ($scope.data.data.hasOwnProperty(cardName) && typeof $scope.data.data[cardName] !== 'undefined') {
 				$scope.data.data[cardName].name = $scope.data.data[cardName].card.name;
 				arrayData.push($scope.data.data[cardName]);
