@@ -25,7 +25,7 @@ angular.module('scrollstoolboxApp')
 
 	function parseSet(res) {
 		var rarityMap = ['Common', 'Uncommon', 'Rare'];
-		var toDelete = ['Crone','Metal Wonder','Solemn Giant','Wings Shield'];
+		var toDelete = ['Breaker', 'Corrode', 'Fleetness'];
 		for (var cardName in res) {
 			res[cardName].price.median = Math.floor((res[cardName].price.high + res[cardName].price.low) / 2);
 			res[cardName].resource = res[cardName].card.costenergy ? 'Energy' : (res[cardName].card.costgrowth ? 'Growth' : 'Order');
