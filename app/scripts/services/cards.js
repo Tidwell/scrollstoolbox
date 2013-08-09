@@ -39,6 +39,11 @@ angular.module('scrollstoolboxApp')
 		toDelete.forEach(function(name){
 			delete res[name];
 		});
+
+		//temp fix
+		console.log(res);
+		res['Rat King'].card.rarity = 'Rare';
+
 		return res;
 	}
 

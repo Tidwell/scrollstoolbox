@@ -42,6 +42,15 @@ angular.module('scrollstoolboxApp')
 			}
 
 		],
+		draft: [{
+			title: 'ScrollsGuide Draft',
+			url: 'http://www.scrollsguide.com/draft',
+			description: 'Standard 8 man draft.'
+		},{
+			title: 'Plinko Draft',
+			url: 'http://scrolls.bitplay.net/',
+			description: 'Drafting, plinko style.'
+		}],
 		official: [],
 		fansites: [],
 		lists: [{
