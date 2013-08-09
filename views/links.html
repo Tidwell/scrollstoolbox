@@ -6,42 +6,49 @@
 	<h2>Price Checking</h2>
 	<ul>
 		<li ng-repeat="link in links.prices">
-			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
+			<a href="{{link.url}}" target="new">{{link.title}}</a> - {{link.description}}</li>
 		
 	</ul>
 
 	<h2>Buy/Sell/Trading</h2>
 	<ul>
 		<li ng-repeat="link in links.trading">
-			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
+			<a href="{{link.url}}" target="new">{{link.title}}</a> - {{link.description}}</li>
 		
 	</ul>
 
 	<h2>Deck Building</h2>
 	<ul>
 		<li ng-repeat="link in links.deckbuilders">
-			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
+			<a href="{{link.url}}" target="new">{{link.title}}</a> - {{link.description}}</li>
+		
+	</ul>
+
+	<h2>Draft/Limited Formats</h2>
+	<ul>
+		<li ng-repeat="link in links.draft">
+			<a href="{{link.url}}" target="new">{{link.title}}</a> - {{link.description}}</li>
 		
 	</ul>
 
 	<h2>Card Browsing</h2>
 	<ul>
 		<li ng-repeat="link in links.lists">
-			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
+			<a href="{{link.url}}" target="new">{{link.title}}</a> - {{link.description}}</li>
 		
 	</ul>
 
 	<h2>Misc</h2>
 	<ul>
 		<li ng-repeat="link in links.misc">
-			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
+			<a href="{{link.url}}" target="new">{{link.title}}</a> - {{link.description}}</li>
 		
 	</ul>
 
 	<h2>For Developers</h2>
 	<ul>
 		<li ng-repeat="link in links.developers">
-			<a href="{{link.url}}">{{link.title}}</a> - {{link.description}}</li>
+			<a href="{{link.url}}" target="new">{{link.title}}</a> - {{link.description}}</li>
 		
 	</ul>
 </div>
