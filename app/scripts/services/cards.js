@@ -41,7 +41,6 @@ angular.module('scrollstoolboxApp')
 		});
 
 		//temp fix
-		console.log(res);
 		res['Rat King'].card.rarity = 'Rare';
 
 		return res;
