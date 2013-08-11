@@ -18,10 +18,6 @@ angular.module('scrollstoolboxApp')
 				url: 'http://scrollswap.com/',
 				description: 'Post buy/sell/trade requests'
 			}, {
-				title: 'Trading Scrolls',
-				url: 'http://www.tradingscrolls.com/',
-				description: 'Post buy/sell/trade requests'
-			}, {
 				title: 'Scrolls Trader',
 				url: 'http://www.scrollstrader.com/',
 				description: 'Post buy/sell/trade requests'
@@ -34,7 +30,11 @@ angular.module('scrollstoolboxApp')
 		deckbuilders: [{
 				title: 'Scrolls Guide Deckbuilder',
 				url: 'http://www.scrollsguide.com/deckbuilder/',
-				description: 'Sorting, Drag and Drop, Card Browser, Filters, Saving (account required)'
+				description: 'Sorting, Drag and Drop, Card Browser, Filters, Sharing & Saving (account required)'
+			}, {
+				title: 'ScrollsPost Deckbuilder',
+				url: 'http://www.scrollspost.com/deckbuilder',
+				description: 'Drag and Drop, Card Browser, Filters, Sharing, In-Game Import (via MOD), Stats'
 			}, {
 				title: 'Famous Frames Deckbuilder',
 				url: 'http://scrolls.famousframes.de/',
@@ -58,13 +58,9 @@ angular.module('scrollstoolboxApp')
 				url: 'http://www.scrollsguide.com/wiki/index.php/Scrolls_Database',
 				description: 'Browse all cards, Sorting, includes removed and upcomming cards.'
 			}, {
-				title: 'Scrolls.Me Library',
-				url: 'http://library.scrolls.me/',
-				description: 'Browse all cards, Filters'
-			}, {
-				title: 'Visual Card Spoiler',
-				url: 'http://www.morosanmihail.com/home/scrolls-cards',
-				description: 'Browse images of all cards, Filters'
+				title: 'ScrollsPost Card DB',
+				url: 'http://www.scrollspost.com/scrolls',
+				description: 'Browse all cards, Sorting, Filtering'
 			}
 		],
 		misc: [{
@@ -109,6 +105,21 @@ angular.module('scrollstoolboxApp')
 				title: 'Scrolls Trading Bulletin API',
 				url: 'http://www.reddit.com/r/Scrolls/comments/1gqzg9/scrolls_trading_sites_comparisonaverage_in_json/can6dge',
 				description: 'Reddit thread detailing Scrolls Trading Bulletin API'
+			}, {
+				category: 'lists',
+				title: 'Visual Card Spoiler',
+				url: 'http://www.morosanmihail.com/home/scrolls-cards',
+				description: 'Browse images of all cards, Filters'
+			}, {
+				category: 'lists',
+				title: 'Scrolls.Me Library',
+				url: 'http://library.scrolls.me/',
+				description: 'Browse all cards, Filters'
+			}, {
+				category: 'trading',
+				title: 'Trading Scrolls',
+				url: 'http://www.tradingscrolls.com/',
+				description: 'Post buy/sell/trade requests'
 			}
 		]
 	};
