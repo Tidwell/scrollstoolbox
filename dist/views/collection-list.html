@@ -1,9 +1,31 @@
 <h2>{{username}}'s Collection</h2>
-<div class="alert alert-info">Please note this list currently includes untradeable cards (the first starter deck purchased).  These will be marked appropriately soon&trade;</div>
-
-<ul class="collection-list">
-	<li ng-repeat="card in collection.collection" class="pull-left" ng-show="card.owned > 0">
-		<img src="{{generateImagePath(card.name)}}">
-		<strong class="owned">{{card.owned}}</strong>
-	</li>
-</ul>
+<div class="collection-container">
+	<div class="row-fluid info">
+		<span class="tradeable">Tradeable</span>
+		<span class="tier1">Tier 1</span>
+		<span class="tier2">Tier 2</span>
+		<span class="tier3">Tier 3</span>
+	</div>
+	<hr>
+	<div class="control-group">
+		<label class="controls checkbox checkbox-inline">
+			<input type="checkbox" ng-model="hoverShow">
+			Hover to Show Tradeable/Tier Information
+		</label>
+	</div>
+	<hr>
+	<div class="row-fluid">
+		<ul class="collection-list">
+			<li ng-repeat="card in collection.collection" class="pull-left" ng-show="card.owned > 0">
+				<img src="{{generateImagePath(card.name)}}">
+				<strong class="owned">{{card.owned}}</strong>
+				<div class="details-container">
+					<span class="tradeable">{{card.tradeable}}</span>
+					<span class="tier1">{{card.tier1}}</span>
+					<span class="tier2">{{card.tier2}}</span>
+					<span class="tier3">{{card.tier3}}</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

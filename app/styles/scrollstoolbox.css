@@ -322,10 +322,7 @@ footer {
   width: 200px;
   height: 355px;
 }
-.collection-list li strong {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+.collection-list li strong, .collection-container span {
   font-size: 20px;
   color: #fff;
   padding: 5px;
@@ -335,6 +332,48 @@ footer {
   line-height: 30px;
   width: 30px;
   text-align: center;
+}
+
+.collection-list li strong {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+
+.collection-list li .details-container {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.collection-container.hover-show li .details-container {
+  display: none;
+}
+.collection-container li:hover .details-container {
+  display: block;
+}
+.collection-container li span {
+  display: inline-block;
+}
+
+.collection-container .info span.tier1 {
+  color: #ddd;
+  border: 1px solid #ccc;
+}
+
+.collection-container span.tradeable {
+  background-color: rgba(0,0,255,.5);
+}
+.collection-container span.tier1 {
+  background-color: rgba(255,255,255,.5);
+}
+.collection-container span.tier2 {
+  background-color: rgba(125,125,0,.5);
+}
+.collection-container span.tier3 {
+  background-color: rgba(125,0,125,.5);
 }
 
 .dark .modal h1 {

@@ -18,13 +18,13 @@ angular.module('scrollstoolboxApp')
 				url: 'http://scrollswap.com/',
 				description: 'Post buy/sell/trade requests'
 			}, {
-				title: 'Scrolls Trader',
-				url: 'http://www.scrollstrader.com/',
-				description: 'Post buy/sell/trade requests'
-			}, {
 				title: 'Scrolls Shop',
 				url: 'http://www.scrollsshop.com/',
 				description: 'Mod-supported collection tracking, WTS list generation'
+			}, {
+				title: 'Scrolls Trader',
+				url: 'http://www.scrollstrader.com/',
+				description: 'Post buy/sell/trade requests'
 			}
 		],
 		deckbuilders: [{
