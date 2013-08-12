@@ -6,15 +6,8 @@ angular.module('scrollstoolboxApp')
 		$scope.collection = collectionList.get($scope.username);
 
 		$scope.hoverShow = true;
+		$scope.tradeableShow = false;
 
-		//needs to be a directive
-		$scope.$watch('hoverShow', function() {
-			if ($scope.hoverShow) {
-				$('.collection-container').addClass('hover-show');
-			} else {
-				$('.collection-container').removeClass('hover-show');
-			}
-		});
 
 		$scope.generateImagePath = function(name) {
 			if (name) {

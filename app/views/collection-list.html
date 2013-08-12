@@ -1,5 +1,5 @@
 <h2>{{username}}'s Collection</h2>
-<div class="collection-container">
+<div class="collection-container" ng-class="{'hover-show': hoverShow}">
 	<div class="row-fluid info">
 		<span class="tradeable">Tradeable</span>
 		<span class="tier1">Tier 1</span>
@@ -12,6 +12,10 @@
 			<input type="checkbox" ng-model="hoverShow"></input>
 			Hover to Show Tradeable/Tier Information
 		</label>
+		<label class="controls checkbox checkbox-inline">
+			<input type="checkbox" ng-model="tradeableShow"></input>
+			Show Number Tradeable
+		</label>
 	</div>
 	<hr />
 	<div class="row-fluid">
@@ -20,7 +24,7 @@
 				<img src="{{generateImagePath(card.name)}}" />
 				<strong class="owned">{{card.owned}}</strong>
 				<div class="details-container">
-					<span class="tradeable">{{card.tradeable}}</span>
+					<span class="tradeable" ng-show="tradeableShow">{{card.tradeable}}</span>
 					<span class="tier1">{{card.tier1}}</span>
 					<span class="tier2">{{card.tier2}}</span>
 					<span class="tier3">{{card.tier3}}</span>
