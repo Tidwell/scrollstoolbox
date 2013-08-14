@@ -23,9 +23,10 @@ angular.module('scrollstoolboxApp')
 		var lowTotal = 0;
 		var highTotal = 0;
 		for (var card in $scope.data.data) {
+			var adjustedOwned = $scope.data.data[card].tier1 + $scope.data.data[card].tier2*3 + $scope.data.data[card].tier3*9;
 			if ($scope.data.data[card].owned > 3) {
-				lowTotal += $scope.data.data[card].price.low * ($scope.data.data[card].owned - 3);
-				highTotal += $scope.data.data[card].price.high * ($scope.data.data[card].owned - 3);
+				lowTotal += $scope.data.data[card].price.low * (adjustedOwned - 3);
+				highTotal += $scope.data.data[card].price.high * (adjustedOwned - 3);
 			}
 		}
 		return {
@@ -38,8 +39,9 @@ angular.module('scrollstoolboxApp')
 		var lowTotal = 0;
 		var highTotal = 0;
 		for (var card in $scope.data.data) {
-			lowTotal += $scope.data.data[card].price.low * ($scope.data.data[card].owned);
-			highTotal += $scope.data.data[card].price.high * ($scope.data.data[card].owned);
+			var adjustedOwned = $scope.data.data[card].tier1 + $scope.data.data[card].tier2*3 + $scope.data.data[card].tier3*9;
+			lowTotal += $scope.data.data[card].price.low * (adjustedOwned);
+			highTotal += $scope.data.data[card].price.high * (adjustedOwned);
 		}
 		return {
 			low: lowTotal,
