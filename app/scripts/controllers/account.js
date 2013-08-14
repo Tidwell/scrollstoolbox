@@ -33,4 +33,8 @@ angular.module('scrollstoolboxApp')
 		user.update();
 		$scope.close(property);
 	};
+
+	$scope.resetSettings = function() {
+		user.resetSettings();
+	};
 });

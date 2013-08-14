@@ -144,6 +144,14 @@ angular.module('scrollstoolboxApp')
 			socket.emit('settings:update', {
 				settings: user.settings
 			});
+		},
+		resetSettings: function() {
+			var curTheme = user.settings.theme; //remember the theme
+
+			user.settings = angular.copy(userTemplate.settings);
+			user.settings.theme = curTheme; //reset it
+
+			this.updateSettings();
 		}
 	};
 });

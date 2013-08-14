@@ -48,6 +48,10 @@ angular.module('scrollstoolboxApp', ['ui.bootstrap', 'ngCookies'])
 				templateUrl: '/views/collection-list.html',
 				controller: 'CollectionListCtrl'
 			})
+.when('/gametext', {
+  templateUrl: 'views/gametext.html',
+  controller: 'GametextCtrl'
+})
 			.otherwise({
 				redirectTo: '/home'
 			});

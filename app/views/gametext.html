@@ -1,0 +1,12 @@
+<table class="table table-bordered table-hover table-condensed">
+	<thead>
+		<tr><th>Name</th><th>Current Text</th><th>New Text</th></tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="card in cardsService.data">
+			<td>{{card.card.name}}</td>
+			<td style="text-align: left;">{{card.card.description}}</td>
+			<td><textarea style="width: 600px">{{card.card.description}}</textarea></td>
+		</tr>
+	</tbody>
+</table>

@@ -18,6 +18,10 @@ angular.module('scrollstoolboxApp')
 		$scope.wtb = '';
 		$scope.wts = '';
 
+		$scope.resetSettings = function() {
+			user.resetSettings();
+		};
+
 		function includeRarity(rarity, card, buySell) {
 			return (card.card.rarity === rarity && $scope.u.settings[buySell + rarity]);
 		}
