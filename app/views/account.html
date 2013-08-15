@@ -65,12 +65,150 @@
 			</form>
 		</p>
 	</div>
-
+	<p>
+		<a href ng-click="resetSettings()">Reset All Settings (WTS/WTB and Color Customizations)</a>
+	</p>
+	<hr />
+	<h2>Color Customization</h2>
 	<p>
 		<a href switch-theme>Switch to Light Theme</a>
 	</p>
-
-	<p>
-		<a href ng-click="resetSettings()">Reset Settings</a>
-	</p>
+	<form class="form row-fluid">
+		<div class="span4">
+			<div class="controls">
+				<label class="control-label">
+					None owned color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.ownedColors.none"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					Less than 3 owned color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.ownedColors.missing"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					Exactly 3 owned color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.ownedColors.playset"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					More than 3 owned color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.ownedColors.extras"/>
+				</div>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="controls">
+				<label class="control-label">
+					Growth faction color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.factionColors.growth"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					Order faction color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.factionColors.order"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					Energy faction color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.factionColors.energy"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					Decay faction color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.factionColors.decay"/>
+				</div>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="controls">
+				<label class="control-label">
+					Common color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.rarityColors.common"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					Uncommon color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.rarityColors.uncommon"/>
+				</div>
+			</div>
+			<div class="controls">
+				<label class="control-label">
+					Rare color
+				</label>
+				<div class="control-group">
+					<input type="color" ng-model="user.settings.rarityColors.rare"/>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="row-fluid">
+		<table class="table table-bordered table-hover table-condensed">
+			<tbody>
+				<tr class="faction-growth">
+					<td class="owned owned-colors-none">
+						<input type="number" value="0"></td>
+					<td>
+						<a>Bear Paw</a>
+					</td>
+					<td class="rarity rarity-common">Common</td>
+					<td class="price">57-62</td>
+				</tr>
+				<tr class="faction-order">
+					<td class="owned owned-colors-missing">
+						<input type="number" value="2"></td>
+					<td>
+						<a>Blessing of Haste</a>
+					</td>
+					<td class="rarity rarity-uncommon">Uncommon</td>
+					<td class="price">157-162</td>
+				</tr>
+				<tr class="faction-energy">
+					<td class="owned owned-colors-playset">
+						<input type="number" value="3"></td>
+					<td>
+						<a>Iron Giant</a>
+					</td>
+					<td class="rarity rarity-rare">Rare</td>
+					<td class="price">57-62</td>
+				</tr>
+				<tr class="faction-decay">
+					<td class="owned owned-colors-extras">
+						<input type="number" value="4"></td>
+					<td>
+						<a>Husk</a>
+					</td>
+					<td class="rarity rarity-common">Common</td>
+					<td class="price">117-222</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

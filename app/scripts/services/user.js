@@ -63,7 +63,25 @@ angular.module('scrollstoolboxApp')
 			tier3multiplier: 9,
 			tierPrefix: '[t',
 			tierSuffix: ']',
-			buyMax: 3
+			buyMax: 3,
+
+			ownedColors: {
+				extras: '#787DF5',
+				playset: '#8CF578',
+				missing: '#F5CD78',
+				none: '#F57878'
+			},
+			rarityColors: {
+				rare: '#FF00FF',
+				uncommon: '#00FF00',
+				common: '#0000FF'
+			},
+			factionColors: {
+				growth: '#ACD0B0',
+				order: '#A4C2F4',
+				energy: '#F9CB9C',
+				decay: '#daaced'
+			}
 		}
 	};
 
@@ -82,6 +100,15 @@ angular.module('scrollstoolboxApp')
 			socket.emit('settings:update', {
 				settings: user.settings
 			});
+		}
+		if (!data.settings.ownedColors) {
+			data.settings.ownedColors = angular.copy(userTemplate.settings.ownedColors);
+		}
+		if (!data.settings.rarityColors) {
+			data.settings.rarityColors = angular.copy(userTemplate.settings.rarityColors);
+		}
+		if (!data.settings.factionColors) {
+			data.settings.factionColors = angular.copy(userTemplate.settings.factionColors);
 		}
 	}
 
