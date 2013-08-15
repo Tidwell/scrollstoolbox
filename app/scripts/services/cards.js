@@ -28,7 +28,7 @@ angular.module('scrollstoolboxApp')
 		var toDelete = ['Breaker', 'Corrode', 'Fleetness'];
 		for (var cardName in res) {
 			res[cardName].price.median = Math.floor((res[cardName].price.high + res[cardName].price.low) / 2);
-			res[cardName].resource = res[cardName].card.costenergy ? 'Energy' : (res[cardName].card.costgrowth ? 'Growth' : 'Order');
+			res[cardName].resource = res[cardName].card.costenergy ? 'Energy' : (res[cardName].card.costgrowth ? 'Growth' : (res[cardName].card.costdecay ? 'Decay' : 'Order'));
 			res[cardName].card.rarity = rarityMap[res[cardName].card.rarity];
 
 			if (res[cardName].card.costdecay) {

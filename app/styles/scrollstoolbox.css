@@ -126,6 +126,10 @@ h1, h2 {
 .shared-controls .faction-growth input[type='checkbox'] {
   background-image: url('/img/card-icons/growth.png');
 }
+.table-controls .faction-decay input[type='checkbox'],
+.shared-controls .faction-decay input[type='checkbox'] {
+  background-image: url('/img/card-icons/decay.png');
+}
 .table-controls input[type='checkbox']:checked,
 .shared-controls input[type='checkbox']:checked {
   opacity: 1;
@@ -264,6 +268,9 @@ tr:hover td:not(:first-child) input[type="number"] {
 }
 .faction-energy, .faction-energy td:not(.owned) input[type="number"] {
   background: rgb(249,203,156);
+}
+.faction-energy, .faction-decay td:not(.owned) input[type="number"] {
+  background: #daaced;
 }
 
 .over-count {

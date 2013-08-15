@@ -11,6 +11,11 @@
 				<div class="faction-growth checkbox">
 					<input type="checkbox" ng-model="showGrowth" />Growth: <strong>{{total('growth')}}</strong>
 				</div>
+				<!--
+				<div class="faction-decay checkbox">
+					<input type="checkbox" ng-model="showDecay" />Decay: <strong>{{total('decay')}}</strong>
+				</div>
+				-->
 			</div>
 		</div>
 		<form class="form span5 form-horizontal table-controls">
@@ -140,7 +145,8 @@
 
 		    		((showOrder && card.resource=='Order') ||
 		    		(showGrowth && card.resource=='Growth') ||
-		    		(showEnergy && card.resource=='Energy')) &&
+		    		(showEnergy && card.resource=='Energy') ||
+		    		(showDecay && card.resource=='Decay')) &&
 
 		    		inFiltered(card.name)">
 		      <td owned-color="card.owned" class="owned">

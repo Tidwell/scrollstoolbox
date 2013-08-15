@@ -11,6 +11,7 @@ angular.module('scrollstoolboxApp')
 	$scope.showOrder = true;
 	$scope.showEnergy = true;
 	$scope.showGrowth = true;
+	$scope.showDecay = true;
 
 	$scope.columnTradeableHide = false;
 	$scope.columnTiersHide = false;

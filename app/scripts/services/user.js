@@ -51,6 +51,7 @@ angular.module('scrollstoolboxApp')
 			includeEnergy: true,
 			includeOrder: true,
 			includeGrowth: true,
+			includeDecay: true,
 			minPrice: 0,
 			maxPrice: 50000,
 			buytier1: true,
