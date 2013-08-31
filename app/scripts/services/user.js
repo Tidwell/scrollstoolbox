@@ -82,7 +82,8 @@ angular.module('scrollstoolboxApp')
 				order: '#A4C2F4',
 				energy: '#F9CB9C',
 				decay: '#daaced'
-			}
+			},
+			roundto: ''
 		}
 	};
 
@@ -110,6 +111,9 @@ angular.module('scrollstoolboxApp')
 		}
 		if (!data.settings.factionColors) {
 			data.settings.factionColors = angular.copy(userTemplate.settings.factionColors);
+		}
+		if (!data.settings.roundto) {
+			data.settings.roundto = '';
 		}
 	}
 

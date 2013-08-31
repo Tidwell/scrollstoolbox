@@ -43,6 +43,11 @@ angular.module('scrollstoolboxApp')
 				price += pModifier;
 				price += Number($scope.u.settings[buySell + 'Modifier']);
 			}
+
+			if ($scope.u.settings.roundto) {
+				price = $scope.u.settings.roundto * Math.round(price/$scope.u.settings.roundto);
+			}
+
 			return price;
 		}
 
@@ -155,6 +160,6 @@ angular.module('scrollstoolboxApp')
 		socket.on('user:login', updateText);
 		socket.on('cards:all', updateText);
 		socket.on('user:error', updateText); //for when they are in the demo
-		$scope.$watch('u.settings.separator + u.settings.buyPrependText + u.settings.buyAppendText + u.settings.sellPrependText + u.settings.sellAppendText + u.settings.buyModifier + u.settings.sellModifier + u.settings.buyPModifier + u.settings.sellPModifier + u.settings.buyAt + u.settings.sellAt + u.settings.buyCommon + u.settings.buyUncommon + u.settings.buyRare + u.settings.sellCommon + u.settings.sellUncommon + u.settings.sellRare + u.settings.gPrefix + u.settings.gSuffix + u.settings.qPrefix + u.settings.qSuffix + u.settings.includeEnergy + u.settings.includeOrder + u.settings.includeGrowth + u.settings.includeDecay + u.settings.minPrice + u.settings.maxPrice + u.settings.buytier1 + u.settings.buytier2 + u.settings.buytier3 + u.settings.selltier1 + u.settings.selltier2 + u.settings.selltier3 + u.settings.tier2multiplier + u.settings.tier3multiplier + u.settings.tierPrefix + u.settings.tierSuffix + u.settings.buyMax', updateText);
+		$scope.$watch('u.settings.separator + u.settings.buyPrependText + u.settings.buyAppendText + u.settings.sellPrependText + u.settings.sellAppendText + u.settings.buyModifier + u.settings.sellModifier + u.settings.buyPModifier + u.settings.sellPModifier + u.settings.buyAt + u.settings.sellAt + u.settings.buyCommon + u.settings.buyUncommon + u.settings.buyRare + u.settings.sellCommon + u.settings.sellUncommon + u.settings.sellRare + u.settings.gPrefix + u.settings.gSuffix + u.settings.qPrefix + u.settings.qSuffix + u.settings.includeEnergy + u.settings.includeOrder + u.settings.includeGrowth + u.settings.includeDecay + u.settings.minPrice + u.settings.maxPrice + u.settings.buytier1 + u.settings.buytier2 + u.settings.buytier3 + u.settings.selltier1 + u.settings.selltier2 + u.settings.selltier3 + u.settings.tier2multiplier + u.settings.tier3multiplier + u.settings.tierPrefix + u.settings.tierSuffix + u.settings.buyMax + u.settings.roundto', updateText);
 
 	});
