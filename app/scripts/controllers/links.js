@@ -78,6 +78,11 @@ angular.module('scrollstoolboxApp')
 				title: 'Summoner',
 				url: 'http://www.scrollsguide.com/forum/viewforum.php?f=59',
 				description: 'aka ModLoader, allows you to write mods for scrolls in C#'
+			},
+			{
+				title: 'Card Image Collector',
+				url: 'https://github.com/RelentlessEmu/RelentlessTools/tree/master/CardImageCollector',
+				description: 'The card image collector is used to download the Scroll animation kits and card images from the official Mojang servers. (windows)'
 			}
 		],
 		notUpdated: [{
