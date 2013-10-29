@@ -2,18 +2,13 @@
 
 angular.module('scrollstoolboxApp')
 	.controller('LinksCtrl', function($scope) {
-	$scope.links = {
-		prices: [{
-				title: 'Scrolls Post',
-				url: 'http://www.scrollspost.com/',
-				description: 'Price checking, Filters, Time-Ranged pricing, generated from in-game bot'
-			}, {
-				title: 'Scrolls Prices',
-				url: 'http://scrollsprices.com/',
-				description: 'Price checking'
-			}
-		],
-		trading: [{
+		$scope.links = {
+			prices: [{
+				title: 'Scrolls Guide',
+				url: 'http://www.scrollsguide.com/prices',
+				description: 'Price-checking, search, generated from in-game bot.'
+			}],
+			trading: [{
 				title: 'Scrolls Swap',
 				url: 'http://scrollswap.com/',
 				description: 'Post buy/sell/trade requests'
@@ -25,67 +20,53 @@ angular.module('scrollstoolboxApp')
 				title: 'Scrolls Trader',
 				url: 'http://www.scrollstrader.com/',
 				description: 'Post buy/sell/trade requests'
-			}
-		],
-		deckbuilders: [{
-				title: 'Scrolls Guide Deckbuilder',
-				url: 'http://www.scrollsguide.com/deckbuilder/',
-				description: 'Sorting, Drag and Drop, Card Browser, Filters, Sharing & Saving (account required)'
-			}, {
-				title: 'ScrollsPost Deckbuilder',
-				url: 'http://www.scrollspost.com/deckbuilder',
-				description: 'Drag and Drop, Card Browser, Filters, Sharing, In-Game Import (via MOD), Stats'
-			}, {
-				title: 'Famous Frames Deckbuilder',
-				url: 'http://scrolls.famousframes.de/',
-				description: 'Sorting, Search, Card Browser, Full-Card Visual Deckview, Sharing & Saving, Decks Browser, Commenting'
-			}
+			}],
+			deckbuilders: [{
+					title: 'Scrolls Guide Deckbuilder',
+					url: 'http://www.scrollsguide.com/deckbuilder/',
+					description: 'Sorting, Drag and Drop, Card Browser, Filters, Sharing & Saving (account required)'
+				}, {
+					title: 'Famous Frames Deckbuilder',
+					url: 'http://scrolls.famousframes.de/',
+					description: 'Sorting, Search, Card Browser, Full-Card Visual Deckview, Sharing & Saving, Decks Browser, Commenting'
+				}
 
-		],
-		draft: [{
-			title: 'ScrollsGuide Draft',
-			url: 'http://www.scrollsguide.com/draft',
-			description: 'Standard 8 man draft.'
-		},{
-			title: 'Plinko Draft',
-			url: 'http://scrolls.bitplay.net/',
-			description: 'Drafting, plinko style.'
-		}],
-		official: [],
-		fansites: [],
-		lists: [{
+			],
+			draft: [{
+				title: 'ScrollsGuide Draft',
+				url: 'http://www.scrollsguide.com/draft',
+				description: 'Standard 8 man draft.'
+			}, {
+				title: 'Plinko Draft',
+				url: 'http://scrolls.bitplay.net/',
+				description: 'Drafting, plinko style.'
+			}],
+			official: [],
+			fansites: [],
+			lists: [{
 				title: 'Scrolls Guide Wiki Database',
 				url: 'http://www.scrollsguide.com/wiki/index.php/Scrolls_Database',
 				description: 'Browse all cards, Sorting, includes removed and upcomming cards.'
-			}, {
-				title: 'ScrollsPost Card DB',
-				url: 'http://www.scrollspost.com/scrolls',
-				description: 'Browse all cards, Sorting, Filtering'
-			}
-		],
-		misc: [{
+			}],
+			misc: [{
 				title: 'Scrolls Guide Card Maker',
 				url: 'http://www.scrollsguide.com/designer',
 				description: 'Create custom cards'
-			}
-		],
-		developers: [{
+			}],
+			developers: [{
 				title: 'ScrollsGuide API',
 				url: 'http://www.reddit.com/r/Scrolls/comments/1ge2wj/full_scrolls_sqldb_or_spreatsheet/caje1f3',
 				description: 'Reddit thread for how to request ScrollsGuide API acess'
-			},
-			{
+			}, {
 				title: 'Summoner',
 				url: 'http://www.scrollsguide.com/forum/viewforum.php?f=59',
 				description: 'aka ModLoader, allows you to write mods for scrolls in C#'
-			},
-			{
+			}, {
 				title: 'Card Image Collector',
 				url: 'https://github.com/RelentlessEmu/RelentlessTools/tree/master/CardImageCollector',
 				description: 'The card image collector is used to download the Scroll animation kits and card images from the official Mojang servers. (windows)'
-			}
-		],
-		notUpdated: [{
+			}],
+			notUpdated: [{
 				category: 'prices',
 				title: 'Scrolls Trading Bulletin',
 				url: 'http://trading.scrolls.pw/',
@@ -125,7 +106,26 @@ angular.module('scrollstoolboxApp')
 				title: 'Trading Scrolls',
 				url: 'http://www.tradingscrolls.com/',
 				description: 'Post buy/sell/trade requests'
-			}
-		]
-	};
-});
+			}, {
+				category: 'prices',
+				title: 'Scrolls Post',
+				url: 'http://www.scrollspost.com/',
+				description: 'Price checking, Filters, Time-Ranged pricing, generated from in-game bot'
+			}, {
+				category: 'prices',
+				title: 'Scrolls Prices',
+				url: 'http://scrollsprices.com/',
+				description: 'Price checking'
+			}, {
+				category: 'deckbuilders',
+				title: 'ScrollsPost Deckbuilder',
+				url: 'http://www.scrollspost.com/deckbuilder',
+				description: 'Drag and Drop, Card Browser, Filters, Sharing, In-Game Import (via MOD), Stats'
+			}, {
+				category: 'list',
+				title: 'ScrollsPost Card DB',
+				url: 'http://www.scrollspost.com/scrolls',
+				description: 'Browse all cards, Sorting, Filtering'
+			}]
+		};
+	});
