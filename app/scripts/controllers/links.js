@@ -4,15 +4,11 @@ angular.module('scrollstoolboxApp')
 	.controller('LinksCtrl', function($scope) {
 		$scope.links = {
 			prices: [{
-				title: 'Scrolls Guide',
-				url: 'http://www.scrollsguide.com/prices',
+				title: 'Scrollsguide',
+				url: 'http://www.scrollsguide.com/trade',
 				description: 'Price-checking, search, generated from in-game bot.'
 			}],
 			trading: [{
-				title: 'Scrolls Swap',
-				url: 'http://scrollswap.com/',
-				description: 'Post buy/sell/trade requests'
-			}, {
 				title: 'Scrolls Shop',
 				url: 'http://www.scrollsshop.com/',
 				description: 'Mod-supported collection tracking, WTS list generation'
@@ -22,7 +18,7 @@ angular.module('scrollstoolboxApp')
 				description: 'Post buy/sell/trade requests'
 			}],
 			deckbuilders: [{
-					title: 'Scrolls Guide Deckbuilder',
+					title: 'Scrollsguide Deckbuilder',
 					url: 'http://www.scrollsguide.com/deckbuilder/',
 					description: 'Sorting, Drag and Drop, Card Browser, Filters, Sharing & Saving (account required)'
 				}, {
@@ -33,33 +29,33 @@ angular.module('scrollstoolboxApp')
 
 			],
 			draft: [{
-				title: 'ScrollsGuide Draft',
+				title: 'Judgement Simulator',
+				url: 'http://www.scrollsguide.com/judgement',
+				description: 'Judgement Simulator, community-improved version.'
+			}, {
+				title: 'Scrollsguide Draft',
 				url: 'http://www.scrollsguide.com/draft',
 				description: 'Standard 8 man draft.'
-			}, {
-				title: 'Plinko Draft',
-				url: 'http://scrolls.bitplay.net/',
-				description: 'Drafting, plinko style.'
 			}],
 			official: [],
 			fansites: [],
 			lists: [{
-				title: 'Scrolls Guide Wiki Database',
+				title: 'Scrollsguide Wiki Database',
 				url: 'http://www.scrollsguide.com/wiki/index.php/Scrolls_Database',
 				description: 'Browse all cards, Sorting, includes removed and upcomming cards.'
 			}],
 			misc: [{
-				title: 'Scrolls Guide Card Maker',
+				title: 'Scrollsguide Card Maker',
 				url: 'http://www.scrollsguide.com/designer',
 				description: 'Create custom cards'
 			}],
 			developers: [{
-				title: 'ScrollsGuide API',
-				url: 'http://www.reddit.com/r/Scrolls/comments/1ge2wj/full_scrolls_sqldb_or_spreatsheet/caje1f3',
-				description: 'Reddit thread for how to request ScrollsGuide API acess'
+				title: 'Scrollsguide API',
+				url: 'http://a.scrollsguide.com/docs/',
+				description: 'Scrollsguide Scrolls API & resources'
 			}, {
-				title: 'Summoner',
-				url: 'http://www.scrollsguide.com/forum/viewforum.php?f=59',
+				title: 'Summoner Modloader',
+				url: 'http://www.scrollsguide.com/summoner',
 				description: 'aka ModLoader, allows you to write mods for scrolls in C#'
 			}, {
 				title: 'Card Image Collector',
@@ -126,6 +122,16 @@ angular.module('scrollstoolboxApp')
 				title: 'ScrollsPost Card DB',
 				url: 'http://www.scrollspost.com/scrolls',
 				description: 'Browse all cards, Sorting, Filtering'
+			}, {
+				category: 'trading',
+				title: 'Scrolls Swap',
+				url: 'http://scrollswap.com/',
+				description: 'Post buy/sell/trade requests'
+			}, {
+				category: 'draft',
+				title: 'Plinko Draft',
+				url: 'http://scrolls.bitplay.net/',
+				description: 'Drafting, plinko style.'
 			}]
 		};
 	});
