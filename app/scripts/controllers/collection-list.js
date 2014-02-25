@@ -11,7 +11,7 @@ angular.module('scrollstoolboxApp')
 
 		$scope.generateImagePath = function(name) {
 			if (name) {
-				return '/img/scrolls-cards/'+name.toLowerCase().replace(/ /g,'').replace(/'/g,'')+'.png';
+				return '/img/scrolls-cards/'+name.toLowerCase().replace(/ /g,'').replace(/'/g,'').replace(/\,/g,'')+'.png';
 			}
 		};
 	});
