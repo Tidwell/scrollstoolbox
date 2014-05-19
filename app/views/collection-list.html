@@ -16,11 +16,15 @@
 			<input type="checkbox" ng-model="tradeableShow"></input>
 			Show Number Tradeable
 		</label>
+		<label class="controls checkbox checkbox-inline">
+			<input type="checkbox" ng-model="unownedShow"></input>
+			Show Unowned
+		</label>
 	</div>
 	<hr />
 	<div class="row-fluid">
 		<ul class="collection-list">
-			<li ng-repeat="card in collection.collection" class="pull-left" ng-show="card.owned > 0">
+			<li ng-repeat="card in collection.collection" class="pull-left" ng-show="(card.owned > 0) || unownedShow">
 				<img src="{{generateImagePath(card.name)}}" />
 				<strong class="owned">{{card.owned}}</strong>
 				<div class="details-container">
